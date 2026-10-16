@@ -562,6 +562,12 @@ body:has(.lp) {
 .lp-mock {
   border-radius: var(--lp-r-md);
   overflow: hidden;
+  /* Mockups read as one animation, not as text: no selection, text cursor
+     or iOS long-press menu. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  cursor: default;
   position: relative;
   align-self: center;
   width: 100%;
