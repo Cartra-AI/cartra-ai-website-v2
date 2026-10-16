@@ -7,7 +7,7 @@ export const HERO = {
   // Rendered two-tone: [ink, orange]
   headline: ['Transform your business', 'with custom AI.'],
   lede:
-    'Your AI systems should be uniquely yours and optimized to your company to ensure that you stay ahead of your competition in the AI-era.',
+    'Off-the-shelf AI gives you the same tools as everyone else. Custom AI is built around how your business actually works, so it becomes an advantage your competitors can’t buy.',
 };
 
 export type Pillar = {
