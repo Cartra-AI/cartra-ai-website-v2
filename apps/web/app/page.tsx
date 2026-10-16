@@ -329,15 +329,15 @@ export default function Home() {
 
               {/* Always on */}
               <Reveal className="lp-span-2">
-                <div className="lp-step grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end" style={{ background: 'var(--lp-surface)', border: '1px solid var(--lp-line)' }}>
-                  <div className="lp-step__art" style={{ color: 'var(--lp-text)' }}>
-                    <LineArt variant="grid" opacity={0.06} />
+                <div className="lp-step lp-step--4 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">
+                  <div className="lp-step__art" style={{ color: '#fff' }}>
+                    <LineArt variant="grid" opacity={0.12} />
                   </div>
                   <div className="flex flex-col justify-between gap-12 h-full">
-                    <span className="lp-tag self-start" style={{ color: 'var(--lp-accent-text)' }}>{STEPS[3]!.tag}</span>
+                    <span className="lp-tag self-start">{STEPS[3]!.tag}</span>
                     <div className="max-w-[32rem]">
                       <h3 className="lp-display lp-h3">{STEPS[3]!.title}</h3>
-                      <p className="lp-body mt-5">{STEPS[3]!.body}</p>
+                      <p className="lp-body mt-5" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{STEPS[3]!.body}</p>
                     </div>
                   </div>
                   <div className="lp-mock" role="img" aria-label="Example: skills the system learned this week">

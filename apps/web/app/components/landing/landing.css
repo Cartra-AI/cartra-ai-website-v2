@@ -1540,6 +1540,7 @@ body:has(.lp[data-palette='sierra']) {
 .lp[data-palette='sierra'] .lp-on-ink,
 .lp[data-palette='sierra'] .lp-step--2,
 .lp[data-palette='sierra'] .lp-step--3,
+.lp[data-palette='sierra'] .lp-step--4,
 .lp[data-palette='sierra'] .lp-beyond--light,
 .lp[data-palette='sierra'] .lp-beyond--ink,
 .lp[data-palette='sierra'] .lp-beyond--signal,
@@ -1938,4 +1939,23 @@ body:has(.lp[data-palette='sierra']) {
   .lp[data-palette='sierra'] .lp-glow-fill {
     animation: none;
   }
+}
+
+/* "Ongoing" step: emerald into teal, the brand green deepening as it
+   compounds. The skills mock floats on it like the pillar mocks. */
+.lp-step--4 {
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-line);
+}
+
+.lp[data-palette='sierra'] .lp-step--4 {
+  --g: linear-gradient(120deg, #0d5a34 0%, #0f6b45 45%, #1d7d74 100%);
+  --glint: 0.2;
+  border: 0;
+  color: #fff;
+}
+
+.lp[data-palette='sierra'] .lp-step--4 .lp-mock {
+  border-color: transparent;
+  box-shadow: 0 24px 48px -24px rgba(5, 40, 25, 0.55), 0 2px 6px rgba(5, 40, 25, 0.12);
 }
