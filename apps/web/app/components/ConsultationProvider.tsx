@@ -54,6 +54,8 @@ function ConsultationDialog({ onClose }: { onClose: () => void }) {
     const trigger = document.activeElement as HTMLElement | null;
     const overflow = document.body.style.overflow;
     element.showModal();
+    // Start focus on the dialog so the close button doesn't open with a focus ring.
+    element.focus();
     document.body.style.overflow = "hidden";
     return () => {
       element.close();
@@ -107,6 +109,7 @@ function ConsultationDialog({ onClose }: { onClose: () => void }) {
     <dialog
       ref={dialog}
       className={styles.dialog}
+      tabIndex={-1}
       aria-labelledby="consultation-title"
       aria-describedby="consultation-description"
       onCancel={onClose}
