@@ -7,7 +7,7 @@ export const HERO = {
   // Rendered two-tone: [ink, orange]
   headline: ['Transform your business', 'with custom AI.'],
   lede:
-    'Cartra is an applied AI company. We design, build, and run AI that’s customized and optimized to your business to make sure you stay ahead of your competition in the AI-era.',
+    'Your AI systems should be uniquely yours and optimized to your company to ensure that you stay ahead of your competition in the AI-era.',
 };
 
 export type Pillar = {
