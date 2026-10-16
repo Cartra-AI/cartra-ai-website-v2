@@ -75,12 +75,12 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-2 sm:w-[30rem] lp-hero-in" style={{ '--d': '320ms' } as CSSProperties}>
                 <CallTile label="Book a call" meta="Discovery session" location="landing_hero" />
-                <a href="#platform" className="lp-tile lp-tile--ink">
+                <a href="#how-it-works" className="lp-tile lp-tile--ink">
                   <span className="lp-tile__label">
-                    See the platform
+                    How it works
                     <Arrow />
                   </span>
-                  <span className="lp-tile__meta">Voice · Agents · Brain</span>
+                  <span className="lp-tile__meta">Find · Build · Launch</span>
                 </a>
               </div>
             </div>
