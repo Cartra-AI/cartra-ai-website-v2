@@ -10,7 +10,7 @@ import LogoMarquee from './components/landing/integrations/LogoMarquee';
 import BeyondLogos from './components/landing/integrations/BeyondLogos';
 import { VoiceMockup, AgentsMockup, BrainMockup } from './components/landing/Mockups';
 import { Arrow, CallButton, CallTile, Reveal } from './components/landing/primitives';
-import { DEPARTMENTS, FAQS, HERO, OUTCOMES, PILLARS, STEPS, type Pillar } from './components/landing/content';
+import { CONTRAST, DEPARTMENTS, FAQS, HERO, OUTCOMES, PILLARS, STEPS, type Pillar } from './components/landing/content';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Cartra | Applied AI for Voice, Agents, and Company Knowledge',
@@ -116,22 +116,59 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ───────── Statement ───────── */}
-        <section className="lp-section">
-          <div className="lp-wrap text-center">
-            <Reveal>
-              <h2 className="lp-display lp-h2 mx-auto max-w-[20ch]">
-                We don&apos;t just automate tasks. <span className="lp-accent">We transform how your company works.</span>
-              </h2>
+        {/* ───────── Problem vs solution ───────── */}
+        <section className="lp-section" aria-labelledby="contrast-title">
+          <div className="lp-wrap">
+            <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end mb-12 lg:mb-16">
+              <Reveal>
+                <span className="lp-tag lp-tag--muted">The problem</span>
+                <h2 id="contrast-title" className="lp-display lp-h2 mt-6 max-w-[16ch]">
+                  Everyone has the same AI. <span className="lp-accent">Few have AI built for them.</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={100}>
+                <p className="lp-lede max-w-[34rem] lg:ml-auto">
+                  Off-the-shelf tools don&apos;t know your customers, your systems, or how your team actually works. So they
+                  stall after the demo, sit beside the real work, and leave the hard parts to your people.
+                </p>
+              </Reveal>
+            </div>
+
+            <Reveal delay={150}>
+              <div className="lp-compare">
+                <div className="lp-compare__col lp-compare__col--generic">
+                  <p className="lp-compare__head">
+                    <span className="lp-mono">Off-the-shelf AI</span>
+                  </p>
+                  {CONTRAST.map((row) => (
+                    <p key={row.generic} className="lp-compare__row">
+                      <svg viewBox="0 0 16 16" fill="none" aria-hidden className="lp-compare__mark">
+                        <path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                      </svg>
+                      {row.generic}
+                    </p>
+                  ))}
+                </div>
+                <div className="lp-compare__col lp-compare__col--cartra">
+                  <p className="lp-compare__head">
+                    <span className="lp-mono">Built by Cartra</span>
+                  </p>
+                  {CONTRAST.map((row) => (
+                    <p key={row.cartra} className="lp-compare__row">
+                      <svg viewBox="0 0 16 16" fill="none" aria-hidden className="lp-compare__mark">
+                        <path d="M3.5 8.5l3 3 6-7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      {row.cartra}
+                    </p>
+                  ))}
+                </div>
+              </div>
             </Reveal>
-            <Reveal delay={120}>
-              <p className="lp-lede mx-auto mt-8 max-w-[44rem]">
-                A single bot that answers emails isn&apos;t transformation. We architect AI systems that own entire workflows, from the
-                first phone call to the last system update, and the knowledge that makes them reliable.
-              </p>
-              <p className="lp-lede mx-auto mt-5 max-w-[44rem]" style={{ color: 'var(--lp-text)' }}>
-                The result: your front line never misses a customer, your operations run without the backlog, and everything
-                your company knows is finally put to use.
+
+            <Reveal delay={200}>
+              <p className="lp-lede mx-auto mt-12 lg:mt-16 max-w-[44rem] text-center" style={{ color: 'var(--lp-text)' }}>
+                We work with you to tailor and optimize AI solutions to your exact needs so that{' '}
+                <span className="lp-accent">it becomes your competitive advantage.</span>
               </p>
             </Reveal>
           </div>

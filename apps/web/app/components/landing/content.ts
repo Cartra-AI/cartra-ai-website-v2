@@ -191,3 +191,28 @@ export const FAQS = [
     a: 'Pricing depends on scope: the workflows, systems, and volume involved. We share a proposal after the discovery call, once we understand what you need.',
   },
 ];
+
+/* Problem vs solution: each row pairs a limit of off-the-shelf AI with
+   what Cartra builds instead, so the two columns read across. */
+export const CONTRAST: Array<{ generic: string; cartra: string }> = [
+  {
+    generic: 'Built for the average company',
+    cartra: 'Designed around how your company actually operates',
+  },
+  {
+    generic: 'Doesn’t know your customers, policies, or history',
+    cartra: 'Grounded in your know-how and procedures through Cartra Brain',
+  },
+  {
+    generic: 'Sits in another tab, outside your systems',
+    cartra: 'Works inside the phones, inboxes, and software you already use',
+  },
+  {
+    generic: 'Handles one task, then hands the rest back to your team',
+    cartra: 'Owns whole workflows, from the first call to the final system update',
+  },
+  {
+    generic: 'Stays the same as the day you bought it',
+    cartra: 'Learns from every interaction and keeps getting better',
+  },
+];

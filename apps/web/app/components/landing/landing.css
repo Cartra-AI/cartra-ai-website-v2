@@ -1538,7 +1538,8 @@ body:has(.lp[data-palette='sierra']) {
 .lp[data-palette='sierra'] .lp-beyond--ink,
 .lp[data-palette='sierra'] .lp-beyond--signal,
 .lp[data-palette='sierra'] .lp-band,
-.lp[data-palette='sierra'] .ds-card-featured {
+.lp[data-palette='sierra'] .ds-card-featured,
+.lp[data-palette='sierra'] .lp-compare__col--cartra {
   background-color: transparent;
   background-image:
     var(--grain),
@@ -1780,4 +1781,76 @@ body:has(.lp[data-palette='sierra']) {
 .lp-footer__legal .lp-footer__link {
   font-size: 0.875rem;
   color: var(--lp-muted);
+}
+
+/* ---------- Problem vs solution ----------
+   Both columns are subgrids of one grid, so row N on the left lines up with
+   row N on the right however the text wraps. */
+
+.lp-compare {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .lp-compare {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lp-compare__col {
+  display: grid;
+  grid-row: span 6;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--lp-r-xl);
+}
+
+.lp-compare__col--generic {
+  background: var(--lp-sand);
+  color: var(--lp-muted);
+}
+
+.lp-compare__col--cartra {
+  --g: var(--g-green);
+  color: #fff;
+}
+
+.lp-compare__head {
+  padding-bottom: 1.25rem;
+}
+
+.lp-compare__col--cartra .lp-compare__head {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.lp-compare__row {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+  padding-block: 1.125rem;
+  border-top: 1px solid var(--lp-line-strong);
+  font-family: var(--lp-font-display);
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.lp-compare__col--cartra .lp-compare__row {
+  border-top-color: rgba(255, 255, 255, 0.22);
+}
+
+.lp-compare__row:last-child {
+  padding-bottom: 0;
+}
+
+.lp-compare__mark {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.15em;
+  opacity: 0.85;
 }
