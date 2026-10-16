@@ -1,66 +1,105 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { Container } from '@repo/ui';
 import ContactLink from './ContactLink';
 
-const LINK_CLASS = 'inline-flex items-center h-8 hover:text-c-text transition-colors';
+/* Site-wide footer in the redesign's system: logo + contact on the left,
+   link columns on the right, legal row underneath. */
+
+const COLUMNS: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
+  {
+    title: 'Products',
+    links: [
+      { href: '/#voice', label: 'Cartra Voice' },
+      { href: '/#agents', label: 'Cartra Agents' },
+      { href: '/#brain', label: 'Cartra Brain' },
+      { href: '/#integrations', label: 'Integrations' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { href: '/', label: 'Home' },
+      { href: '/agent-systems', label: 'Agent Systems' },
+      { href: '/case-studies', label: 'Case Studies' },
+      { href: '/support', label: 'Support' },
+    ],
+  },
+  {
+    title: 'AI Services',
+    links: [
+      { href: '/ai-agent-development-company', label: 'AI Agent Development Company' },
+      { href: '/ai-automation-agency', label: 'AI Automation Agency' },
+      { href: '/ai-workflow-automation', label: 'AI Workflow Automation' },
+    ],
+  },
+];
 
 export default function SiteFooter() {
   return (
-    <footer className="py-12 px-4 sm:px-6 lg:px-8" style={{ borderTop: '1px solid var(--c-border)' }}>
-      <Container size="2xl">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
-          <div>
-            <p className="font-display text-c-text" style={{ fontSize: '1.25rem', fontWeight: 400, letterSpacing: '-0.02em' }}>
-              Cartra AI
+    <footer className="lp-footer">
+      <div className="lp-wrap">
+        <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-20">
+          <div className="max-w-[22rem]">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5"
+              style={{ fontFamily: 'var(--lp-font-display)', fontSize: '1.125rem', letterSpacing: '-0.02em' }}
+            >
+              <Image src="/cartra_geometric_logo_round.png" alt="" width={26} height={26} className="rounded-full" />
+              Cartra
+            </Link>
+            <p className="lp-small mt-4">
+              Applied AI for the businesses that run the real economy: voice agents, agent teammates, and a company brain.
             </p>
-            <div className="mt-3 text-sm text-c-text-muted font-display space-y-1">
-              <p className="flex items-center gap-2">
-                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+            <div className="lp-small mt-6 grid gap-1.5">
+              <a href="mailto:team@cartra.ai" className="lp-footer__link">
                 team@cartra.ai
-              </p>
-              <p className="flex items-start gap-2 pt-1">
-                <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>2261 Market Street<br />STE 85777<br />San Francisco, CA 94114</span>
-              </p>
+              </a>
+              <span>
+                2261 Market Street, STE 85777
+                <br />
+                San Francisco, CA 94114
+              </span>
             </div>
           </div>
-          <div className="grid sm:grid-cols-2 gap-8 text-sm font-display text-c-text-muted">
-            <div>
-              <p className="text-c-text font-semibold">Company</p>
-              <div className="mt-3 flex flex-col gap-2">
-                <Link href="/" className={LINK_CLASS}>Home</Link>
-                <Link href="/agent-systems" className={LINK_CLASS}>Agent Systems</Link>
-                <Link href="/case-studies" className={LINK_CLASS}>Case Studies</Link>
-                <Link href="/support" className={LINK_CLASS}>Support</Link>
-                <ContactLink className={`${LINK_CLASS} cursor-pointer`} />
+
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-14">
+            {COLUMNS.map((col) => (
+              <div key={col.title}>
+                <p className="lp-mono" style={{ color: 'var(--lp-muted)' }}>
+                  {col.title}
+                </p>
+                <ul className="mt-4 grid gap-2.5">
+                  {col.links.map((l) => (
+                    <li key={l.href}>
+                      <Link href={l.href} className="lp-footer__link">
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                  {col.title === 'Company' && (
+                    <li>
+                      <ContactLink className="lp-footer__link cursor-pointer" />
+                    </li>
+                  )}
+                </ul>
               </div>
-            </div>
-            <div>
-              <p className="text-c-text font-semibold">AI Services</p>
-              <div className="mt-3 flex flex-col gap-2">
-                <Link href="/ai-agent-development-company" className={LINK_CLASS}>AI Agent Development Company</Link>
-                <Link href="/ai-automation-agency" className={LINK_CLASS}>AI Automation Agency</Link>
-                <Link href="/ai-workflow-automation" className={LINK_CLASS}>AI Workflow Automation</Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        <div
-          className="mt-10 pt-8 flex flex-col-reverse items-center gap-3 sm:flex-row sm:justify-between text-sm font-display text-c-text-soft tabular-nums"
-          style={{ borderTop: '1px solid var(--c-border)' }}
-        >
-          <p>&copy; {new Date().getFullYear()} Cartra. All rights reserved.</p>
+
+        <div className="lp-footer__legal">
+          <p className="tabular-nums">&copy; {new Date().getFullYear()} Cartra. All rights reserved.</p>
           <nav aria-label="Legal" className="flex items-center gap-6">
-            <Link href="/privacy" className={LINK_CLASS}>Privacy Policy</Link>
-            <Link href="/terms" className={LINK_CLASS}>Terms of Use</Link>
+            <Link href="/privacy" className="lp-footer__link">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="lp-footer__link">
+              Terms of Use
+            </Link>
           </nav>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }

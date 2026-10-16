@@ -42,7 +42,7 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
         path: `/${page.slug}`,
         category: page.eyebrow,
       })} />
-      <Surface className="text-gray-900">
+      <Surface>
         <Navigation />
         <main>
 
@@ -59,7 +59,7 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
               <ConsultationButton>Book a free consultation</ConsultationButton>
               <Link
                 href="/agent-systems"
-                className="inline-flex items-center h-11 px-4 font-display text-sm font-semibold text-c-text-muted hover:text-c-text transition-colors"
+                className="inline-flex items-center h-11 px-4 font-display text-sm font-normal text-c-text-muted hover:text-c-text transition-colors"
               >
                 Browse agent systems
               </Link>
@@ -128,7 +128,7 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
             <div className="grid md:grid-cols-3 gap-5">
               {page.sections.map((section) => (
                 <Card key={section.title}>
-                  <h2 className="font-display text-c-text" style={{ fontSize: '1.25rem', fontWeight: 500, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                  <h2 className="font-display text-c-text" style={{ fontSize: '1.25rem', fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
                     {section.title}
                   </h2>
                   <Body size="sm" className="mt-3">{section.body}</Body>
@@ -167,7 +167,7 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
                   >
                     <Card className="h-full transition-colors group-hover:border-c-border-strong">
                       <Eyebrow tone="accent">{agent.category}</Eyebrow>
-                      <h3 className="font-display mt-3 text-c-text" style={{ fontSize: '1.1rem', fontWeight: 500, letterSpacing: '-0.015em', lineHeight: 1.2 }}>
+                      <h3 className="font-display mt-3 text-c-text" style={{ fontSize: '1.1rem', fontWeight: 400, letterSpacing: '-0.015em', lineHeight: 1.2 }}>
                         {agent.name}
                       </h3>
                       <Body size="sm" className="mt-3">{agent.tagline}</Body>
@@ -189,7 +189,7 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
                   className="font-display text-c-text px-3 py-1.5 rounded-c-md border border-c-border bg-c-surface"
                   style={{
                     fontSize: '0.8125rem',
-                    fontWeight: 500,
+                    fontWeight: 400,
                   }}
                 >
                   {integration}
@@ -209,7 +209,7 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
             <div className="space-y-3">
               {page.faqs.map((faq) => (
                 <Card key={faq.question}>
-                  <h3 className="font-display text-c-text" style={{ fontSize: '1.0625rem', fontWeight: 500, letterSpacing: '-0.01em' }}>
+                  <h3 className="font-display text-c-text" style={{ fontSize: '1.0625rem', fontWeight: 400, letterSpacing: '-0.01em' }}>
                     {faq.question}
                   </h3>
                   <Body size="sm" className="mt-3">{faq.answer}</Body>

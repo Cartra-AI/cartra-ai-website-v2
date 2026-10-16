@@ -57,7 +57,7 @@ export default async function AgentSystemDetail(
       ])}
     />
     <JsonLd data={createAgentServiceJsonLd(agent)} />
-    <Surface className="text-gray-900">
+    <Surface>
       <Navigation />
       <main>
 
@@ -66,7 +66,7 @@ export default async function AgentSystemDetail(
           <Link
             href="/agent-systems"
             className="inline-flex items-center gap-1.5 font-display text-c-text-muted hover:text-c-text transition-colors"
-            style={{ fontSize: '0.8125rem', fontWeight: 500, letterSpacing: '-0.005em' }}
+            style={{ fontSize: '0.8125rem', fontWeight: 400, letterSpacing: '-0.005em' }}
           >
             <span aria-hidden>←</span> All agent systems
           </Link>
@@ -119,13 +119,13 @@ export default async function AgentSystemDetail(
               <Card key={col.n} className="h-full">
                 <span
                   className="font-display text-c-orange tabular-nums"
-                  style={{ fontSize: '0.85rem', fontWeight: 500, letterSpacing: '0.04em' }}
+                  style={{ fontSize: '0.85rem', fontWeight: 400, letterSpacing: '0.04em' }}
                 >
                   {col.n}
                 </span>
                 <h3
                   className="font-display mt-3 text-c-text"
-                  style={{ fontSize: '1.125rem', fontWeight: 500, letterSpacing: '-0.015em', lineHeight: 1.2 }}
+                  style={{ fontSize: '1.125rem', fontWeight: 400, letterSpacing: '-0.015em', lineHeight: 1.2 }}
                 >
                   {col.label}
                 </h3>
@@ -166,7 +166,7 @@ export default async function AgentSystemDetail(
                 className="font-display text-c-text px-3 py-1.5 rounded-c-md border border-c-border bg-c-surface"
                 style={{
                   fontSize: '0.8125rem',
-                  fontWeight: 500,
+                  fontWeight: 400,
                   letterSpacing: '-0.005em',
                 }}
               >
@@ -177,7 +177,7 @@ export default async function AgentSystemDetail(
               className="font-display text-c-text-muted px-3 py-1.5 rounded-c-md border border-dashed border-c-border"
               style={{
                 fontSize: '0.8125rem',
-                fontWeight: 500,
+                fontWeight: 400,
                 letterSpacing: '-0.005em',
               }}
             >
@@ -202,13 +202,13 @@ export default async function AgentSystemDetail(
             <Card surface="featured" className="mt-10">
               <span
                 className="font-display uppercase tracking-widest text-c-on-dark-muted"
-                style={{ fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.12em' }}
+                style={{ fontSize: '0.7rem', fontWeight: 400, letterSpacing: '0.12em' }}
               >
                 Case study
               </span>
               <h3
                 className="font-display mt-3"
-                style={{ fontSize: '1.5rem', fontWeight: 500, letterSpacing: '-0.02em', color: 'var(--c-on-dark)' }}
+                style={{ fontSize: '1.5rem', fontWeight: 400, letterSpacing: '-0.02em', color: 'var(--c-on-dark)' }}
               >
                 {agent.caseStudy.label}
               </h3>

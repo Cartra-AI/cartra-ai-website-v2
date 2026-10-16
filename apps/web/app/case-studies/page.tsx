@@ -47,7 +47,7 @@ export default function CaseStudiesPage() {
           })),
         }}
       />
-      <Surface className="text-gray-900">
+      <Surface>
         <Navigation />
         <main>
 
@@ -71,7 +71,7 @@ export default function CaseStudiesPage() {
                 return (
                   <Card key={study.slug} className="h-full">
                     <Eyebrow tone="accent">{study.industry}</Eyebrow>
-                    <h2 className="font-display mt-3 text-c-text" style={{ fontSize: '1.35rem', fontWeight: 500, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                    <h2 className="font-display mt-3 text-c-text" style={{ fontSize: '1.35rem', fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
                       {study.headline}
                     </h2>
                     <Body size="md" className="mt-4">{study.summary}</Body>
@@ -87,7 +87,7 @@ export default function CaseStudiesPage() {
                       <Link
                         href={`/agent-systems/${agent.slug}`}
                         className="mt-6 inline-flex font-display text-c-accent"
-                        style={{ fontSize: '0.8125rem', fontWeight: 500 }}
+                        style={{ fontSize: '0.8125rem', fontWeight: 400 }}
                       >
                         See related agent system →
                       </Link>

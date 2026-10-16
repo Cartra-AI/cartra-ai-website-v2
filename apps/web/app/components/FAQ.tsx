@@ -25,7 +25,7 @@ export default function FAQ({ items = FAQS }: FAQProps) {
             >
               <span
                 className="font-display text-c-text pr-4"
-                style={{ fontSize: '1.0625rem', fontWeight: 500, letterSpacing: '-0.01em', textWrap: 'balance' }}
+                style={{ fontSize: '1.0625rem', fontWeight: 400, letterSpacing: '-0.01em', textWrap: 'balance' }}
               >
                 {faq.question}
               </span>

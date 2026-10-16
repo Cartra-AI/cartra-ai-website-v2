@@ -27,14 +27,14 @@ export default function AgentSystems() {
                 <Eyebrow tone="accent">{agent.category}</Eyebrow>
                 <h3
                   className="font-display mt-3 text-c-text"
-                  style={{ fontSize: '1.125rem', fontWeight: 500, letterSpacing: '-0.015em', lineHeight: 1.2 }}
+                  style={{ fontSize: '1.125rem', fontWeight: 400, letterSpacing: '-0.015em', lineHeight: 1.2 }}
                 >
                   {agent.name}
                 </h3>
                 <Body size="sm" className="mt-3">{agent.tagline}</Body>
                 <span
                   className="mt-5 inline-flex items-center gap-1.5 font-display text-c-accent"
-                  style={{ fontSize: '0.8125rem', fontWeight: 500, letterSpacing: '-0.005em' }}
+                  style={{ fontSize: '0.8125rem', fontWeight: 400, letterSpacing: '-0.005em' }}
                 >
                   See how it works
                   <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
