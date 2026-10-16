@@ -54,7 +54,7 @@ export default function ContactCenter({
           className="mt-5 block break-all font-display text-c-text transition-colors hover:text-c-primary"
           style={{
             fontSize: '1.25rem',
-            fontWeight: 500,
+            fontWeight: 400,
             letterSpacing: '-0.015em',
           }}
         >
@@ -87,7 +87,7 @@ export default function ContactCenter({
           className="mt-5 text-center font-display text-c-text"
           style={{
             fontSize: '0.9375rem',
-            fontWeight: 500,
+            fontWeight: 400,
             letterSpacing: '-0.01em',
           }}
         >
@@ -152,10 +152,10 @@ const PILL_BASE_CLASS =
 const PILL_FILLED_CLASS =
   'bg-c-surface-card text-c-text border border-c-border-strong hover:bg-c-surface';
 const PILL_DARK_CLASS =
-  'bg-c-text text-c-on-dark border border-c-text hover:bg-c-navy-2';
+  'bg-c-primary text-c-on-dark border border-c-primary hover:bg-c-primary-active';
 const PILL_STYLE = {
   fontSize: '0.875rem',
-  fontWeight: 500,
+  fontWeight: 400,
   letterSpacing: '-0.005em',
 } as const;
 

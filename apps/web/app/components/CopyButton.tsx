@@ -31,7 +31,7 @@ export default function CopyButton({
       onClick={handleClick}
       aria-label={copied ? `${label} copied` : `Copy ${value}`}
       className={`inline-flex items-center gap-1.5 rounded-c-pill border border-c-border bg-c-surface-card px-2.5 py-1 font-display text-c-text-muted transition-colors hover:border-c-border-strong hover:text-c-text ${className}`}
-      style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '-0.005em' }}
+      style={{ fontSize: '0.75rem', fontWeight: 400, letterSpacing: '-0.005em' }}
     >
       {copied ? (
         <>

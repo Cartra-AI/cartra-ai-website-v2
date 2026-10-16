@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "@repo/ui/tokens.css";
@@ -6,6 +6,9 @@ import "@repo/ui/motion.css";
 import "@repo/ui/components.css";
 import "@repo/ui/explainer.css";
 import "./globals.css";
+import "./components/landing/landing.css";
+import { landingMono } from "./components/landing/fonts";
+import { PALETTE } from "./components/landing/palette";
 import JsonLd from "./components/JsonLd";
 import Analytics from "./components/Analytics";
 import ConsultationProvider from "./components/ConsultationProvider";
@@ -19,6 +22,12 @@ import {
   createOrganizationJsonLd,
   createWebsiteJsonLd,
 } from "./lib/seo";
+
+// Browser chrome (mobile toolbar, tab strip) matches the page; always light.
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  colorScheme: "light",
+};
 
 const inter = Inter({
   subsets: ["latin"],
@@ -127,10 +136,13 @@ export default function RootLayout({
           }}
         />
         <Analytics />
-        <ConsultationProvider>
-          {children}
-          <SiteFooter />
-        </ConsultationProvider>
+        {/* Site shell: the redesign's palette, fonts and tokens wrap every page. */}
+        <div className={`lp ${landingMono.variable}`} data-palette={PALETTE}>
+          <ConsultationProvider>
+            {children}
+            <SiteFooter />
+          </ConsultationProvider>
+        </div>
       </body>
     </html>
   );
