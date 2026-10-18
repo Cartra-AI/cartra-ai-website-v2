@@ -272,7 +272,7 @@ export default function ProductPage({ product }: { product: Product }) {
                   <li key={l.slug} className="lp-logo">
                     {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logos, no optimization needed */}
                     <img
-                      src={`/integrations/${l.slug}.svg`}
+                      src={`/integrations/${l.slug}.${l.ext ?? 'svg'}`}
                       alt={l.wordmark ? l.name : ''}
                       className={`lp-logo__mark ${l.wordmark ? 'lp-logo__mark--word' : ''}`}
                     />

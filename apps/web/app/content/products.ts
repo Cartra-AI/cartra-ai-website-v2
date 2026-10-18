@@ -21,7 +21,7 @@ export type ProductStory = {
   results?: string[];
 };
 
-export type ProductLogo = { slug: string; name: string; wordmark?: boolean };
+export type ProductLogo = { slug: string; name: string; wordmark?: boolean; ext?: 'svg' | 'png' };
 
 export type Product = {
   id: ProductId;
@@ -286,6 +286,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
       { slug: 'microsoftoutlook', name: 'Microsoft Outlook' },
       { slug: 'netsuite', name: 'Oracle NetSuite', wordmark: true },
       { slug: 'quickbooks', name: 'QuickBooks' },
+      { slug: 'efreight', name: 'E-Freight', ext: 'png' },
       { slug: 'salesforce', name: 'Salesforce', wordmark: true },
       { slug: 'hubspot', name: 'HubSpot' },
       { slug: 'zendesk', name: 'Zendesk' },
@@ -418,6 +419,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
       { slug: 'googledrive', name: 'Google Drive' },
       { slug: 'microsoftsharepoint', name: 'Microsoft SharePoint' },
       { slug: 'box', name: 'Box', wordmark: true },
+      { slug: 'efreight', name: 'E-Freight', ext: 'png' },
       { slug: 'notion', name: 'Notion' },
       { slug: 'confluence', name: 'Confluence' },
       { slug: 'zendesk', name: 'Zendesk' },
