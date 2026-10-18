@@ -19,7 +19,6 @@ export type CommercialPage = {
     body: string;
   }>;
   integrations: string[];
-  relatedAgentSlugs: string[];
   faqs: FAQItem[];
 };
 
@@ -28,31 +27,32 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
     slug: 'ai-agent-development-company',
     seoTitle: 'AI Agent Development Company for Operations | Cartra',
     seoDescription:
-      'Cartra is an AI agent development company building custom workflow automation systems for document ops, finance, procurement, and revenue teams.',
+      'Cartra is an AI agent development company building custom voice agents, AI teammates, and company knowledge bases around how your business actually works.',
     eyebrow: 'AI Agent Development Company',
-    h1: 'Custom AI agent development for operational workflows.',
+    h1: 'Custom AI agent development, built around your business.',
     intro:
-      'Cartra designs, builds, deploys, and maintains custom AI agents for mid-market companies that need production workflow automation inside the tools they already use.',
+      'Cartra designs, builds, and runs custom AI agents for established businesses: voice agents that answer your phones, AI teammates that take on operational work, and a company brain that keeps both grounded in what you know.',
     highlights: [
       {
         label: 'Built for',
-        body: 'Operational workflows with clear rules, volume, and measurable outcomes.',
+        body: 'Work with real volume and clear rules: calls, documents, approvals, and the systems in between.',
       },
       {
         label: 'Deploys into',
-        body: 'ERPs, CRMs, inboxes, spreadsheets, portals, and internal tools.',
+        body: 'Phone lines, inboxes, ERPs, CRMs, spreadsheets, portals, and internal tools.',
       },
       {
-        label: 'Launch model',
-        body: 'Discovery, build, deployment, monitoring, and ongoing optimization.',
+        label: 'After launch',
+        body: 'Agents that learn from every correction and keep getting better on live work.',
       },
     ],
     fit: [
-      'You have repetitive operational work with clear volume and clear rules.',
+      'You have repetitive work with clear volume, on the phone or behind it.',
       'Your team lives across ERPs, CRMs, inboxes, spreadsheets, and portals.',
-      'You need a production system, not another AI demo or prompt library.',
+      'You want a production system built for you, not another off-the-shelf AI tool.',
     ],
     workflows: [
+      'Inbound and outbound calls for service, scheduling, and sales',
       'Document intake, extraction, classification, and ERP posting',
       'Accounts payable and accounts receivable reconciliation',
       'Procurement, vendor operations, and approval routing',
@@ -60,7 +60,7 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       'CRM hygiene, pipeline quality checks, and sales ops maintenance',
     ],
     proof:
-      'Recent deployments cut manual-entry errors by 30%, moved document handling 50% faster, and collapsed multi-day procurement coordination into a single agent-driven workflow.',
+      'Recent deployments include a quoting agent that helped a freight forwarder win 30% more quotes, a voice agent handling 10,000+ calls a month for an insurance agency, and multi-day procurement coordination collapsed into a single agent-driven workflow.',
     sections: [
       {
         title: 'Built around your operating model',
@@ -70,31 +70,30 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       {
         title: 'Production deployment, not prototype handoff',
         body:
-          'Each engagement includes monitoring, exception queues, KPI visibility, and ongoing optimization after launch so the system keeps improving against live data.',
+          'Every engagement runs through launch and beyond, with exception queues and KPI visibility. Agents learn from the corrections your team makes and turn what works into new skills, so the system keeps improving on live work.',
       },
       {
-        title: 'No platform migration required',
+        title: 'Works inside the stack you already run',
         body:
-          'Agents operate inside Salesforce, NetSuite, SAP, HubSpot, QuickBooks, Microsoft 365, Google Workspace, Slack, Zendesk, and custom internal tools.',
+          'Agents work inside your phone system, Salesforce, NetSuite, SAP, HubSpot, QuickBooks, Microsoft 365, Google Workspace, Slack, Zendesk, and custom internal tools.',
       },
     ],
     integrations: ['Salesforce', 'NetSuite', 'SAP', 'HubSpot', 'QuickBooks', 'Slack', 'Zendesk', 'Microsoft 365'],
-    relatedAgentSlugs: ['customs-document-ops', 'ap-intake-approval', 'sales-ops-hygiene'],
     faqs: [
       {
         question: 'What does an AI agent development company actually build?',
         answer:
-          'For Cartra, it means building production agents that read inputs, apply business logic, take actions in your systems, route exceptions to humans, and report outcomes to leadership.',
+          'For Cartra, it means production AI built for one company: voice agents that handle calls, AI teammates that read inputs, apply your business logic, take action in your systems, and route exceptions to people, and a company knowledge base that grounds them both.',
       },
       {
         question: 'How long does a typical AI agent deployment take?',
         answer:
-          'Most first agent systems launch in about six weeks, with discovery concentrated in the first two weeks and production tuning after launch.',
+          'It depends on the workflow and the systems involved. We scope a timeline on the first call and design every engagement to put something real into production quickly, then expand from there.',
       },
       {
         question: 'Do we need our own AI team?',
         answer:
-          'No. Cartra handles agent design, development, integrations, deployment, monitoring, and maintenance.',
+          'No. Cartra handles design, development, integrations, deployment, and everything after launch.',
       },
     ],
   },
@@ -102,15 +101,15 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
     slug: 'ai-automation-agency',
     seoTitle: 'AI Automation Agency for Mid-Market Operations | Cartra',
     seoDescription:
-      'Cartra is an AI automation agency for mid-market operations teams, replacing manual document, finance, procurement, and CRM workflows.',
+      'Cartra is an AI automation agency that builds custom AI for the calls, documents, approvals, and updates that slow your team down.',
     eyebrow: 'AI Automation Agency',
-    h1: 'An AI automation agency for the workflows slowing down your team.',
+    h1: 'An AI automation agency for the work slowing down your team.',
     intro:
-      'Cartra helps mid-market operations teams replace repetitive manual work with custom AI automation that runs inside their existing systems.',
+      'Cartra hands your team\'s repetitive work to custom AI: the phone calls, documents, approvals, and system updates that eat the day, automated inside the tools you already run.',
     highlights: [
       {
         label: 'Best first workflows',
-        body: 'Manual handoffs, document processing, approvals, reconciliation, and CRM updates.',
+        body: 'Phone answering, document processing, approvals, reconciliation, and CRM updates.',
       },
       {
         label: 'Delivery model',
@@ -127,6 +126,7 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       'You want an implementation partner that owns delivery and optimization.',
     ],
     workflows: [
+      'Phone answering, scheduling, and follow-up calls',
       'Shared inbox triage and routing',
       'Invoice and customs document processing',
       'ERP, CRM, and help-desk updates',
@@ -142,9 +142,9 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
           'We start by mapping your highest-cost workflows and estimating the operational return before building. The first deployment should have a clear business case.',
       },
       {
-        title: 'Custom agents for messy business systems',
+        title: 'Custom AI for messy business systems',
         body:
-          'Most valuable workflows span inboxes, PDFs, ERPs, CRMs, spreadsheets, portals, and approvals. That is exactly where custom agent systems fit.',
+          'The most valuable work spans phone calls, inboxes, PDFs, ERPs, CRMs, spreadsheets, portals, and approvals. Off-the-shelf tools stall there. Custom AI is built for it.',
       },
       {
         title: 'Launch with humans in the loop',
@@ -153,17 +153,16 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       },
     ],
     integrations: ['Outlook', 'Gmail', 'NetSuite', 'Salesforce', 'HubSpot', 'QuickBooks', 'Zendesk', 'Slack'],
-    relatedAgentSlugs: ['procurement-vendor-ops', 'company-knowledge-base', 'ar-reconciliation'],
     faqs: [
       {
         question: 'How is Cartra different from a generic AI automation agency?',
         answer:
-          'Cartra focuses on production agent systems for operational workflows, including integrations, exception handling, KPI dashboards, and ongoing optimization.',
+          'Most agencies stitch together off-the-shelf tools. Cartra builds AI around how your business actually works, across phone calls, operational work, and company knowledge, deploys it into your stack, and keeps improving it in production.',
       },
       {
         question: 'What should we automate first?',
         answer:
-          'Start with high-volume, rule-heavy work that already has clear inputs and outputs: document processing, reconciliation, approvals, triage, or CRM hygiene.',
+          'Start with high-volume, rule-heavy work that already has clear inputs and outputs: routine calls, document processing, reconciliation, approvals, triage, or CRM hygiene.',
       },
       {
         question: 'Can you work with our existing tools?',
@@ -176,11 +175,11 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
     slug: 'ai-workflow-automation',
     seoTitle: 'AI Workflow Automation for Operations Teams | Cartra',
     seoDescription:
-      'Deploy AI workflow automation for document processing, finance ops, procurement, customer support, and CRM workflows without replacing your stack.',
+      'Custom AI workflow automation for calls, documents, finance ops, procurement, customer support, and CRM work, built into the stack you already run.',
     eyebrow: 'AI Workflow Automation',
     h1: 'AI workflow automation built into the systems you already run.',
     intro:
-      'Cartra builds agent systems that take repetitive workflows from intake to decision to output, with human review only where judgment is actually needed.',
+      'Cartra builds custom AI that takes repetitive work from the first call or document to the final system update, with people involved only where judgment is actually needed.',
     highlights: [
       {
         label: 'Workflow shape',
@@ -208,7 +207,7 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       'Produce dashboards, audit logs, and weekly operating reports',
     ],
     proof:
-      'In production, the best first workflows often reduce manual handling time by 30-50% while giving operators cleaner queues and leadership better visibility.',
+      'In production, a freight forwarder’s quoting workflow now answers customer quote requests automatically by email, and faster responses helped it win 30% more quotes.',
     sections: [
       {
         title: 'From intake to action',
@@ -218,7 +217,7 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       {
         title: 'Works across operational departments',
         body:
-          'The same pattern applies across logistics, finance, procurement, customer support, revenue operations, and internal knowledge workflows.',
+          'The same pattern applies across customer calls, logistics, finance, procurement, customer support, revenue operations, and company knowledge.',
       },
       {
         title: 'Measured from day one',
@@ -227,12 +226,11 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       },
     ],
     integrations: ['SAP', 'NetSuite', 'Salesforce', 'HubSpot', 'Zendesk', 'Microsoft Teams', 'Slack', 'Google Workspace'],
-    relatedAgentSlugs: ['customs-document-ops', 'ar-reconciliation', 'company-knowledge-base'],
     faqs: [
       {
         question: 'What is AI workflow automation?',
         answer:
-          'AI workflow automation uses agents to read workflow inputs, apply decision logic, take action in business systems, and escalate exceptions to people.',
+          'AI workflow automation uses AI agents to take in work, from calls and emails to documents, apply your decision logic, take action in your business systems, and escalate exceptions to people.',
       },
       {
         question: 'Which workflows are best for AI automation?',

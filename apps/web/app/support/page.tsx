@@ -33,7 +33,7 @@ import { createBreadcrumbJsonLd, createFaqPageJsonLd, createPageMetadata } from 
 export const metadata: Metadata = createPageMetadata({
   title: 'Support and Help | Cartra',
   description:
-    'Get help with a Cartra AI agent: where to send issues and change requests, response-time targets, what to include, and answers to common questions.',
+    'Get help with Cartra Voice, Agents, or Brain: where to send issues and change requests, response-time targets, what to include, and answers to common questions.',
   path: '/support',
 });
 
@@ -240,7 +240,7 @@ export default function SupportPage() {
                 </Display>
                 <Body size="md" className="mt-4" maxWidth="56ch">
                   Pick the route that matches why you&apos;re here. Each one reaches the people who
-                  design, build, and run Cartra agents.
+                  design, build, and run your Cartra systems.
                 </Body>
 
                 <div className="mt-10 grid gap-10 lg:mt-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-12">
@@ -388,7 +388,7 @@ export default function SupportPage() {
                     Common questions.
                   </Display>
                   <Body size="md" className="mt-4">
-                    Practical answers for teams running Cartra agents. Thinking about a first project?
+                    Practical answers for teams running Cartra. Thinking about a first project?
                     The{' '}
                     <Link
                       href="/#faq"
@@ -412,7 +412,7 @@ export default function SupportPage() {
                 <div className="md:px-4">
                   <Label>Start a project</Label>
                   <Display as="h2" size="md" align="center" className="mt-4 mx-auto" maxWidth="22ch">
-                    Bring us the workflow that costs you the most time.
+                    Bring us the work that costs you the most time.
                   </Display>
                   <Body size="md" align="center" className="mt-5 mx-auto" maxWidth="54ch">
                     Book a free 30-minute consultation. We&apos;ll map where an agent fits, what it would

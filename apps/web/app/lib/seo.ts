@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { AGENT_SYSTEMS, type AgentSystem } from '../content/agent-systems';
 import { FAQS, type FAQItem } from '../content/faqs';
 
 export const SITE_URL = 'https://www.cartra.ai';
@@ -123,41 +122,6 @@ export function createBreadcrumbJsonLd(items: Array<{ name: string; path: string
   };
 }
 
-export function createAgentServiceJsonLd(agent: AgentSystem) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': absoluteUrl(`/agent-systems/${agent.slug}#service`),
-    name: agent.seoTitle,
-    serviceType: agent.name,
-    category: agent.category,
-    description: agent.seoDescription,
-    url: absoluteUrl(`/agent-systems/${agent.slug}`),
-    provider: {
-      '@id': absoluteUrl('/#organization'),
-    },
-    areaServed: {
-      '@type': 'Country',
-      name: 'United States',
-    },
-    audience: {
-      '@type': 'BusinessAudience',
-      audienceType: 'Mid-market operations teams',
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: `${agent.name} integrations`,
-      itemListElement: agent.integrations.slice(0, 6).map((integration) => ({
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: `${agent.name} for ${integration}`,
-        },
-      })),
-    },
-  };
-}
-
 export function createServiceJsonLd({
   name,
   description,
@@ -196,12 +160,12 @@ export function createServiceJsonLd({
 
 export const SITEMAP_ROUTES = [
   '/',
-  '/agent-systems',
-  ...AGENT_SYSTEMS.map((agent) => `/agent-systems/${agent.slug}`),
+  '/voice',
+  '/agents',
+  '/brain',
   '/ai-agent-development-company',
   '/ai-automation-agency',
   '/ai-workflow-automation',
-  '/case-studies',
   '/support',
   '/privacy',
   '/terms',

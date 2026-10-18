@@ -9,9 +9,9 @@ const COLUMNS: Array<{ title: string; links: Array<{ href: string; label: string
   {
     title: 'Products',
     links: [
-      { href: '/#voice', label: 'Cartra Voice' },
-      { href: '/#agents', label: 'Cartra Agents' },
-      { href: '/#brain', label: 'Cartra Brain' },
+      { href: '/voice', label: 'Cartra Voice' },
+      { href: '/agents', label: 'Cartra Agents' },
+      { href: '/brain', label: 'Cartra Brain' },
       { href: '/#integrations', label: 'Integrations' },
     ],
   },
@@ -19,8 +19,6 @@ const COLUMNS: Array<{ title: string; links: Array<{ href: string; label: string
     title: 'Company',
     links: [
       { href: '/', label: 'Home' },
-      { href: '/agent-systems', label: 'Agent Systems' },
-      { href: '/case-studies', label: 'Case Studies' },
       { href: '/support', label: 'Support' },
     ],
   },

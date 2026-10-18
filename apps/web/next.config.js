@@ -10,6 +10,11 @@ const nextConfig = {
         destination: '/?utm_source=caceo&utm_medium=print&utm_campaign=caceo-30th-anniversary',
         permanent: false,
       },
+      // The use case and case study pages were folded into the product pages.
+      { source: '/agent-systems', destination: '/agents', permanent: true },
+      { source: '/agent-systems/company-knowledge-base', destination: '/brain', permanent: true },
+      { source: '/agent-systems/:slug', destination: '/agents', permanent: true },
+      { source: '/case-studies', destination: '/agents#results', permanent: true },
     ];
   },
 };

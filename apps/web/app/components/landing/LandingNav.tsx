@@ -6,9 +6,9 @@ import { useEffect, useState } from 'react';
 import { CallButton } from './primitives';
 
 const LINKS = [
-  { href: '/#voice', label: 'Voice' },
-  { href: '/#agents', label: 'Agents' },
-  { href: '/#brain', label: 'Brain' },
+  { href: '/voice', label: 'Voice' },
+  { href: '/agents', label: 'Agents' },
+  { href: '/brain', label: 'Brain' },
   { href: '/#how-it-works', label: 'How it works' },
   { href: '/#faq', label: 'FAQ' },
 ];

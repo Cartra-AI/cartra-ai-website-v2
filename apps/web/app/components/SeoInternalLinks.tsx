@@ -27,12 +27,11 @@ export default function SeoInternalLinks({
               className="mt-4"
               maxWidth="20ch"
             >
-              Explore the services behind the agent systems.
+              Explore the services behind the use cases.
             </Display>
             <Body size="md" className="mt-5" maxWidth="54ch">
-              Start with the service area closest to the workflow you want to
-              improve, then follow the related agent systems for concrete
-              examples.
+              Start with the service closest to the work you want to hand
+              off, then follow the related use cases for concrete examples.
             </Body>
           </div>
 

@@ -12,7 +12,7 @@ import Navigation from './Navigation';
 import ConsultationButton from './ConsultationButton';
 import SeoInternalLinks from './SeoInternalLinks';
 import type { CommercialPage } from '../content/commercial-pages';
-import { getAgentSystem } from '../content/agent-systems';
+import { PRODUCTS, PRODUCT_ORDER } from '../content/products';
 import JsonLd from './JsonLd';
 import {
   createBreadcrumbJsonLd,
@@ -21,9 +21,6 @@ import {
 } from '../lib/seo';
 
 export default function CommercialLandingPage({ page }: { page: CommercialPage }) {
-  const relatedAgents = page.relatedAgentSlugs
-    .map((slug) => getAgentSystem(slug))
-    .filter(Boolean);
   const highlightAccentColors = ['var(--c-accent)', 'var(--c-orange)', 'var(--c-accent)'];
 
   return (
@@ -58,10 +55,10 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <ConsultationButton>Book a free consultation</ConsultationButton>
               <Link
-                href="/agent-systems"
+                href="/#platform"
                 className="inline-flex items-center h-11 px-4 font-display text-sm font-normal text-c-text-muted hover:text-c-text transition-colors"
               >
-                Browse agent systems
+                See the platform
               </Link>
             </div>
           </Container>
@@ -153,24 +150,24 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
           <Container size="xl">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-10">
               <div>
-                <Eyebrow tone="muted">Related agent systems</Eyebrow>
+                <Eyebrow tone="muted">The platform</Eyebrow>
                 <Display as="h2" size="md" className="mt-4" maxWidth="18ch">
-                  Concrete starting points.
+                  Three ways we put AI to work.
                 </Display>
               </div>
               <div className="grid md:grid-cols-3 gap-5">
-                {relatedAgents.map((agent) => agent && (
+                {PRODUCT_ORDER.map((id) => PRODUCTS[id]).map((product) => (
                   <Link
-                    key={agent.slug}
-                    href={`/agent-systems/${agent.slug}`}
+                    key={product.id}
+                    href={product.path}
                     className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-c-accent rounded-2xl"
                   >
                     <Card className="h-full transition-colors group-hover:border-c-border-strong">
-                      <Eyebrow tone="accent">{agent.category}</Eyebrow>
+                      <Eyebrow tone="accent">{product.kicker}</Eyebrow>
                       <h3 className="font-display mt-3 text-c-text" style={{ fontSize: '1.1rem', fontWeight: 400, letterSpacing: '-0.015em', lineHeight: 1.2 }}>
-                        {agent.name}
+                        {product.name}
                       </h3>
-                      <Body size="sm" className="mt-3">{agent.tagline}</Body>
+                      <Body size="sm" className="mt-3">{product.lede.split('. ')[0]}.</Body>
                     </Card>
                   </Link>
                 ))}
@@ -224,10 +221,10 @@ export default function CommercialLandingPage({ page }: { page: CommercialPage }
             <Card className="text-left md:text-center">
               <Eyebrow tone="muted" className="md:justify-center md:inline-flex">Get started</Eyebrow>
               <Display as="h2" size="md" align="center" className="mt-4 mx-auto" maxWidth="22ch">
-                Find the first workflow worth automating.
+                Find the first workflow worth handing to AI.
               </Display>
               <Body size="md" align="center" className="mt-5 mx-auto" maxWidth="58ch">
-                Book a 30-minute call and we will map your highest-cost manual workflow, estimate the return, and tell you whether an agent system is a fit.
+                Book a 30-minute call. We&apos;ll map your highest-cost manual work, estimate the return, and tell you honestly whether custom AI is a fit.
               </Body>
               <div className="mt-8 flex justify-center">
                 <ConsultationButton>Book a free consultation</ConsultationButton>

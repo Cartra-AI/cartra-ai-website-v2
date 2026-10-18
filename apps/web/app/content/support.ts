@@ -37,7 +37,7 @@ export const SUPPORT_ROUTES: SupportRoute[] = [
   {
     id: 'clients',
     audience: 'Existing clients',
-    title: 'Report an issue or request a change to a deployed agent.',
+    title: 'Report an issue or request a change to something we built for you.',
     description:
       "Email us, post in your engagement's shared Slack or Microsoft Teams channel if you have one, or go straight to your named point of contact.",
     actions: [{ type: 'link', label: 'What to include in a request', href: '#what-to-include' }],
@@ -47,7 +47,7 @@ export const SUPPORT_ROUTES: SupportRoute[] = [
     audience: 'Exploring a project',
     title: 'Start with a free consultation.',
     description:
-      'Tell us about the workflow that costs your team the most time. We reply to new project inquiries within 2 business days.',
+      'Tell us about the work that costs your team the most time. We reply to new project inquiries within 2 business days.',
     actions: [{ type: 'consultation', label: 'Book a free consultation' }],
   },
   {
@@ -79,7 +79,7 @@ export const RESPONSE_TARGETS: ResponseTarget[] = [
   {
     id: 'production',
     request: 'Production issue',
-    detail: 'A deployed agent is down, stuck, or producing wrong results in a live workflow.',
+    detail: 'A voice agent, AI teammate, or knowledge base is down, stuck, or giving wrong results in live work.',
     value: '4',
     unit: 'business hours',
   },
@@ -93,7 +93,7 @@ export const RESPONSE_TARGETS: ResponseTarget[] = [
   {
     id: 'new-project',
     request: 'New project inquiries',
-    detail: 'Prospective clients scoping a first agent system.',
+    detail: 'Prospective clients scoping a first project.',
     value: '2',
     unit: 'business days',
   },
@@ -116,8 +116,8 @@ export type RequestChecklistItem = {
 
 export const REQUEST_CHECKLIST: RequestChecklistItem[] = [
   {
-    title: 'Which agent or workflow',
-    detail: 'Name the agent, or the process it runs, such as invoice intake or email triage.',
+    title: 'Which agent, line, or workflow',
+    detail: 'Name the agent, phone line, or process it runs, such as invoice intake or after-hours calls.',
     prompts: ['Agent or workflow:'],
   },
   {
@@ -169,7 +169,7 @@ export const SUPPORT_FAQS: FAQItem[] = [
   {
     question: 'What happens if an agent is unsure or makes a mistake?',
     answer:
-      'Agents are designed with human review points for the decisions that matter. When an agent is not confident, it escalates the item to a person on your team instead of guessing. Agent actions are logged, so we can trace what happened, correct it, and adjust the logic so the same error does not repeat. If you spot a mistake, report it like any other issue.',
+      'Agents are designed with human review points for the decisions that matter. When an agent is not confident, it hands the item or the call to a person on your team instead of guessing. Agent actions are logged, so we can trace what happened, and agents learn from corrections so the same error does not repeat. If you spot a mistake, report it like any other issue.',
   },
   {
     question: 'Where is our data processed, and can we request an export or deletion?',
@@ -194,6 +194,6 @@ export const SUPPORT_FAQS: FAQItem[] = [
   {
     question: 'Is there a login for this website?',
     answer:
-      'No. This site has no accounts, logins, or passwords to reset. Cartra agents run inside the tools your team already uses, such as your ERP, CRM, email, and document systems, so you sign in to those as usual. If a message asks you to sign in to a Cartra account, do not enter your credentials. Forward it to team@cartra.ai.',
+      'No. This site has no accounts, logins, or passwords to reset. Cartra runs inside the tools your team already uses, such as your phone system, ERP, CRM, email, and document systems, so you sign in to those as usual. If a message asks you to sign in to a Cartra account, do not enter your credentials. Forward it to team@cartra.ai.',
   },
 ];
