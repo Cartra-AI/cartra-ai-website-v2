@@ -228,6 +228,13 @@ export default function ProductPage({ product }: { product: Product }) {
                   <article className={`lp-story lp-story--${s.kind}`}>
                     <span className="lp-mono lp-story__kind">{s.industry}</span>
                     <h3 className="lp-h4 mt-5">{s.title}</h3>
+                    {s.agents && (
+                      <ul className="lp-story__agents" aria-label="Agents built">
+                        {s.agents.map((name) => (
+                          <li key={name}>{name}</li>
+                        ))}
+                      </ul>
+                    )}
                     <p className={product.stories.length === 2 ? 'lp-body mt-4' : 'lp-small mt-3'}>{s.body}</p>
                     {s.results && (
                       <ul className="lp-story__results">

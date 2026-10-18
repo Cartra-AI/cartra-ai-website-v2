@@ -2122,3 +2122,36 @@ body:has(.lp[data-palette='sierra']) {
     padding-top: 2rem;
   }
 }
+
+/* Names of the agents built for a client, as small tags under the title. */
+.lp-story__agents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.875rem;
+  list-style: none;
+}
+
+.lp-story__agents li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  height: 1.75rem;
+  padding-inline: 0.625rem;
+  border-radius: var(--lp-r-xs);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid color-mix(in srgb, var(--lp-accent-text) 18%, transparent);
+  font-family: var(--lp-font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lp-accent-text);
+}
+
+.lp-story__agents li::before {
+  content: '';
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 999px;
+  background: currentColor;
+}
