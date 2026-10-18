@@ -13,6 +13,8 @@ type Logo = {
   name: string;
   /** Hide the text label when the logo already spells the name. */
   wordmark?: boolean;
+  /** File type in /public/integrations when there's no SVG. */
+  ext?: 'svg' | 'png';
 };
 
 // Row 1: where conversations happen (chat, email, phones, calendars, CRM).
@@ -33,6 +35,7 @@ const FRONT: Logo[] = [
 // Row 2: systems of record and company knowledge.
 const BACK: Logo[] = [
   { slug: 'hawksoft', name: 'HawkSoft' },
+  { slug: 'efreight', name: 'E-Freight', ext: 'png' },
   { slug: 'netsuite', name: 'Oracle NetSuite', wordmark: true },
   { slug: 'quickbooks', name: 'QuickBooks' },
   { slug: 'googledrive', name: 'Google Drive' },
@@ -56,7 +59,7 @@ function Chips({ logos, hidden = false }: { logos: Logo[]; hidden?: boolean }) {
         >
           {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logos, no optimization needed */}
           <img
-            src={`/integrations/${l.slug}.svg`}
+            src={`/integrations/${l.slug}.${l.ext ?? 'svg'}`}
             alt={l.wordmark ? l.name : ''}
             className={l.wordmark ? 'lp-logo__mark lp-logo__mark--word' : 'lp-logo__mark'}
             decoding="async"
