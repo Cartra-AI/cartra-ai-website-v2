@@ -273,10 +273,10 @@ export const PRODUCTS: Record<ProductId, Product> = {
       },
       {
         kind: 'case-study',
-        industry: 'Industrial manufacturer, 60 people',
-        title: 'Procurement coordination collapsed from days into one workflow',
-        body: 'Purchase orders passed between several departments, and coordinating a single order could take days. We built an AI teammate that runs the purchase-order pipeline end to end, handling the handoffs between departments in one coordinated workflow. The same company also runs Cartra Brain as the shared knowledge base for customer service, operations, and marketing.',
-        results: ['End-to-end PO workflow coordinated across departments', 'Days of coordination collapsed into one flow'],
+        industry: 'U.S. freight forwarder, 35 people',
+        title: 'Every inbox triaged, every shipment kept current',
+        body: 'We built two AI teammates around how this forwarder runs. The first triages and prioritizes every employee’s email according to the company’s own SOPs, so the messages that matter reach the right person first. The second manages shipments, creating and updating them in the TMS automatically from inputs and events across email, shipping, and tracking data.',
+        results: ['Every employee inbox triaged against company SOPs', 'Shipments created and updated in the TMS automatically'],
       },
     ],
     integrations: [
