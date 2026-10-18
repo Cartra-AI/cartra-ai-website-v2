@@ -403,20 +403,8 @@ export const PRODUCTS: Record<ProductId, Product> = {
         kind: 'case-study',
         industry: 'Industrial manufacturer, 60 people',
         title: 'One source of truth for service, operations, and marketing',
-        body: 'Customer service, operations, and marketing now work from the same knowledge base, turning weeks of searching for answers into consistent, instant ones.',
+        body: 'Customer service, operations, and marketing each kept their own documents, and finding the right answer often meant digging through drives or asking whoever happened to know. We built Cartra Brain around how those teams work, bringing their documents and know-how into one knowledge base with answers that link back to their sources. Now all three teams work from the same source of truth, and weeks of searching have turned into consistent, instant answers.',
         results: ['Company knowledge unified into one source of truth', 'Faster, more consistent answers for service and operations'],
-      },
-      {
-        kind: 'example',
-        industry: 'Property management company, 40 people',
-        title: 'New hires ramp on real procedures',
-        body: 'Leasing, maintenance, and tenant procedures live in Cartra Brain. New hires learn from it, staff and agents answer from it, and the office manager stopped fielding the same questions all day.',
-      },
-      {
-        kind: 'example',
-        industry: 'Specialty chemicals manufacturer, 90 people',
-        title: 'Marketing grounded in engineering know-how',
-        body: 'A 2-person marketing team drafts product pages, sales sheets, and campaigns from Cartra Brain, built on what the company’s application engineers actually know.',
       },
     ],
     integrations: [

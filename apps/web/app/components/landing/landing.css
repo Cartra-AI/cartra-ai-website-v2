@@ -2155,3 +2155,34 @@ body:has(.lp[data-palette='sierra']) {
   border-radius: 999px;
   background: currentColor;
 }
+
+/* One story: a single full-width card, story on the left, highlights on
+   the right, so the section never shows an empty column. */
+.lp-stories--one .lp-story {
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+@media (min-width: 900px) {
+  .lp-stories--one {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lp-stories--one .lp-story {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    column-gap: clamp(2.5rem, 5vw, 5rem);
+    align-content: start;
+  }
+
+  .lp-stories--one .lp-story > * {
+    grid-column: 1;
+  }
+
+  .lp-stories--one .lp-story__results {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: end;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
