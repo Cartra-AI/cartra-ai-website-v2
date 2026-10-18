@@ -18,6 +18,8 @@ export type ProductStory = {
   industry: string;
   title: string;
   body: string;
+  /** Names of the agents we built, shown as tags on the card. */
+  agents?: string[];
   results?: string[];
 };
 
@@ -268,14 +270,16 @@ export const PRODUCTS: Record<ProductId, Product> = {
         kind: 'case-study',
         industry: 'U.S. freight forwarder, 40 people',
         title: 'Faster quotes, and 30% more of them won',
-        body: 'Customers email in quote requests for ocean shipments and drayage, and in freight the fastest quote often wins the job. We built a quoting teammate that reads each request, prices it on the forwarder’s own rates and rules, and replies to the customer by email, automatically. Faster responses meant the team won 30% more of the quotes it sent.',
+        agents: ['Quoting Agent'],
+        body: 'Customers email in quote requests for ocean shipments and drayage, and in freight the fastest quote often wins the job. We built a Quoting Agent that reads each request, prices it on the forwarder’s own rates and rules, and replies to the customer by email, automatically. Faster responses meant the team won 30% more of the quotes it sent.',
         results: ['30% more quotes won', 'Quote requests answered automatically by email'],
       },
       {
         kind: 'case-study',
         industry: 'U.S. freight forwarder, 35 people',
         title: 'Every inbox triaged, every shipment kept current',
-        body: 'We built two AI teammates around how this forwarder runs. The first triages and prioritizes every employee’s email according to the company’s own SOPs, so the messages that matter reach the right person first. The second manages shipments, creating and updating them in the TMS automatically from inputs and events across email, shipping, and tracking data.',
+        agents: ['Email Triage Agent', 'Shipment Manager Agent'],
+        body: 'We built two AI teammates around how this forwarder runs. The Email Triage Agent prioritizes every employee’s email according to the company’s own SOPs, so the messages that matter reach the right person first. The Shipment Manager Agent creates and updates shipments in the TMS automatically from inputs and events across email, shipping, and tracking data.',
         results: ['Every employee inbox triaged against company SOPs', 'Shipments created and updated in the TMS automatically'],
       },
     ],
@@ -397,22 +401,10 @@ export const PRODUCTS: Record<ProductId, Product> = {
     stories: [
       {
         kind: 'case-study',
-        industry: 'Industrial manufacturer, 60 people',
+        industry: 'Supplement manufacturer, 100 people, $50M revenue',
         title: 'One source of truth for service, operations, and marketing',
-        body: 'Customer service, operations, and marketing now work from the same knowledge base, turning weeks of searching for answers into consistent, instant ones.',
+        body: 'Customer service, operations, and marketing each kept their own documents, and finding the right answer often meant digging through drives or asking whoever happened to know. We built Cartra Brain around how those teams work, bringing their documents and know-how into one knowledge base with answers that link back to their sources. Now all three teams work from the same source of truth, and weeks of searching have turned into consistent, instant answers.',
         results: ['Company knowledge unified into one source of truth', 'Faster, more consistent answers for service and operations'],
-      },
-      {
-        kind: 'example',
-        industry: 'Property management company, 40 people',
-        title: 'New hires ramp on real procedures',
-        body: 'Leasing, maintenance, and tenant procedures live in Cartra Brain. New hires learn from it, staff and agents answer from it, and the office manager stopped fielding the same questions all day.',
-      },
-      {
-        kind: 'example',
-        industry: 'Specialty chemicals manufacturer, 90 people',
-        title: 'Marketing grounded in engineering know-how',
-        body: 'A 2-person marketing team drafts product pages, sales sheets, and campaigns from Cartra Brain, built on what the company’s application engineers actually know.',
       },
     ],
     integrations: [

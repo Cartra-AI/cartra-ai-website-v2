@@ -60,7 +60,7 @@ export const COMMERCIAL_PAGES: CommercialPage[] = [
       'CRM hygiene, pipeline quality checks, and sales ops maintenance',
     ],
     proof:
-      'Recent deployments include a quoting agent that helped a freight forwarder win 30% more quotes, a voice agent handling 10,000+ calls a month for an insurance agency, and multi-day procurement coordination collapsed into a single agent-driven workflow.',
+      'Recent deployments include a quoting agent that helped a freight forwarder win 30% more quotes, a voice agent handling 10,000+ calls a month for an insurance agency, and a wellness facility booking 50+ appointments a day by phone.',
     sections: [
       {
         title: 'Built around your operating model',

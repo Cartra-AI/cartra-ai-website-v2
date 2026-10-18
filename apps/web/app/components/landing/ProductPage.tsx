@@ -222,13 +222,24 @@ export default function ProductPage({ product }: { product: Product }) {
                 </p>
               )}
             </Reveal>
-            <div className={`lp-stories mt-12 lg:mt-16 ${product.stories.length === 2 ? 'lp-stories--two' : ''}`}>
+            <div
+              className={`lp-stories mt-12 lg:mt-16 ${
+                product.stories.length === 1 ? 'lp-stories--one' : product.stories.length === 2 ? 'lp-stories--two' : ''
+              }`}
+            >
               {product.stories.map((s, i) => (
                 <Reveal key={s.title} delay={i * 80} className="grid">
                   <article className={`lp-story lp-story--${s.kind}`}>
                     <span className="lp-mono lp-story__kind">{s.industry}</span>
                     <h3 className="lp-h4 mt-5">{s.title}</h3>
-                    <p className={product.stories.length === 2 ? 'lp-body mt-4' : 'lp-small mt-3'}>{s.body}</p>
+                    {s.agents && (
+                      <ul className="lp-story__agents" aria-label="Agents built">
+                        {s.agents.map((name) => (
+                          <li key={name}>{name}</li>
+                        ))}
+                      </ul>
+                    )}
+                    <p className={product.stories.length <= 2 ? 'lp-body mt-4' : 'lp-small mt-3'}>{s.body}</p>
                     {s.results && (
                       <ul className="lp-story__results">
                         {s.results.map((r) => (
