@@ -1879,3 +1879,246 @@ body:has(.lp[data-palette='sierra']) {
   border-color: transparent;
   box-shadow: 0 24px 48px -24px rgba(5, 40, 25, 0.55), 0 2px 6px rgba(5, 40, 25, 0.12);
 }
+
+/* ==========================================================================
+   Product pages (/voice, /agents, /brain)
+   ========================================================================== */
+
+.lp-product-hero {
+  padding-top: calc(var(--lp-nav-h) + clamp(3rem, 9vh, 6rem));
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+/* The showcase card scrolls normally here; it isn't part of a stack. */
+.lp-card.lp-card--static {
+  position: relative;
+  top: auto;
+  min-height: 0;
+}
+
+.lp-features {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .lp-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lp-features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.lp-feature {
+  height: 100%;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: var(--lp-r-lg);
+  background: var(--lp-sand);
+}
+
+.lp-product-steps {
+  display: grid;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .lp-product-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.lp-product-step {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lp-line-strong);
+}
+
+.lp-stories {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .lp-stories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.lp-story {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: var(--lp-r-lg);
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-line);
+}
+
+.lp-story__kind {
+  color: var(--lp-muted);
+}
+
+/* Real client results get the pastel green panel. */
+.lp-story--case-study {
+  border-color: transparent;
+  background: var(--g-pastel-green, var(--lp-sand));
+}
+
+.lp-story--case-study .lp-story__kind {
+  color: var(--lp-accent-text);
+}
+
+.lp-story__results {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  list-style: none;
+}
+
+.lp-story__results li {
+  padding-top: 0.625rem;
+  border-top: 1px solid color-mix(in srgb, var(--lp-accent-text) 22%, transparent);
+  font-family: var(--lp-font-display);
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--lp-accent-text);
+}
+
+.lp-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.lp-logo--more {
+  color: var(--lp-muted);
+  border-style: dashed;
+  border-color: var(--lp-line-strong);
+}
+
+/* Cross-links to the other products wear their homepage card colors. */
+.lp[data-palette='sierra'] .lp-tile--voice {
+  --g: linear-gradient(140deg, #3a6cb3 0%, #2f80c4 52%, #2c93cf 100%);
+}
+
+.lp[data-palette='sierra'] .lp-tile--agents {
+  --g: linear-gradient(140deg, #93708c 0%, #a65d7f 50%, #b04768 100%);
+}
+
+.lp[data-palette='sierra'] .lp-tile--brain {
+  --g: linear-gradient(140deg, #7d9a68 0%, #648a5c 50%, #4f7a52 100%);
+}
+
+/* Secondary outline button on the colored pillar cards. */
+.lp[data-palette='sierra'] .lp-card .lp-btn--line {
+  --btn-bg: transparent;
+  --btn-fg: #fff;
+  --btn-bg-hover: rgba(255, 255, 255, 0.14);
+}
+
+/* Example cards get their own pastel panels; real case studies keep green. */
+.lp-story--example {
+  border-color: transparent;
+  background: var(--lp-sand);
+}
+
+.lp-stories > :nth-child(3n + 1) .lp-story--example {
+  background: linear-gradient(140deg, #eef3fa 0%, #e5eef8 50%, #e2edf3 100%);
+}
+
+.lp-stories > :nth-child(3n + 2) .lp-story--example {
+  background: linear-gradient(140deg, #f4eefa 0%, #efe6f7 50%, #f8e9f0 100%);
+}
+
+.lp-stories > :nth-child(3n + 3) .lp-story--example {
+  background: linear-gradient(140deg, #fbf1e8 0%, #f8eadf 50%, #f6e6e1 100%);
+}
+
+/* Platform + built for you: two panels joined by a plus. */
+.lp-approach {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .lp-approach {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.lp-approach__col {
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--lp-r-xl);
+  background: var(--lp-sand);
+}
+
+.lp-approach__col--bespoke {
+  background: var(--g-pastel-green, var(--lp-sand));
+}
+
+.lp-approach__col--bespoke.lp-approach__col--voice {
+  background: linear-gradient(140deg, #eef3fa 0%, #e5eef8 50%, #e2edf3 100%);
+}
+
+.lp-approach__label {
+  color: var(--lp-muted);
+}
+
+.lp-approach__plus {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .lp-approach__plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    background: var(--lp-surface);
+    border: 1px solid var(--lp-line);
+    font-family: var(--lp-font-display);
+    font-size: 1.375rem;
+    color: var(--lp-text);
+  }
+}
+
+/* Numbers in result highlights are set larger so they read at a glance. */
+.lp-story__num {
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.lp-approach__col--bespoke.lp-approach__col--agents {
+  background: linear-gradient(140deg, #f7eef3 0%, #f4e6ee 50%, #f6e7ec 100%);
+}
+
+/* Two stories: wider cards with roomier padding. */
+@media (min-width: 900px) {
+  .lp-stories--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lp-stories--two .lp-story {
+    padding: clamp(2rem, 3vw, 2.75rem);
+  }
+
+  .lp-stories--two .lp-story__results {
+    padding-top: 2rem;
+  }
+}
