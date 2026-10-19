@@ -22,14 +22,6 @@ const COLUMNS: Array<{ title: string; links: Array<{ href: string; label: string
       { href: '/support', label: 'Support' },
     ],
   },
-  {
-    title: 'AI Services',
-    links: [
-      { href: '/ai-agent-development-company', label: 'AI Agent Development Company' },
-      { href: '/ai-automation-agency', label: 'AI Automation Agency' },
-      { href: '/ai-workflow-automation', label: 'AI Workflow Automation' },
-    ],
-  },
 ];
 
 export default function SiteFooter() {
@@ -61,7 +53,7 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-14">
+          <div className="grid grid-cols-2 gap-10 sm:gap-14">
             {COLUMNS.map((col) => (
               <div key={col.title}>
                 <p className="lp-mono" style={{ color: 'var(--lp-muted)' }}>

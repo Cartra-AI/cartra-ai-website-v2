@@ -15,6 +15,10 @@ const nextConfig = {
       { source: '/agent-systems/company-knowledge-base', destination: '/brain', permanent: true },
       { source: '/agent-systems/:slug', destination: '/agents', permanent: true },
       { source: '/case-studies', destination: '/agents#results', permanent: true },
+      // The SEO service pages were retired; SEO gets its own workstream later.
+      { source: '/ai-agent-development-company', destination: '/', permanent: true },
+      { source: '/ai-automation-agency', destination: '/', permanent: true },
+      { source: '/ai-workflow-automation', destination: '/', permanent: true },
     ];
   },
 };
