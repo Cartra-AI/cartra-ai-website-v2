@@ -2,7 +2,7 @@ import {
   parseConsultation,
   parseSourcePage,
   validEmail,
-  workEmailError,
+  emailAddressError,
 } from "../../lib/consultation";
 import { TURNSTILE_ACTION } from "../../lib/turnstile";
 
@@ -54,11 +54,11 @@ export async function POST(request: Request) {
     return failure("Invalid request.", 400);
   }
   const details = parseConsultation(input);
-  if (input && typeof input.email === "string" && workEmailError(input.email))
-    return failure(workEmailError(input.email), 400);
+  if (input && typeof input.email === "string" && emailAddressError(input.email))
+    return failure(emailAddressError(input.email), 400);
   if (!details)
     return failure(
-      "Please complete all fields with a company email and select a role and revenue range.",
+      "Please complete all fields with a valid email and select a role and revenue range.",
       400,
     );
   if (input.website) return failure("Unable to verify this request.", 400);
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
             "New Cartra discovery call request",
             "",
             `Name: ${details.name}`,
-            `Work email: ${details.email}`,
+            `Email: ${details.email}`,
             `Role: ${details.role}`,
             `Company: ${details.company}`,
             `Annual revenue (USD): ${details.revenue}`,

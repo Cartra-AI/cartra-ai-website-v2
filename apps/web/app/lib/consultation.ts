@@ -1,5 +1,7 @@
 export const REVENUE_OPTIONS = [
-  "Under $20M",
+  "Under $1M",
+  "$1M–$5M",
+  "$5M–$20M",
   "$20M–$100M",
   "$100M–$200M",
   "$200M–$500M",
@@ -22,7 +24,7 @@ export const NEEDS_MAX_LENGTH = 2000;
 
 export const CONSULTATION_FIELDS = [
   { name: "name", label: "Your name", autoComplete: "name", maxLength: 100 },
-  { name: "email", label: "Work email", autoComplete: "email", maxLength: 254 },
+  { name: "email", label: "Email", autoComplete: "email", maxLength: 254 },
   {
     name: "role",
     label: "Your role",
@@ -61,32 +63,13 @@ export function validEmail(value: string) {
   );
 }
 
-// A small, explicit list; this is a sanity check, not mailbox verification.
-const PERSONAL_EMAIL_DOMAINS = new Set([
-  "gmail.com",
-  "googlemail.com",
-  "yahoo.com",
-  "ymail.com",
-  "hotmail.com",
-  "outlook.com",
-  "live.com",
-  "msn.com",
-  "icloud.com",
-  "me.com",
-  "mac.com",
-  "aol.com",
-  "proton.me",
-  "protonmail.com",
-  "mail.com",
-]);
-
-export function workEmailError(value: string) {
+// Personal addresses (Gmail, Yahoo, iCloud...) are welcome: many owners of
+// smaller businesses use one. This is a syntax check, not mailbox verification.
+export function emailAddressError(value: string) {
   const email = value.trim();
-  if (!email) return "Enter your work email.";
+  if (!email) return "Enter your email.";
   if (!validEmail(email))
     return "Enter a valid email address, such as you@company.com.";
-  if (PERSONAL_EMAIL_DOMAINS.has(email.split("@")[1]!.toLowerCase()))
-    return "Please use your company email rather than a personal email address.";
   return "";
 }
 
@@ -125,7 +108,7 @@ export function parseConsultation(value: unknown) {
     fields[name] = field.trim();
   }
   if (
-    workEmailError(fields.email!) ||
+    emailAddressError(fields.email!) ||
     !ROLE_OPTIONS.includes(fields.role as (typeof ROLE_OPTIONS)[number]) ||
     !REVENUE_OPTIONS.includes(input.revenue as (typeof REVENUE_OPTIONS)[number])
   )

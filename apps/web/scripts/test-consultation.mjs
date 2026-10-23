@@ -41,8 +41,13 @@ for (const email of [
   "person@cartra.ai",
   "first.last+sales@sub.company.co.uk",
   " Person@Company.COM ",
+  // Personal addresses are accepted.
+  "person@GMAIL.COM",
+  "person@outlook.com",
+  "owner@icloud.com",
 ]) {
-  assert.equal(lib.workEmailError(email), "");
+  assert.equal(lib.emailAddressError(email), "");
+  assert.ok(lib.parseConsultation({ ...payload, email }));
 }
 for (const email of [
   "",
@@ -57,14 +62,14 @@ for (const email of [
   "a@company.com/path",
   "a b@company.com",
   "a".repeat(65) + "@company.com",
-  "person@GMAIL.COM",
-  "person@outlook.com",
 ]) {
-  assert.notEqual(lib.workEmailError(email), "");
+  assert.notEqual(lib.emailAddressError(email), "");
   assert.equal(lib.parseConsultation({ ...payload, email }), null);
 }
 assert.deepEqual(lib.REVENUE_OPTIONS, [
-  "Under $20M",
+  "Under $1M",
+  "$1M–$5M",
+  "$5M–$20M",
   "$20M–$100M",
   "$100M–$200M",
   "$200M–$500M",
@@ -135,6 +140,10 @@ try {
   assert.ok(calls[1].body.text.includes(payload.needs));
   assert.ok(!calls[1].body.text.includes("Source page"));
   calls = [];
+  assert.equal((await POST(request({ ...payload, email: "owner@gmail.com" }))).status, 200);
+  assert.equal(calls[1].body.reply_to, "owner@gmail.com");
+  assert.ok(calls[1].body.text.includes("Email: owner@gmail.com"));
+  calls = [];
   assert.equal((await POST(request({ ...payload, source: "/30" }))).status, 200);
   assert.ok(calls[1].body.text.includes("Source page: /30"));
   calls = [];
@@ -176,7 +185,6 @@ try {
     { ...payload, needs: "x".repeat(2001) },
     { ...payload, needs: { text: "Invalid type" } },
     { ...payload, needs: "Bad\u0000text" },
-    { ...payload, email: "person@gmail.com" },
     { ...payload, email: "a..b@company.com" },
     { ...payload, role: "" },
     { ...payload, role: "Invented role" },

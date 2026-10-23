@@ -15,7 +15,7 @@ import {
   REVENUE_OPTIONS,
   ROLE_OPTIONS,
   NEEDS_MAX_LENGTH,
-  workEmailError,
+  emailAddressError,
 } from "../lib/consultation";
 import { trackEvent } from "../lib/analytics";
 import Turnstile from "./Turnstile";
@@ -196,7 +196,7 @@ function ConsultationDialog({ onClose }: { onClose: () => void }) {
                     onChange={
                       field.name === "email"
                         ? (event) => {
-                            const message = workEmailError(
+                            const message = emailAddressError(
                               event.currentTarget.value,
                             );
                             event.currentTarget.setCustomValidity(message);
@@ -209,7 +209,7 @@ function ConsultationDialog({ onClose }: { onClose: () => void }) {
                         ? (event) => {
                             event.currentTarget.value =
                               event.currentTarget.value.trim();
-                            const message = workEmailError(
+                            const message = emailAddressError(
                               event.currentTarget.value,
                             );
                             event.currentTarget.setCustomValidity(message);
@@ -220,7 +220,7 @@ function ConsultationDialog({ onClose }: { onClose: () => void }) {
                     onInvalid={
                       field.name === "email"
                         ? (event) => {
-                            const message = workEmailError(
+                            const message = emailAddressError(
                               event.currentTarget.value,
                             );
                             event.currentTarget.setCustomValidity(message);
@@ -240,7 +240,7 @@ function ConsultationDialog({ onClose }: { onClose: () => void }) {
                     aria-live="polite"
                   >
                     {emailError ||
-                      "Use your company email, such as you@company.com."}
+                      "A work or personal email is fine."}
                   </p>
                 )}
               </div>
