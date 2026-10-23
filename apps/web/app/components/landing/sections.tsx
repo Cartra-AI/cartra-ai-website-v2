@@ -1,7 +1,49 @@
 import LineArt from './LineArt';
 import { Arrow, CallTile, Reveal } from './primitives';
+import type { ProductStory } from '../../content/products';
 
 /* Sections shared by the homepage and the product pages. */
+
+/** One client story or typical build. `roomy` sets the body at full size (one or two cards). */
+export function StoryCard({ story, roomy = false }: { story: ProductStory; roomy?: boolean }) {
+  return (
+    <article className={`lp-story lp-story--${story.kind}`}>
+      <span className="lp-mono lp-story__kind">{story.industry}</span>
+      <h3 className="lp-h4 mt-5">{story.title}</h3>
+      {story.agents && (
+        <ul className="lp-story__agents" aria-label="Agents built">
+          {story.agents.map((name) => (
+            <li key={name}>{name}</li>
+          ))}
+        </ul>
+      )}
+      <p className={roomy ? 'lp-body mt-4' : 'lp-small mt-3'}>{story.body}</p>
+      {story.link && (
+        <a href={story.link.href} className="lp-link lp-story__link">
+          {story.link.label}
+          <Arrow />
+        </a>
+      )}
+      {story.results && (
+        <ul className="lp-story__results">
+          {story.results.map((r) => (
+            <li key={r}>
+              {r.split(/(\d[\d,./]*\d\+?%?|\d\+?%?)/).map((part, pi) =>
+                pi % 2 ? (
+                  <span key={pi} className="lp-story__num">
+                    {part}
+                  </span>
+                ) : (
+                  part
+                ),
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </article>
+  );
+}
 
 export function FaqSection({ faqs, title = 'Frequently asked questions.' }: { faqs: Array<{ q: string; a: string }>; title?: string }) {
   return (
@@ -39,11 +81,14 @@ export function ClosingSection({
   title,
   body,
   location,
+  cta = { label: 'Book a discovery call', meta: 'Schedule discovery' },
 }: {
   title: string;
   body: string;
   /** Analytics location for the call tile. */
   location: string;
+  /** Label for the call tile, to match the page. */
+  cta?: { label: string; meta: string };
 }) {
   return (
     <section className="lp-section" style={{ paddingTop: 0 }} aria-labelledby="closing-title">
@@ -66,7 +111,7 @@ export function ClosingSection({
           </Reveal>
           <div className="grid gap-2">
             <Reveal delay={80} className="grid">
-              <CallTile label="Book a discovery call" meta="Schedule discovery" location={location} className="lp-round-xl" />
+              <CallTile label={cta.label} meta={cta.meta} location={location} className="lp-round-xl" />
             </Reveal>
             <Reveal delay={160} className="grid">
               <a href="mailto:team@cartra.ai" className="lp-tile lp-tile--ink lp-round-xl">

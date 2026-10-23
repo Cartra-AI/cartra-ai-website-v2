@@ -2186,3 +2186,207 @@ body:has(.lp[data-palette='sierra']) {
     padding-top: 0;
   }
 }
+
+/* Link from a story card to the page that tells it for the client's industry. */
+.lp-story__link {
+  align-self: flex-start;
+  margin-top: 1.25rem;
+  color: var(--lp-accent-text);
+}
+
+/* ==========================================================================
+   Industry pages (/voice/spas)
+   ========================================================================== */
+
+/* The hero tag doubles as a link back to the product page. */
+.lp-tag--link {
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.lp-tag--link:hover {
+  color: var(--lp-text);
+  border-color: var(--lp-text);
+}
+
+/* Hero proof line: a live client, linked to its story. */
+.lp-proof {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--lp-line-strong);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--lp-text);
+  text-wrap: pretty;
+  transition: color 150ms ease;
+}
+
+.lp-proof::before {
+  content: '';
+  flex: none;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 999px;
+  margin-top: 0.5em;
+  background: var(--lp-glow);
+  animation: lp-pulse 1.6s ease-in-out infinite;
+}
+
+.lp-proof .lp-arrow {
+  margin-top: 0.25em;
+}
+
+.lp-proof:hover {
+  color: var(--lp-accent-text);
+}
+
+.lp-proof:hover .lp-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* How it books: one pastel panel per booking system. */
+.lp-booking {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .lp-booking {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.lp-booking__panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: var(--lp-r-lg);
+  background: var(--lp-sand);
+}
+
+.lp-booking > :nth-child(1) .lp-booking__panel {
+  background: linear-gradient(140deg, #eef3fa 0%, #e5eef8 50%, #e2edf3 100%);
+}
+
+.lp-booking > :nth-child(2) .lp-booking__panel {
+  background: linear-gradient(140deg, #f4eefa 0%, #efe6f7 50%, #f8e9f0 100%);
+}
+
+.lp-booking > :nth-child(3) .lp-booking__panel {
+  background: linear-gradient(140deg, #fbf1e8 0%, #f8eadf 50%, #f6e6e1 100%);
+}
+
+.lp-booking__label {
+  color: var(--lp-muted);
+}
+
+/* Logo tiles: square for marks, wider for wordmarks. */
+.lp-booking__logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.lp-booking__logo {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--lp-r-md);
+  background: var(--lp-surface);
+}
+
+.lp-booking__logo img {
+  width: 1.625rem;
+  height: 1.625rem;
+  object-fit: contain;
+}
+
+.lp-booking__logo--word {
+  width: auto;
+  padding-inline: 1rem;
+}
+
+.lp-booking__logo--word img {
+  width: auto;
+  height: 1.125rem;
+  max-width: 6.5rem;
+}
+
+.lp-booking__name {
+  font-size: clamp(1.625rem, 2.4vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+/* A sample appointment, as it would land in the calendar. */
+.lp-appt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--lp-r-md);
+  background: var(--lp-surface);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.lp-appt__service {
+  flex: 1;
+  min-width: 0;
+}
+
+.lp-appt__when {
+  flex: none;
+  font-size: 0.625rem;
+  color: var(--lp-muted);
+}
+
+/* Greetings on the languages band: a two-up grid on phones (language under
+   the greeting), one row of chips from 640px. */
+.lp-hellos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.lp-hello {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--lp-r-md);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 640px) {
+  .lp-hellos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .lp-hello {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.875rem;
+    height: 3.5rem;
+    padding: 0 1.25rem 0 1.125rem;
+  }
+}
+
+.lp-hello__text {
+  font-family: var(--lp-font-display);
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+}
+
+.lp-hello__name {
+  font-size: 0.625rem;
+  color: var(--lp-on-signal-muted);
+}
