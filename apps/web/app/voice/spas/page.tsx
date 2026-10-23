@@ -207,8 +207,17 @@ export default function Page() {
               {SPAS.booking.systems.map((sys, i) => (
                 <Reveal key={sys.name} delay={i * 80} className="grid">
                   <div className="lp-booking__panel">
-                    <span className="lp-mono lp-booking__label">{sys.label}</span>
-                    <h3 className="lp-display lp-booking__name mt-10">{sys.name}</h3>
+                    {/* Decorative: the heading below names each system. */}
+                    <ul className="lp-booking__logos" aria-hidden>
+                      {sys.logos.map((l) => (
+                        <li key={l.slug} className={`lp-booking__logo ${l.wordmark ? 'lp-booking__logo--word' : ''}`}>
+                          {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logos, no optimization needed */}
+                          <img src={`/integrations/${l.slug}.${l.ext ?? 'svg'}`} alt="" />
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="lp-mono lp-booking__label mt-10">{sys.label}</span>
+                    <h3 className="lp-display lp-booking__name mt-3">{sys.name}</h3>
                     <p className="lp-small mt-3">{sys.body}</p>
                     <div className="mt-auto pt-8">
                       <div className="lp-appt" role="img" aria-label={`Example booking: ${sys.example.service}, ${sys.example.when}`}>

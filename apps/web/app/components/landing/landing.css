@@ -2283,6 +2283,40 @@ body:has(.lp[data-palette='sierra']) {
   color: var(--lp-muted);
 }
 
+/* Logo tiles: square for marks, wider for wordmarks. */
+.lp-booking__logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.lp-booking__logo {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--lp-r-md);
+  background: var(--lp-surface);
+}
+
+.lp-booking__logo img {
+  width: 1.625rem;
+  height: 1.625rem;
+  object-fit: contain;
+}
+
+.lp-booking__logo--word {
+  width: auto;
+  padding-inline: 1rem;
+}
+
+.lp-booking__logo--word img {
+  width: auto;
+  height: 1.125rem;
+  max-width: 6.5rem;
+}
+
 .lp-booking__name {
   font-size: clamp(1.625rem, 2.4vw, 2rem);
   line-height: 1.05;

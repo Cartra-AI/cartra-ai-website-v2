@@ -9,18 +9,18 @@
  */
 
 import type { VoiceScript } from '../components/landing/VoiceCall';
-import { DATA_OWNERSHIP, type ProductStory } from './products';
+import { DATA_OWNERSHIP, type ProductLogo, type ProductStory } from './products';
 
 export const SPAS = {
   path: '/voice/spas',
   seoTitle: 'AI Phone Answering and Booking for Spas | Cartra Voice',
   seoDescription:
-    'Cartra Voice answers your spa’s phone during treatments and after hours, answers callers’ questions, and books appointments into Square Appointments, Mindbody, Booker, or Google Calendar, in 90+ languages.',
+    'Cartra Voice answers your spa’s phone during treatments and after hours, answers callers’ questions, and books appointments into Square Appointments, Mindbody, Booker, or a Google or Outlook calendar, in 90+ languages.',
 
   /** Rendered two-tone: [ink, green]. */
   headline: ['Calls answered and booked', 'while you’re with clients.'] as [string, string],
   lede:
-    'Cartra Voice picks up when your staff can’t: during treatments, after hours, and at the front-desk rush. It answers the questions callers ask every day and books the appointment into Square Appointments, Mindbody, Booker, or Google Calendar, in 90+ languages.',
+    'Cartra Voice picks up when your staff can’t: during treatments, after hours, and at the front-desk rush. It answers the questions callers ask every day and books the appointment into Square Appointments, Mindbody, Booker, or your Google or Outlook calendar, in 90+ languages.',
   proof: 'Live at a large Korean spa in Orange County: 50+ appointments booked every day.',
 
   showcase: {
@@ -74,24 +74,34 @@ export const SPAS = {
   booking: {
     title: 'Booked into the calendar you already use.',
     body: 'It checks open times and books the appointment while the caller is still on the line. Bookings land where your team already looks, with nothing new to learn.',
-    /* `example` is a sample booking for the panel's card, not customer data. */
+    /* `example` is a sample booking for the panel's card, not customer data.
+       Logos live in public/integrations. */
     systems: [
       {
         label: 'On Square',
         name: 'Square Appointments',
         body: 'Appointments go straight onto your Square calendar, next to the ones your front desk books.',
+        logos: [{ slug: 'square', name: 'Square' }] as ProductLogo[],
         example: { service: 'Body scrub, 60 min', when: 'Sat 2:00 PM' },
       },
       {
         label: 'On Mindbody or Booker',
         name: 'Mindbody and Booker',
         body: 'Appointments go straight into the schedule your front desk already works from.',
+        logos: [
+          { slug: 'mindbody', name: 'Mindbody', wordmark: true },
+          { slug: 'booker', name: 'Booker', wordmark: true },
+        ] as ProductLogo[],
         example: { service: 'Facial, 60 min', when: 'Thu 6:30 PM' },
       },
       {
         label: 'Booking by phone today',
-        name: 'Google Calendar',
-        body: 'No booking software? It books into a shared Google Calendar, so your team sees the day’s appointments in one place.',
+        name: 'Google or Outlook Calendar',
+        body: 'No booking software? It books into a shared Google or Outlook calendar, so your team sees the day’s appointments in one place.',
+        logos: [
+          { slug: 'googlecalendar', name: 'Google Calendar' },
+          { slug: 'microsoftoutlook', name: 'Microsoft Outlook' },
+        ] as ProductLogo[],
         example: { service: 'Couples massage, 90 min', when: 'Sun 11:00 AM' },
       },
     ],
@@ -144,7 +154,7 @@ export const SPAS = {
     },
     {
       title: 'We connect your booking system',
-      body: 'We connect Square Appointments, Mindbody, Booker, or Google Calendar, write your greeting, and test it on real scenarios before any caller hears it.',
+      body: 'We connect your booking system or calendar, write your greeting, and test it on real scenarios before any caller hears it.',
     },
     {
       title: 'We launch and keep tuning',
@@ -155,7 +165,7 @@ export const SPAS = {
   faqs: [
     {
       q: 'Which booking systems does it work with?',
-      a: 'Square Appointments, Mindbody, and Booker. If you take bookings by phone and don’t use booking software, it books into Google Calendar. On a different system? Tell us when you reach out.',
+      a: 'Square Appointments, Mindbody, and Booker. If you take bookings by phone and don’t use booking software, it books into a Google or Outlook calendar. On a different system? Tell us when you reach out.',
     },
     {
       q: 'What languages does it speak?',
