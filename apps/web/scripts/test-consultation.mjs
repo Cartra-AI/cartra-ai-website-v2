@@ -67,8 +67,7 @@ for (const email of [
   assert.equal(lib.parseConsultation({ ...payload, email }), null);
 }
 assert.deepEqual(lib.REVENUE_OPTIONS, [
-  "Under $1M",
-  "$1M–$5M",
+  "Under $5M",
   "$5M–$20M",
   "$20M–$100M",
   "$100M–$200M",

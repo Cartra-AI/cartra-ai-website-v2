@@ -1,6 +1,6 @@
 # Consultation form setup
 
-All consultation buttons and the homepage footer Contact button open the same custom form. It collects name, email, role, company, and annual revenue in USD. Role is a required dropdown covering owners/founders, CEOs, other C-suite executives, VPs, directors, managers, individual contributors, and Other. Revenue options are Under $1M, $1M–$5M, $5M–$20M, $20M–$100M, $100M–$200M, $200M–$500M, $500M–$1B, and $1B+. Submissions go to `jeff@cartra.ai`; replying addresses the visitor. The form requests a call, and Jeff schedules it by email.
+All consultation buttons and the homepage footer Contact button open the same custom form. It collects name, email, role, company, and annual revenue in USD. Role is a required dropdown covering owners/founders, CEOs, other C-suite executives, VPs, directors, managers, individual contributors, and Other. Revenue options are Under $5M, $5M–$20M, $20M–$100M, $100M–$200M, $200M–$500M, $500M–$1B, and $1B+. Submissions go to `jeff@cartra.ai`; replying addresses the visitor. The form requests a call, and Jeff schedules it by email.
 
 Email checks run in the browser and backend: trim surrounding whitespace and validate address and domain syntax. Personal addresses (Gmail, Yahoo, iCloud and similar) are accepted, since many owners of smaller businesses use one, as are company domains with subdomains and plus-addressing. This is a sanity check, not DNS, mailbox ownership, or deliverability verification.
 
