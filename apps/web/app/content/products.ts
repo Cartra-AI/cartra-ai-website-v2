@@ -21,6 +21,8 @@ export type ProductStory = {
   /** Names of the agents we built, shown as tags on the card. */
   agents?: string[];
   results?: string[];
+  /** A page that tells this story for the client's industry. */
+  link?: { href: string; label: string };
 };
 
 export type ProductLogo = { slug: string; name: string; wordmark?: boolean; ext?: 'svg' | 'png' };
@@ -50,7 +52,7 @@ export type Product = {
   faqs: Array<{ q: string; a: string }>;
 };
 
-const DATA_OWNERSHIP =
+export const DATA_OWNERSHIP =
   'You do. You own your configuration, knowledge, and data, you can export or delete it at any time, and it is never used to train models.';
 
 export const PRODUCTS: Record<ProductId, Product> = {
@@ -145,6 +147,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
         title: 'Appointments booked and questions answered around the clock',
         body: 'Clients call to book appointments and ask the same handful of questions, often while the front desk is busy with the people in front of them. We built Cartra Voice around the facility’s schedule and the answers its staff give every day. Now it books appointments over the phone and answers recurring questions 24/7, and the front desk can focus on the clients in the room.',
         results: ['50+ appointments booked every day', 'Live in under 2 weeks'],
+        link: { href: '/voice/spas', label: 'Cartra Voice for spas and wellness' },
       },
     ],
     integrations: [

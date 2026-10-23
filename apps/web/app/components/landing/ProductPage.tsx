@@ -3,7 +3,7 @@ import JsonLd from '../JsonLd';
 import LandingNav from './LandingNav';
 import { VoiceMockup, AgentsMockup, BrainMockup } from './Mockups';
 import { Arrow, CallButton, Reveal } from './primitives';
-import { ClosingSection, FaqSection } from './sections';
+import { ClosingSection, FaqSection, StoryCard } from './sections';
 import { PILLARS } from './content';
 import { PRODUCTS, PRODUCT_ORDER, type Product, type ProductId } from '../../content/products';
 import { createBreadcrumbJsonLd, createServiceJsonLd } from '../../lib/seo';
@@ -229,35 +229,7 @@ export default function ProductPage({ product }: { product: Product }) {
             >
               {product.stories.map((s, i) => (
                 <Reveal key={s.title} delay={i * 80} className="grid">
-                  <article className={`lp-story lp-story--${s.kind}`}>
-                    <span className="lp-mono lp-story__kind">{s.industry}</span>
-                    <h3 className="lp-h4 mt-5">{s.title}</h3>
-                    {s.agents && (
-                      <ul className="lp-story__agents" aria-label="Agents built">
-                        {s.agents.map((name) => (
-                          <li key={name}>{name}</li>
-                        ))}
-                      </ul>
-                    )}
-                    <p className={product.stories.length <= 2 ? 'lp-body mt-4' : 'lp-small mt-3'}>{s.body}</p>
-                    {s.results && (
-                      <ul className="lp-story__results">
-                        {s.results.map((r) => (
-                          <li key={r}>
-                            {r.split(/(\d[\d,./]*\d\+?%?|\d\+?%?)/).map((part, pi) =>
-                              pi % 2 ? (
-                                <span key={pi} className="lp-story__num">
-                                  {part}
-                                </span>
-                              ) : (
-                                part
-                              ),
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </article>
+                  <StoryCard story={s} roomy={product.stories.length <= 2} />
                 </Reveal>
               ))}
             </div>
