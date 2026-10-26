@@ -6,9 +6,10 @@
  * Only figures Jeff has confirmed appear (2026-10-25):
  * - Korean spa, Irvine, CA: 50 people, 5,000 calls a month, about 30
  *   appointments booked a day, live in under 2 weeks.
- * - Med spa, Flagstaff, AZ: revenue up 16% after adding Cartra Voice.
- * - Waxing studio, Salt Lake City, UT: 23% of would-be cancellations
- *   rescheduled instead.
+ * - Med spa, Flagstaff, AZ: 1,000 calls a month, revenue up 16% after adding
+ *   Cartra Voice.
+ * - Waxing studio, Salt Lake City, UT: 1,500 calls a month, 23% of would-be
+ *   cancellations rescheduled instead.
  * Don't add names, headcounts or other figures without his OK.
  */
 

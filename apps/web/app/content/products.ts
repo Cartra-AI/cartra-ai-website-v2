@@ -60,7 +60,7 @@ export const MED_SPA_STORY: ProductStory = {
   industry: 'Med spa, Flagstaff, AZ',
   title: 'Phones answered while the team is with patients',
   body: 'The med spa added Cartra Voice to answer its phones, so callers get an answer even when the team is with patients. After it went live, revenue rose 16%.',
-  results: ['Revenue up 16% after adding Cartra Voice'],
+  results: ['1,000 calls handled every month', 'Revenue up 16% after adding Cartra Voice'],
 };
 
 export const WAXING_STUDIO_STORY: ProductStory = {
@@ -68,7 +68,7 @@ export const WAXING_STUDIO_STORY: ProductStory = {
   industry: 'Waxing studio, Salt Lake City, UT',
   title: 'Cancellations turned into reschedules',
   body: 'When a client calls to cancel, Cartra Voice offers them another time instead of just taking the cancellation. Nearly a quarter of those calls now end with a new appointment on the books rather than an empty slot.',
-  results: ['23% of would-be cancellations rescheduled instead'],
+  results: ['1,500 calls handled every month', '23% of would-be cancellations rescheduled instead'],
 };
 
 export const DATA_OWNERSHIP =
