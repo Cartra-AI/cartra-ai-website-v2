@@ -4,8 +4,9 @@
  *
  * The story is a real client, kept anonymous ("a large Korean spa in Orange
  * County") until it agrees to be named. Only figures Jeff has confirmed
- * appear: 50 people, 50+ appointments booked a day, live in under 2 weeks.
- * Don't add a monthly call count or the client's name without his OK.
+ * appear (2026-10-25): 50 people, 5,000 calls a month, about 30 appointments
+ * booked a day, live in under 2 weeks. Don't add the client's name without
+ * his OK.
  */
 
 import type { VoiceScript } from '../components/landing/VoiceCall';
@@ -21,7 +22,7 @@ export const SPAS = {
   headline: ['Calls answered and booked', 'while you’re with clients.'] as [string, string],
   lede:
     'Cartra Voice picks up when your staff can’t: during treatments, after hours, and at the front-desk rush. It answers the questions callers ask every day and books the appointment into the booking system or calendar you already use, in 90+ languages.',
-  proof: 'Live at a large Korean spa in Orange County: 50+ appointments booked every day.',
+  proof: 'Cartra Voice handles thousands of calls a month for our clients, including 5,000 for a large Korean spa in Orange County.',
   /** Hero row: icons where the brand has one, wordmarks otherwise. */
   bookingLogos: [
     { slug: 'square', name: 'Square' },
@@ -72,13 +73,13 @@ export const SPAS = {
     ],
   },
 
-  storyTitle: 'Live today at a large Korean spa.',
+  storyTitle: 'Built for spas like yours.',
   story: {
     kind: 'case-study',
     industry: 'Korean spa, Orange County, 50 people',
     title: 'Appointments booked and questions answered around the clock',
     body: 'Guests call to book treatments and ask the same questions about the spa, often while the front desk is busy with the people in the building. We built Cartra Voice around the spa’s schedule and the answers its staff give every day. Now it answers those questions around the clock and books appointments over the phone in several languages, so the front desk can focus on the guests in front of them.',
-    results: ['50+ appointments booked every day', 'Live in under 2 weeks'],
+    results: ['5,000 calls handled every month', 'About 30 appointments booked every day', 'Live in under 2 weeks'],
   } satisfies ProductStory,
 
   booking: {

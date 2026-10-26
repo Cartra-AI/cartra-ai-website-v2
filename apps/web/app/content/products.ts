@@ -8,7 +8,8 @@
  * never carry stats, and the section note on the page says so. Cards carry
  * no label; headcounts for the real clients are confirmed by Jeff. The
  * insurance agency figures (10k+ calls a month, 3 departments in 2
- * months) are confirmed by Jeff.
+ * months) and the wellness facility figures (5,000 calls a month, about 30
+ * appointments a day, live in under 2 weeks; 2026-10-25) are confirmed by Jeff.
  */
 
 export type ProductId = 'voice' | 'agents' | 'brain';
@@ -146,7 +147,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
         industry: 'Wellness facility, 50 people',
         title: 'Appointments booked and questions answered around the clock',
         body: 'Clients call to book appointments and ask the same handful of questions, often while the front desk is busy with the people in front of them. We built Cartra Voice around the facility’s schedule and the answers its staff give every day. Now it books appointments over the phone and answers recurring questions 24/7, and the front desk can focus on the clients in the room.',
-        results: ['50+ appointments booked every day', 'Live in under 2 weeks'],
+        results: ['5,000 calls handled every month', 'About 30 appointments booked every day', 'Live in under 2 weeks'],
         link: { href: '/voice/spas', label: 'Cartra Voice for spas and wellness' },
       },
     ],
