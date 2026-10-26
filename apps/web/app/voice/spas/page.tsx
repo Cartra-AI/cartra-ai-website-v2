@@ -11,7 +11,7 @@ import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from 
 /*
  * Cartra Voice for spas and wellness. Same grammar as the product pages
  * (ProductPage.tsx), with the sections a spa owner needs: the problem, the
- * real client story, how it books, and languages. One conversion path: every
+ * real client stories, how it books, and languages. One conversion path: every
  * button opens the consultation form, which records /voice/spas as the source.
  */
 
@@ -183,7 +183,7 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ───────── The client story ───────── */}
+        {/* ───────── Client stories ───────── */}
         <section id="results" className="lp-section lp-anchor" style={{ paddingTop: 0 }} aria-labelledby="story-title">
           <div className="lp-wrap">
             <Reveal>
@@ -192,10 +192,12 @@ export default function Page() {
                 {SPAS.storyTitle}
               </h2>
             </Reveal>
-            <div className="lp-stories lp-stories--one mt-12 lg:mt-16">
-              <Reveal className="grid">
-                <StoryCard story={SPAS.story} roomy />
-              </Reveal>
+            <div className="lp-stories mt-12 lg:mt-16">
+              {SPAS.stories.map((s, i) => (
+                <Reveal key={s.industry} delay={i * 80} className="grid">
+                  <StoryCard story={s} />
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
