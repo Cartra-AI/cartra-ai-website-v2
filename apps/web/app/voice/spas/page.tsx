@@ -4,7 +4,7 @@ import JsonLd from '../../components/JsonLd';
 import LandingNav from '../../components/landing/LandingNav';
 import VoiceCall from '../../components/landing/VoiceCall';
 import { Arrow, CallButton, Reveal } from '../../components/landing/primitives';
-import { ClosingSection, FaqSection, StoryCard } from '../../components/landing/sections';
+import { ClosingSection, FaqSection, LogoGrid, StoryCard } from '../../components/landing/sections';
 import { SPAS, SPA_CALL } from '../../content/voice-spas';
 import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../lib/seo';
 
@@ -86,6 +86,17 @@ export default function Page() {
                   <Arrow />
                 </a>
               </div>
+            </div>
+            <div className="mt-10 lp-hero-in" style={{ '--d': '260ms' } as CSSProperties}>
+              <p className="lp-mono" style={{ color: 'var(--lp-muted)' }}>
+                Books into
+              </p>
+              <LogoGrid
+                logos={SPAS.bookingLogos}
+                more="and more"
+                label="Booking systems and calendars it books into"
+                className="lp-logo-grid--sm mt-3"
+              />
             </div>
             <a href="#results" className="lp-proof lp-hero-in" style={{ '--d': '320ms' } as CSSProperties}>
               <span>{SPAS.proof}</span>

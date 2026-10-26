@@ -15,13 +15,23 @@ export const SPAS = {
   path: '/voice/spas',
   seoTitle: 'AI Phone Answering and Booking for Spas | Cartra Voice',
   seoDescription:
-    'Cartra Voice answers your spa’s phone during treatments and after hours, answers callers’ questions, and books appointments into Square Appointments, Mindbody, Booker, or a Google or Outlook calendar, in 90+ languages.',
+    'Cartra Voice answers your spa’s phone during treatments and after hours and books appointments into Square, Mindbody, Booker, Calendly, Cal.com, Google Calendar, or Outlook, in 90+ languages.',
 
   /** Rendered two-tone: [ink, green]. */
   headline: ['Calls answered and booked', 'while you’re with clients.'] as [string, string],
   lede:
-    'Cartra Voice picks up when your staff can’t: during treatments, after hours, and at the front-desk rush. It answers the questions callers ask every day and books the appointment into Square Appointments, Mindbody, Booker, or your Google or Outlook calendar, in 90+ languages.',
+    'Cartra Voice picks up when your staff can’t: during treatments, after hours, and at the front-desk rush. It answers the questions callers ask every day and books the appointment into the booking system or calendar you already use, in 90+ languages.',
   proof: 'Live at a large Korean spa in Orange County: 50+ appointments booked every day.',
+  /** Hero row: icons where the brand has one, wordmarks otherwise. */
+  bookingLogos: [
+    { slug: 'square', name: 'Square' },
+    { slug: 'mindbody-icon', name: 'Mindbody' },
+    { slug: 'booker', name: 'Booker', wordmark: true },
+    { slug: 'googlecalendar', name: 'Google Calendar' },
+    { slug: 'microsoftoutlook', name: 'Outlook Calendar' },
+    { slug: 'calendly', name: 'Calendly' },
+    { slug: 'caldotcom', name: 'Cal.com', ext: 'png' },
+  ] as ProductLogo[],
 
   showcase: {
     title: 'Questions answered. Appointments booked.',
@@ -95,6 +105,16 @@ export const SPAS = {
         example: { service: 'Facial, 60 min', when: 'Thu 6:30 PM' },
       },
       {
+        label: 'On a scheduling app',
+        name: 'Calendly and Cal.com',
+        body: 'Appointments go straight onto the same schedule your clients already book from online.',
+        logos: [
+          { slug: 'calendly', name: 'Calendly' },
+          { slug: 'caldotcom', name: 'Cal.com', ext: 'png' },
+        ] as ProductLogo[],
+        example: { service: 'Hot stone massage, 60 min', when: 'Fri 5:00 PM' },
+      },
+      {
         label: 'Booking by phone today',
         name: 'Google or Outlook Calendar',
         body: 'No booking software? It books into a shared Google or Outlook calendar, so your team sees the day’s appointments in one place.',
@@ -165,7 +185,7 @@ export const SPAS = {
   faqs: [
     {
       q: 'Which booking systems does it work with?',
-      a: 'Square Appointments, Mindbody, and Booker. If you take bookings by phone and don’t use booking software, it books into a Google or Outlook calendar. On a different system? Tell us when you reach out.',
+      a: 'Square Appointments, Mindbody, Booker, Calendly, and Cal.com. If you take bookings by phone and don’t use booking software, it books into a Google or Outlook calendar. On a different system? Tell us when you reach out.',
     },
     {
       q: 'What languages does it speak?',

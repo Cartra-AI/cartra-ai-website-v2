@@ -1,8 +1,39 @@
 import LineArt from './LineArt';
 import { Arrow, CallTile, Reveal } from './primitives';
-import type { ProductStory } from '../../content/products';
+import type { ProductLogo, ProductStory } from '../../content/products';
 
 /* Sections shared by the homepage and the product pages. */
+
+/** Integration chips: icon and name, or a wordmark alone, ending in a dashed "more" chip. */
+export function LogoGrid({
+  logos,
+  more,
+  label,
+  className = '',
+}: {
+  logos: ProductLogo[];
+  more: string;
+  /** Accessible name for the list. */
+  label: string;
+  className?: string;
+}) {
+  return (
+    <ul className={`lp-logo-grid ${className}`.trim()} aria-label={label}>
+      {logos.map((l) => (
+        <li key={l.slug} className="lp-logo">
+          {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logos, no optimization needed */}
+          <img
+            src={`/integrations/${l.slug}.${l.ext ?? 'svg'}`}
+            alt={l.wordmark ? l.name : ''}
+            className={`lp-logo__mark ${l.wordmark ? 'lp-logo__mark--word' : ''}`}
+          />
+          {!l.wordmark && <span>{l.name}</span>}
+        </li>
+      ))}
+      <li className="lp-logo lp-logo--more">{more}</li>
+    </ul>
+  );
+}
 
 /** One client story or typical build. `roomy` sets the body at full size (one or two cards). */
 export function StoryCard({ story, roomy = false }: { story: ProductStory; roomy?: boolean }) {

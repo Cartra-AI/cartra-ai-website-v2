@@ -2208,6 +2208,24 @@ body:has(.lp[data-palette='sierra']) {
   border-color: var(--lp-text);
 }
 
+/* Compact integration chips for a hero row. */
+.lp-logo-grid--sm .lp-logo {
+  height: 2.5rem;
+  gap: 0.5rem;
+  padding-inline: 0.75rem 0.875rem;
+  font-size: 0.875rem;
+}
+
+.lp-logo-grid--sm .lp-logo__mark {
+  height: 1.25rem;
+  max-width: 1.75rem;
+}
+
+.lp-logo-grid--sm .lp-logo__mark--word {
+  height: 0.75rem;
+  max-width: 4.5rem;
+}
+
 /* Hero proof line: a live client, linked to its story. */
 .lp-proof {
   display: flex;
@@ -2254,7 +2272,7 @@ body:has(.lp[data-palette='sierra']) {
 
 @media (min-width: 900px) {
   .lp-booking {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -2277,6 +2295,10 @@ body:has(.lp[data-palette='sierra']) {
 
 .lp-booking > :nth-child(3) .lp-booking__panel {
   background: linear-gradient(140deg, #fbf1e8 0%, #f8eadf 50%, #f6e6e1 100%);
+}
+
+.lp-booking > :nth-child(4) .lp-booking__panel {
+  background: var(--g-pastel-green, var(--lp-sand));
 }
 
 .lp-booking__label {

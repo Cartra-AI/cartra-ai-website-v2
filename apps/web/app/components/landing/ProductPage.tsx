@@ -3,7 +3,7 @@ import JsonLd from '../JsonLd';
 import LandingNav from './LandingNav';
 import { VoiceMockup, AgentsMockup, BrainMockup } from './Mockups';
 import { Arrow, CallButton, Reveal } from './primitives';
-import { ClosingSection, FaqSection, StoryCard } from './sections';
+import { ClosingSection, FaqSection, LogoGrid, StoryCard } from './sections';
 import { PILLARS } from './content';
 import { PRODUCTS, PRODUCT_ORDER, type Product, type ProductId } from '../../content/products';
 import { createBreadcrumbJsonLd, createServiceJsonLd } from '../../lib/seo';
@@ -250,20 +250,7 @@ export default function ProductPage({ product }: { product: Product }) {
               </p>
             </Reveal>
             <Reveal delay={100}>
-              <ul className="lp-logo-grid" aria-label="Common integrations">
-                {product.integrations.map((l) => (
-                  <li key={l.slug} className="lp-logo">
-                    {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logos, no optimization needed */}
-                    <img
-                      src={`/integrations/${l.slug}.${l.ext ?? 'svg'}`}
-                      alt={l.wordmark ? l.name : ''}
-                      className={`lp-logo__mark ${l.wordmark ? 'lp-logo__mark--word' : ''}`}
-                    />
-                    {!l.wordmark && <span>{l.name}</span>}
-                  </li>
-                ))}
-                <li className="lp-logo lp-logo--more">and your custom tools</li>
-              </ul>
+              <LogoGrid logos={product.integrations} more="and your custom tools" label="Common integrations" />
             </Reveal>
           </div>
         </section>
