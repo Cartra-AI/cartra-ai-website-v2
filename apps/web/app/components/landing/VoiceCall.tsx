@@ -13,30 +13,48 @@ import { useLoopClock } from './useLoopClock';
 
 type Who = 'caller' | 'agent';
 
+export type VoiceScript = {
+  /** Left side of the mockup's title bar, e.g. "Inbound · Service line". */
+  line: string;
+  ariaLabel: string;
+  turns: Array<{ who: Who; start: number; end: number; text: string }>;
+  actions: Array<{ label: string; start: number; done: number }>;
+  /** When the call hangs up (ms into the loop). */
+  callEnd: number;
+  loop: number;
+  /** Frozen frame for reduced motion: call finished, everything resolved. */
+  still: number;
+  /** Call clock at the start of the loop, so it opens mid-call. */
+  startSeconds: number;
+};
+
 // An independent insurance agency's service line: a certificate request.
-const TURNS: Array<{ who: Who; start: number; end: number; text: string }> = [
-  { who: 'caller', start: 500, end: 3700, text: 'Hi, I need a certificate of insurance for a new job. The general contractor needs it before Monday.' },
-  { who: 'agent', start: 4300, end: 8900, text: 'Happy to help. I found your general liability policy, active through March. Who should I list as the certificate holder?' },
-  { who: 'caller', start: 9500, end: 11300, text: 'Brightline Builders. Email it to me and I’ll forward it.' },
-];
+const INSURANCE_CALL: VoiceScript = {
+  line: 'Inbound · Service line',
+  ariaLabel: 'Example: a Cartra Voice agent at an insurance agency handles a certificate of insurance request',
+  turns: [
+    { who: 'caller', start: 500, end: 3700, text: 'Hi, I need a certificate of insurance for a new job. The general contractor needs it before Monday.' },
+    { who: 'agent', start: 4300, end: 8900, text: 'Happy to help. I found your general liability policy, active through March. Who should I list as the certificate holder?' },
+    { who: 'caller', start: 9500, end: 11300, text: 'Brightline Builders. Email it to me and I’ll forward it.' },
+  ],
+  actions: [
+    { label: 'Verified policyholder and active GL policy', start: 4500, done: 5400 },
+    { label: 'Issued certificate for Brightline Builders', start: 11500, done: 12300 },
+    { label: 'Emailed certificate and noted the account', start: 12400, done: 13200 },
+  ],
+  callEnd: 11500,
+  loop: 16500,
+  still: 14000,
+  startSeconds: 2 * 60 + 2,
+};
 
-const ACTIONS = [
-  { label: 'Verified policyholder and active GL policy', start: 4500, done: 5400 },
-  { label: 'Issued certificate for Brightline Builders', start: 11500, done: 12300 },
-  { label: 'Emailed certificate and noted the account', start: 12400, done: 13200 },
-];
-
-const CALL_END = 11500;
-const LOOP = 16500;
 const FADE = 700;
-const START_SECONDS = 2 * 60 + 2;
-/** Frozen frame for reduced motion: call finished, everything resolved. */
-const STILL = 14000;
 
-const speakerAt = (t: number): Who | null => TURNS.find((s) => t >= s.start && t < s.end)?.who ?? null;
+const speakerAt = (turns: VoiceScript['turns'], t: number): Who | null =>
+  turns.find((s) => t >= s.start && t < s.end)?.who ?? null;
 
-const clock = (t: number) => {
-  const s = START_SECONDS + Math.floor(Math.min(t, CALL_END) / 1000);
+const clock = (script: VoiceScript, t: number) => {
+  const s = script.startSeconds + Math.floor(Math.min(t, script.callEnd) / 1000);
   return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 };
 
@@ -48,7 +66,15 @@ function Check() {
   );
 }
 
-function Waveform({ timeRef, still }: { timeRef: React.RefObject<number>; still: boolean }) {
+function Waveform({
+  script,
+  timeRef,
+  still,
+}: {
+  script: VoiceScript;
+  timeRef: React.RefObject<number>;
+  still: boolean;
+}) {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -67,7 +93,7 @@ function Waveform({ timeRef, still }: { timeRef: React.RefObject<number>; still:
     let samples: Array<{ a: number; who: Who | null }> = [];
 
     const sample = (t: number): { a: number; who: Who | null } => {
-      const who = speakerAt(t);
+      const who = speakerAt(script.turns, t);
       if (!who) return { a: 0.035 + Math.random() * 0.03, who };
       // Syllable-like envelope with jitter so it reads as speech, not noise.
       const syllable = 0.3 + 0.7 * Math.abs(Math.sin(t / 95) * Math.sin(t / 410 + 1.3));
@@ -85,7 +111,7 @@ function Waveform({ timeRef, still }: { timeRef: React.RefObject<number>; still:
       const n = Math.ceil(w / (BAR + GAP));
       if (samples.length !== n) {
         // Pre-fill with the conversation so far so it never starts empty.
-        const now = still ? STILL - 1500 : timeRef.current;
+        const now = still ? script.still - 1500 : timeRef.current;
         samples = Array.from({ length: n }, (_, i) => sample(now - (n - i) * STEP_MS));
       }
     };
@@ -139,36 +165,36 @@ function Waveform({ timeRef, still }: { timeRef: React.RefObject<number>; still:
       cancelAnimationFrame(raf);
       ro.disconnect();
     };
-  }, [still, timeRef]);
+  }, [script, still, timeRef]);
 
   return <canvas ref={ref} className="block w-full h-10" aria-hidden />;
 }
 
-export default function VoiceCall() {
-  const { ref: rootRef, t, timeRef, frozen: still } = useLoopClock<HTMLDivElement>(LOOP, STILL);
+export default function VoiceCall({ script = INSURANCE_CALL }: { script?: VoiceScript } = {}) {
+  const { ref: rootRef, t, timeRef, frozen: still } = useLoopClock<HTMLDivElement>(script.loop, script.still);
 
-  const fading = t > LOOP - FADE;
-  const ended = t >= CALL_END;
-  const speaking = speakerAt(t);
+  const fading = t > script.loop - FADE;
+  const ended = t >= script.callEnd;
+  const speaking = speakerAt(script.turns, t);
 
   return (
     <div
       ref={rootRef}
       className="lp-mock"
       role="img"
-      aria-label="Example: a Cartra Voice agent at an insurance agency handles a certificate of insurance request"
+      aria-label={script.ariaLabel}
     >
       <div className="lp-mock__bar">
-        <span>Inbound · Service line</span>
+        <span>{script.line}</span>
         {ended ? (
-          <span className="tabular-nums">Call ended {clock(t)}</span>
+          <span className="tabular-nums">Call ended {clock(script, t)}</span>
         ) : (
-          <span className="lp-mock__live tabular-nums">Live {clock(t)}</span>
+          <span className="lp-mock__live tabular-nums">Live {clock(script, t)}</span>
         )}
       </div>
 
       <div className="px-4 pt-4">
-        <Waveform timeRef={timeRef} still={still} />
+        <Waveform script={script} timeRef={timeRef} still={still} />
         <div className="mt-2 flex items-center justify-between lp-mono lp-mock__muted" style={{ fontSize: '0.625rem' }}>
           <span style={{ color: speaking === 'caller' ? 'var(--lp-text)' : undefined, transition: 'color 200ms' }}>● Caller</span>
           <span style={{ color: speaking === 'agent' ? 'var(--lp-glow)' : undefined, transition: 'color 200ms' }}>Cartra Voice ●</span>
@@ -176,7 +202,7 @@ export default function VoiceCall() {
       </div>
 
       <div className="p-4 flex flex-col gap-2.5" style={{ opacity: fading ? 0 : 1, transition: `opacity ${FADE}ms ease` }}>
-        {TURNS.map((turn) => {
+        {script.turns.map((turn) => {
           const words = turn.text.split(' ');
           const progress = Math.min(1, Math.max(0, (t - turn.start) / (turn.end - turn.start)));
           const shown = Math.ceil(words.length * progress);
@@ -202,7 +228,7 @@ export default function VoiceCall() {
       </div>
 
       <div className="px-4 pb-4 grid gap-1.5" style={{ opacity: fading ? 0 : 1, transition: `opacity ${FADE}ms ease` }}>
-        {ACTIONS.map((a) => {
+        {script.actions.map((a) => {
           const visible = t >= a.start;
           const done = t >= a.done;
           return (

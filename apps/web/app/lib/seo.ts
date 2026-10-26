@@ -161,6 +161,7 @@ export function createServiceJsonLd({
 export const SITEMAP_ROUTES = [
   '/',
   '/voice',
+  '/voice/spas',
   '/agents',
   '/brain',
   '/support',

@@ -3,7 +3,7 @@ import JsonLd from '../JsonLd';
 import LandingNav from './LandingNav';
 import { VoiceMockup, AgentsMockup, BrainMockup } from './Mockups';
 import { Arrow, CallButton, Reveal } from './primitives';
-import { ClosingSection, FaqSection } from './sections';
+import { ClosingSection, FaqSection, LogoGrid, StoryCard } from './sections';
 import { PILLARS } from './content';
 import { PRODUCTS, PRODUCT_ORDER, type Product, type ProductId } from '../../content/products';
 import { createBreadcrumbJsonLd, createServiceJsonLd } from '../../lib/seo';
@@ -28,6 +28,8 @@ export default function ProductPage({ product }: { product: Product }) {
   const [lead, accent] = product.headline;
   const others = PRODUCT_ORDER.filter((id) => id !== product.id).map((id) => PRODUCTS[id]);
   const short = product.name.replace('Cartra ', '');
+  // Two or four stories sit two to a row; three or five fill a three-up row.
+  const twoUp = product.stories.length % 2 === 0;
 
   return (
     <>
@@ -224,40 +226,12 @@ export default function ProductPage({ product }: { product: Product }) {
             </Reveal>
             <div
               className={`lp-stories mt-12 lg:mt-16 ${
-                product.stories.length === 1 ? 'lp-stories--one' : product.stories.length === 2 ? 'lp-stories--two' : ''
+                product.stories.length === 1 ? 'lp-stories--one' : twoUp ? 'lp-stories--two' : ''
               }`}
             >
               {product.stories.map((s, i) => (
                 <Reveal key={s.title} delay={i * 80} className="grid">
-                  <article className={`lp-story lp-story--${s.kind}`}>
-                    <span className="lp-mono lp-story__kind">{s.industry}</span>
-                    <h3 className="lp-h4 mt-5">{s.title}</h3>
-                    {s.agents && (
-                      <ul className="lp-story__agents" aria-label="Agents built">
-                        {s.agents.map((name) => (
-                          <li key={name}>{name}</li>
-                        ))}
-                      </ul>
-                    )}
-                    <p className={product.stories.length <= 2 ? 'lp-body mt-4' : 'lp-small mt-3'}>{s.body}</p>
-                    {s.results && (
-                      <ul className="lp-story__results">
-                        {s.results.map((r) => (
-                          <li key={r}>
-                            {r.split(/(\d[\d,./]*\d\+?%?|\d\+?%?)/).map((part, pi) =>
-                              pi % 2 ? (
-                                <span key={pi} className="lp-story__num">
-                                  {part}
-                                </span>
-                              ) : (
-                                part
-                              ),
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </article>
+                  <StoryCard story={s} roomy={product.stories.length === 1 || twoUp} />
                 </Reveal>
               ))}
             </div>
@@ -278,20 +252,7 @@ export default function ProductPage({ product }: { product: Product }) {
               </p>
             </Reveal>
             <Reveal delay={100}>
-              <ul className="lp-logo-grid" aria-label="Common integrations">
-                {product.integrations.map((l) => (
-                  <li key={l.slug} className="lp-logo">
-                    {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logos, no optimization needed */}
-                    <img
-                      src={`/integrations/${l.slug}.${l.ext ?? 'svg'}`}
-                      alt={l.wordmark ? l.name : ''}
-                      className={`lp-logo__mark ${l.wordmark ? 'lp-logo__mark--word' : ''}`}
-                    />
-                    {!l.wordmark && <span>{l.name}</span>}
-                  </li>
-                ))}
-                <li className="lp-logo lp-logo--more">and your custom tools</li>
-              </ul>
+              <LogoGrid logos={product.integrations} more="and your custom tools" label="Common integrations" />
             </Reveal>
           </div>
         </section>

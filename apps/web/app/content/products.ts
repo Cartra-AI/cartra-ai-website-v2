@@ -3,12 +3,13 @@
  * card on each page reuses the homepage pillar copy (landing/content.ts);
  * everything below it lives here. No em dashes in user-facing strings.
  *
- * Stories: 'case-study' is a real client result (only the two confirmed
- * ones). 'example' is a typical build at a representative company: it must
+ * Stories: 'case-study' is a real client result (only clients and figures
+ * Jeff has confirmed). 'example' is a typical build at a representative company: it must
  * never carry stats, and the section note on the page says so. Cards carry
  * no label; headcounts for the real clients are confirmed by Jeff. The
  * insurance agency figures (10k+ calls a month, 3 departments in 2
- * months) are confirmed by Jeff.
+ * months) and the wellness facility figures (5,000 calls a month, about 30
+ * appointments a day, live in under 2 weeks; 2026-10-25) are confirmed by Jeff.
  */
 
 export type ProductId = 'voice' | 'agents' | 'brain';
@@ -21,6 +22,8 @@ export type ProductStory = {
   /** Names of the agents we built, shown as tags on the card. */
   agents?: string[];
   results?: string[];
+  /** A page that tells this story for the client's industry. */
+  link?: { href: string; label: string };
 };
 
 export type ProductLogo = { slug: string; name: string; wordmark?: boolean; ext?: 'svg' | 'png' };
@@ -50,7 +53,25 @@ export type Product = {
   faqs: Array<{ q: string; a: string }>;
 };
 
-const DATA_OWNERSHIP =
+/* Real wellness clients (Jeff, 2026-10-25), shown on /voice and /voice/spas.
+   Anonymous; only the figures he gave. */
+export const MED_SPA_STORY: ProductStory = {
+  kind: 'case-study',
+  industry: 'Med spa, Flagstaff, AZ',
+  title: 'Phones answered while the team is with patients',
+  body: 'The med spa added Cartra Voice to answer its phones, so callers get an answer even when the team is with patients. After it went live, revenue rose 16%.',
+  results: ['1,000 calls handled every month', 'Revenue up 16% after adding Cartra Voice'],
+};
+
+export const WAXING_STUDIO_STORY: ProductStory = {
+  kind: 'case-study',
+  industry: 'Waxing studio, Salt Lake City, UT',
+  title: 'Cancellations turned into reschedules',
+  body: 'When a client calls to cancel, Cartra Voice offers them another time instead of just taking the cancellation. Nearly a quarter of those calls now end with a new appointment on the books rather than an empty slot.',
+  results: ['1,500 calls handled every month', '23% of would-be cancellations rescheduled instead'],
+};
+
+export const DATA_OWNERSHIP =
   'You do. You own your configuration, knowledge, and data, you can export or delete it at any time, and it is never used to train models.';
 
 export const PRODUCTS: Record<ProductId, Product> = {
@@ -141,11 +162,14 @@ export const PRODUCTS: Record<ProductId, Product> = {
       },
       {
         kind: 'case-study',
-        industry: 'Wellness facility, 50 people',
+        industry: 'Korean spa, Irvine, CA, 50 people',
         title: 'Appointments booked and questions answered around the clock',
         body: 'Clients call to book appointments and ask the same handful of questions, often while the front desk is busy with the people in front of them. We built Cartra Voice around the facility’s schedule and the answers its staff give every day. Now it books appointments over the phone and answers recurring questions 24/7, and the front desk can focus on the clients in the room.',
-        results: ['50+ appointments booked every day', 'Live in under 2 weeks'],
+        results: ['5,000 calls handled every month', 'About 30 appointments booked every day', 'Live in under 2 weeks'],
+        link: { href: '/voice/spas', label: 'Cartra Voice for spas and wellness' },
       },
+      MED_SPA_STORY,
+      WAXING_STUDIO_STORY,
     ],
     integrations: [
       { slug: 'ringcentral', name: 'RingCentral' },
