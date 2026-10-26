@@ -13,7 +13,13 @@
  */
 
 import type { VoiceScript } from '../components/landing/VoiceCall';
-import { DATA_OWNERSHIP, type ProductLogo, type ProductStory } from './products';
+import {
+  DATA_OWNERSHIP,
+  MED_SPA_STORY,
+  WAXING_STUDIO_STORY,
+  type ProductLogo,
+  type ProductStory,
+} from './products';
 
 export const SPAS = {
   path: '/voice/spas',
@@ -25,7 +31,12 @@ export const SPAS = {
   headline: ['Calls answered and booked', 'while you’re with clients.'] as [string, string],
   lede:
     'Cartra Voice picks up when your staff can’t: during treatments, after hours, and at the front-desk rush. It answers the questions callers ask every day and books the appointment into the booking system or calendar you already use, in 90+ languages.',
-  proof: 'Already answering the phones for a Korean spa in Irvine, a med spa in Flagstaff, and a waxing studio in Salt Lake City.',
+  /* Two sentences, each on its own line. The averages are from Jeff
+     (2026-10-25), across Cartra's spa clients. */
+  proof: [
+    'We build your agent to sound and work like your best front-desk employee.',
+    'On average, spas see 14% more revenue and 23% fewer cancellations within their first 60 days.',
+  ] as [string, string],
   /** Hero row: icons where the brand has one, wordmarks otherwise. */
   bookingLogos: [
     { slug: 'square', name: 'Square' },
@@ -85,20 +96,8 @@ export const SPAS = {
       body: 'Guests call to book treatments and ask the same questions about the spa, often while the front desk is busy with the people in the building. Cartra Voice now answers those questions around the clock and books appointments over the phone in several languages.',
       results: ['5,000 calls handled every month', 'About 30 appointments booked every day', 'Live in under 2 weeks'],
     },
-    {
-      kind: 'case-study',
-      industry: 'Med spa, Flagstaff, AZ',
-      title: 'Phones answered while the team is with patients',
-      body: 'The med spa added Cartra Voice to answer its phones, so callers get an answer even when the team is with patients. After it went live, revenue rose 16%.',
-      results: ['Revenue up 16% after adding Cartra Voice'],
-    },
-    {
-      kind: 'case-study',
-      industry: 'Waxing studio, Salt Lake City, UT',
-      title: 'Cancellations turned into reschedules',
-      body: 'When a client calls to cancel, Cartra Voice offers them another time instead of just taking the cancellation. Nearly a quarter of those calls now end with a new appointment on the books rather than an empty slot.',
-      results: ['23% of would-be cancellations rescheduled instead'],
-    },
+    MED_SPA_STORY,
+    WAXING_STUDIO_STORY,
   ] satisfies ProductStory[],
 
   booking: {

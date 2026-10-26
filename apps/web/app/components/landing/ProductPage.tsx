@@ -28,6 +28,8 @@ export default function ProductPage({ product }: { product: Product }) {
   const [lead, accent] = product.headline;
   const others = PRODUCT_ORDER.filter((id) => id !== product.id).map((id) => PRODUCTS[id]);
   const short = product.name.replace('Cartra ', '');
+  // Two or four stories sit two to a row; three or five fill a three-up row.
+  const twoUp = product.stories.length % 2 === 0;
 
   return (
     <>
@@ -224,12 +226,12 @@ export default function ProductPage({ product }: { product: Product }) {
             </Reveal>
             <div
               className={`lp-stories mt-12 lg:mt-16 ${
-                product.stories.length === 1 ? 'lp-stories--one' : product.stories.length === 2 ? 'lp-stories--two' : ''
+                product.stories.length === 1 ? 'lp-stories--one' : twoUp ? 'lp-stories--two' : ''
               }`}
             >
               {product.stories.map((s, i) => (
                 <Reveal key={s.title} delay={i * 80} className="grid">
-                  <StoryCard story={s} roomy={product.stories.length <= 2} />
+                  <StoryCard story={s} roomy={product.stories.length === 1 || twoUp} />
                 </Reveal>
               ))}
             </div>

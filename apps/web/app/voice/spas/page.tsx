@@ -99,7 +99,9 @@ export default function Page() {
               />
             </div>
             <a href="#results" className="lp-proof lp-hero-in" style={{ '--d': '320ms' } as CSSProperties}>
-              <span>{SPAS.proof}</span>
+              <span>
+                <span className="block">{SPAS.proof[0]}</span> <span className="block">{SPAS.proof[1]}</span>
+              </span>
               <Arrow />
             </a>
           </div>
