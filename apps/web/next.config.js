@@ -25,6 +25,13 @@ const nextConfig = {
         destination: '/voice/spas?utm_source=outbound&utm_medium=phone&utm_campaign=wellness',
         permanent: false,
       },
+      {
+        // The logistics site lives on its own subdomain. :path* matches
+        // /logistics itself too, and subpaths and query strings carry over.
+        source: '/logistics/:path*',
+        destination: 'https://logistics.cartra.ai/:path*',
+        permanent: false,
+      },
       // The use case and case study pages were folded into the product pages.
       { source: '/agent-systems', destination: '/agents', permanent: true },
       { source: '/agent-systems/company-knowledge-base', destination: '/brain', permanent: true },
