@@ -3,6 +3,7 @@ import JsonLd from '../JsonLd';
 import LandingNav from './LandingNav';
 import { VoiceMockup, AgentsMockup, BrainMockup } from './Mockups';
 import { Arrow, CallButton, Reveal } from './primitives';
+import ProductName from './ProductName';
 import { ClosingSection, FaqSection, LogoGrid, StoryCard } from './sections';
 import { PILLARS } from './content';
 import { PRODUCTS, PRODUCT_ORDER, type Product, type ProductId } from '../../content/products';
@@ -66,7 +67,7 @@ export default function ProductPage({ product }: { product: Product }) {
         <section className="lp-product-hero" aria-labelledby="product-title">
           <div className="lp-wrap">
             <div className="flex flex-wrap items-center gap-3 lp-hero-in" style={{ '--d': '40ms' } as CSSProperties}>
-              <span className="lp-tag lp-tag--muted">{product.name}</span>
+              <ProductName name={product.name} />
               <span className="lp-mono" style={{ color: 'var(--lp-muted)' }}>
                 {product.kicker}
               </span>
