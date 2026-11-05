@@ -188,6 +188,33 @@ body:has(.lp) {
   border-color: var(--lp-line-ink);
 }
 
+/* Product wordmark (ProductName.tsx): "Cartra" in the display face, the
+   product in a bordered mono chip. Colors follow currentColor. */
+.lp-product-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 1.0625rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.lp-product-name__brand {
+  font-family: var(--lp-font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.lp-product-name__chip {
+  border: 1px solid color-mix(in srgb, currentColor 50%, transparent);
+  border-radius: 5px;
+  padding: 3px 0.375rem;
+  font-family: var(--lp-font-mono);
+  font-size: 0.82em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
 /* ---------- Buttons ---------- */
 
 .lp-btn {
@@ -2198,14 +2225,13 @@ body:has(.lp[data-palette='sierra']) {
    Industry pages (/voice/spas)
    ========================================================================== */
 
-/* The hero tag doubles as a link back to the product page. */
-.lp-tag--link {
-  transition: color 150ms ease, border-color 150ms ease;
+/* The hero's product name doubles as a link back to the product page. */
+.lp-product-name-link {
+  transition: color 150ms ease;
 }
 
-.lp-tag--link:hover {
-  color: var(--lp-text);
-  border-color: var(--lp-text);
+.lp-product-name-link:hover {
+  color: var(--lp-accent-text);
 }
 
 /* Compact integration chips for a hero row. */

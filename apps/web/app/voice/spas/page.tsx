@@ -4,6 +4,7 @@ import JsonLd from '../../components/JsonLd';
 import LandingNav from '../../components/landing/LandingNav';
 import VoiceCall from '../../components/landing/VoiceCall';
 import { Arrow, CallButton, Reveal } from '../../components/landing/primitives';
+import ProductName from '../../components/landing/ProductName';
 import { ClosingSection, FaqSection, LogoGrid, StoryCard } from '../../components/landing/sections';
 import { SPAS, SPA_CALL } from '../../content/voice-spas';
 import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../lib/seo';
@@ -63,8 +64,8 @@ export default function Page() {
         <section className="lp-product-hero" aria-labelledby="spas-title">
           <div className="lp-wrap">
             <div className="flex flex-wrap items-center gap-3 lp-hero-in" style={{ '--d': '40ms' } as CSSProperties}>
-              <a href="/voice" className="lp-tag lp-tag--muted lp-tag--link">
-                Cartra Voice
+              <a href="/voice" className="lp-product-name-link">
+                <ProductName name="Cartra Voice" />
               </a>
               <span className="lp-mono" style={{ color: 'var(--lp-muted)' }}>
                 For spas and wellness

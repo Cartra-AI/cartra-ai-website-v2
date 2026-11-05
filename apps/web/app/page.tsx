@@ -10,6 +10,7 @@ import LogoMarquee from './components/landing/integrations/LogoMarquee';
 import BeyondLogos from './components/landing/integrations/BeyondLogos';
 import { VoiceMockup, AgentsMockup, BrainMockup } from './components/landing/Mockups';
 import { Arrow, CallButton, CallTile, Reveal } from './components/landing/primitives';
+import ProductName from './components/landing/ProductName';
 import { ClosingSection, FaqSection } from './components/landing/sections';
 import { CONTRAST, DEPARTMENTS, FAQS, HERO, OUTCOMES, PILLARS, STEPS, type Pillar } from './components/landing/content';
 
@@ -90,7 +91,7 @@ export default function Home() {
             <nav aria-label="Cartra products" className="lp-pillar-strip lp-hero-in" style={{ '--d': '440ms' } as CSSProperties}>
               {PILLARS.map((p) => (
                 <a key={p.id} href={`/${p.id}`}>
-                  <span className="lp-pillar-strip__name">{p.name}</span>
+                  <ProductName name={p.name} className="lp-pillar-strip__name" />
                   <Arrow />
                   <span className="lp-pillar-strip__desc">{PILLAR_BLURB[p.id]}</span>
                 </a>
@@ -206,9 +207,7 @@ export default function Home() {
                   >
                     <div className="flex flex-col">
                       <div className="flex flex-wrap items-center gap-3">
-                        <span className="lp-tag">
-                          {p.name}
-                        </span>
+                        <ProductName name={p.name} />
                         <span className="lp-mono" style={{ opacity: 0.75 }}>{p.kicker}</span>
                       </div>
                       <h3 id={`${p.id}-title`} className="lp-display lp-h3 mt-6 max-w-[17ch]">
