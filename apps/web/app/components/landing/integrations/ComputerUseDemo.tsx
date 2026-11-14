@@ -121,7 +121,7 @@ export default function ComputerUseDemo() {
             opacity: fading ? 0 : 1,
           }}
         >
-          <path d="M1 1v16.5l4.3-4 2.9 6.8 2.8-1.2-2.9-6.6H14z" fill="#fff" stroke="#061226" strokeWidth="1.3" strokeLinejoin="round" />
+          <path d="M1 1v16.5l4.3-4 2.9 6.8 2.8-1.2-2.9-6.6H14z" fill="#fff" stroke="#121211" strokeWidth="1.3" strokeLinejoin="round" />
         </svg>
       )}
 

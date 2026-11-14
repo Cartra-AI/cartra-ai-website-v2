@@ -343,7 +343,7 @@ export default function Home() {
                     <span className="lp-tag self-start">{STEPS[3]!.tag}</span>
                     <div className="max-w-[32rem]">
                       <h3 className="lp-display lp-h3">{STEPS[3]!.title}</h3>
-                      <p className="lp-body mt-5" style={{ color: 'rgba(255, 255, 255, 0.92)' }}>{STEPS[3]!.body}</p>
+                      <p className="lp-body mt-5" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{STEPS[3]!.body}</p>
                     </div>
                   </div>
                   <div className="lp-mock" role="img" aria-label="Example: skills the system learned this week">
