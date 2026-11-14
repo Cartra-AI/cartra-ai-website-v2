@@ -72,7 +72,7 @@ export default function DotField() {
           if (crest && (i + j) % 3 === 0) {
             ctx.fillStyle = `rgba(${accent}, ${0.35 + depth * 0.55})`;
           } else {
-            ctx.fillStyle = `rgba(6, 18, 38, ${0.1 + depth * 0.5})`;
+            ctx.fillStyle = `rgba(18, 18, 17, ${0.1 + depth * 0.5})`;
           }
 
           if (square) {

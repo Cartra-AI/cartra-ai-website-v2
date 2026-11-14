@@ -10,14 +10,14 @@ export const size = {
 export const contentType = 'image/png';
 
 // Same palette and pillar gradients as the site (landing.css, sierra).
-const TEXT = '#282f3a';
-const MUTED = '#68707d';
-const ACCENT = '#0650b3';
+const TEXT = '#302e2d';
+const MUTED = '#716f6c';
+const GREEN = '#006838';
 
 const PILLARS = [
-  { name: 'Cartra Voice', grad: 'linear-gradient(140deg, #1966d5 0%, #2675ec 52%, #3885fc 100%)' },
-  { name: 'Cartra Agents', grad: 'linear-gradient(140deg, #467ccf 0%, #3a76d2 50%, #0267e8 100%)' },
-  { name: 'Cartra Brain', grad: 'linear-gradient(140deg, #598fe4 0%, #487dd0 50%, #376cbd 100%)' },
+  { name: 'Cartra Voice', grad: 'linear-gradient(140deg, #3a6cb3 0%, #2f80c4 52%, #2c93cf 100%)' },
+  { name: 'Cartra Agents', grad: 'linear-gradient(140deg, #93708c 0%, #a65d7f 50%, #b04768 100%)' },
+  { name: 'Cartra Brain', grad: 'linear-gradient(140deg, #7d9a68 0%, #648a5c 50%, #4f7a52 100%)' },
 ];
 
 export default async function OpenGraphImage() {
@@ -50,7 +50,7 @@ export default async function OpenGraphImage() {
 
         <div style={{ display: 'flex', flexDirection: 'column', fontSize: 84, lineHeight: 1.02, letterSpacing: -3.5 }}>
           <div>Transform your business</div>
-          <div style={{ color: ACCENT }}>with custom AI.</div>
+          <div style={{ color: GREEN }}>with custom AI.</div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>

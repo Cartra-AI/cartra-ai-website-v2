@@ -118,9 +118,9 @@ function Waveform({
 
     const css = getComputedStyle(canvas);
     const colors = {
-      caller: css.getPropertyValue('--lp-text').trim() || '#061226',
-      agent: css.getPropertyValue('--lp-glow').trim() || '#428cff',
-      idle: css.getPropertyValue('--lp-line-strong').trim() || '#c8cdd5',
+      caller: css.getPropertyValue('--lp-text').trim() || '#121211',
+      agent: css.getPropertyValue('--lp-glow').trim() || '#f54e00',
+      idle: css.getPropertyValue('--lp-line-strong').trim() || '#cfcdc5',
     };
 
     const draw = () => {
