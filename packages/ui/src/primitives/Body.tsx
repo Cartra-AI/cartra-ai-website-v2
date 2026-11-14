@@ -29,7 +29,7 @@ type BodyProps = {
 };
 
 /**
- * Body — paragraph text (DESIGN.md body #5a5852).
+ * Body — paragraph text (DESIGN.md body #515965).
  */
 export function Body({
   size = 'md',

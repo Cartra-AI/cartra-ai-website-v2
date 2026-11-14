@@ -16,7 +16,7 @@
   outline: none;
 }
 .dialog::backdrop {
-  background: rgb(38 37 30 / 45%);
+  background: rgb(23 37 58 / 45%);
 }
 .header {
   display: grid;

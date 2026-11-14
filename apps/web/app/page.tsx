@@ -15,7 +15,7 @@ import { ClosingSection, FaqSection } from './components/landing/sections';
 import { CONTRAST, DEPARTMENTS, FAQS, HERO, OUTCOMES, PILLARS, STEPS, type Pillar } from './components/landing/content';
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Cartra | Applied AI for Voice, Agents, and Company Knowledge',
+  title: 'Cartra: Custom AI Agents for Businesses',
   description:
     'Cartra is an applied AI company that designs, builds, and runs custom AI inside your business: AI voice agents, AI agent teammates for operations, and a company knowledge base that powers them.',
   path: '/',
@@ -343,7 +343,7 @@ export default function Home() {
                     <span className="lp-tag self-start">{STEPS[3]!.tag}</span>
                     <div className="max-w-[32rem]">
                       <h3 className="lp-display lp-h3">{STEPS[3]!.title}</h3>
-                      <p className="lp-body mt-5" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{STEPS[3]!.body}</p>
+                      <p className="lp-body mt-5" style={{ color: 'rgba(255, 255, 255, 0.92)' }}>{STEPS[3]!.body}</p>
                     </div>
                   </div>
                   <div className="lp-mock" role="img" aria-label="Example: skills the system learned this week">
@@ -352,13 +352,13 @@ export default function Home() {
                       <span>This week</span>
                     </div>
                     {[
-                      ['Callers asking about split shipments', 'Voice', 'Live'],
-                      ['New vendor invoice layout', 'Agents', 'Live'],
-                      ['Holiday return window', 'Brain', 'Learning'],
-                    ].map(([title, pillar, status]) => (
+                      ['Split shipment questions', 'Support', 'Live'],
+                      ['New vendor invoice layout', 'Finance', 'Live'],
+                      ['Holiday return window', 'Operations', 'Learning'],
+                    ].map(([title, area, status]) => (
                       <div key={title} className="lp-step-row" style={{ gridTemplateColumns: '1fr auto auto' }}>
                         <span>{title}</span>
-                        <span className="lp-pill">{pillar}</span>
+                        <span className="lp-pill">{area}</span>
                         <span className={`lp-pill ${status === 'Learning' ? 'lp-pill--hot' : ''}`}>{status}</span>
                       </div>
                     ))}

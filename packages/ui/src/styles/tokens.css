@@ -13,27 +13,27 @@
   /* ─── Color Tokens (DESIGN.md) ─────────────────────────── */
 
   /* Surfaces */
-  --c-bg: #f7f7f4;                         /* canvas */
-  --c-canvas-soft: #fafaf7;                /* IDE/agent pane soft */
-  --c-surface: #fafaf7;                    /* soft cream alt surface */
-  --c-surface-2: #e6e5e0;                  /* surface-strong */
+  --c-bg: #f4f7fb;                         /* canvas */
+  --c-canvas-soft: #f7fafe;                /* IDE/agent pane soft */
+  --c-surface: #f7fafe;                    /* soft cream alt surface */
+  --c-surface-2: #e0e5ed;                  /* surface-strong */
   --c-surface-card: #ffffff;               /* white card on cream */
-  --c-surface-strong: #e6e5e0;
+  --c-surface-strong: #e0e5ed;
 
   /* Text */
-  --c-text: #26251e;                       /* ink */
-  --c-body: #5a5852;                       /* running text */
-  --c-text-muted: #807d72;                 /* muted */
-  --c-text-soft: #a09c92;                  /* muted-soft */
-  --c-border: #e6e5e0;                     /* hairline */
-  --c-border-soft: #efeee8;                /* hairline-soft */
-  --c-border-strong: #cfcdc4;              /* hairline-strong */
+  --c-text: #17253a;                       /* ink */
+  --c-body: #515965;                       /* running text */
+  --c-text-muted: #757e8a;                 /* muted */
+  --c-text-soft: #949daa;                  /* muted-soft */
+  --c-border: #e0e5ed;                     /* hairline */
+  --c-border-soft: #e9eef6;                /* hairline-soft */
+  --c-border-strong: #c8cdd5;              /* hairline-strong */
 
   /* Primary CTA voltage — scarce orange */
-  --c-primary: #f54e00;
-  --c-primary-active: #d04200;
+  --c-primary: #428cff;
+  --c-primary-active: #0070fa;
   --c-orange: var(--c-primary);
-  --c-orange-bright: #ff6a2a;
+  --c-orange-bright: #619eff;
   --c-orange-ink: var(--c-primary-active);
 
   /* Accent aliases → primary (no cobalt brand voltage) */
@@ -45,20 +45,20 @@
   /* Featured / inverted (ex-navy) — ink inversion only, used rarely */
   --c-navy: var(--c-text);
   --c-navy-2: color-mix(in oklab, var(--c-text) 92%, white);
-  --c-on-dark: #f7f7f4;
+  --c-on-dark: #f4f7fb;
   --c-on-dark-muted: color-mix(in oklab, var(--c-on-dark) 65%, transparent);
   --c-on-dark-soft: color-mix(in oklab, var(--c-on-dark) 40%, transparent);
 
   /* Timeline pastels — agent visualizations only */
-  --c-timeline-thinking: #dfa88f;
-  --c-timeline-grep: #9fc9a2;
-  --c-timeline-read: #9fbbe0;
-  --c-timeline-edit: #c0a8dd;
-  --c-timeline-done: #c08532;
+  --c-timeline-thinking: #8ab8ff;
+  --c-timeline-grep: #94beff;
+  --c-timeline-read: #8ebaff;
+  --c-timeline-edit: #86b6ff;
+  --c-timeline-done: #4890ff;
 
   /* Semantic */
-  --c-semantic-error: #cf2d56;
-  --c-semantic-success: #1f8a65;
+  --c-semantic-error: #006cf3;
+  --c-semantic-success: #3373d5;
 
   /* ─── Spacing Scale (4px base) ─────────────────────────── */
   --space-2xs: 0.25rem;  /*  4px */

@@ -12,29 +12,29 @@
  */
 
 .lp {
-  --lp-bg: #fbfbf9;
+  --lp-bg: #f8fbff;
   --lp-surface: #ffffff;
-  --lp-sand: #f1f0eb;
-  --lp-sand-2: #e9e7e0;
-  --lp-ink: #121211;
-  --lp-ink-2: #1c1c1a;
-  --lp-ink-3: #2a2a27;
-  --lp-text: #121211;
-  --lp-muted: #6b6a64;
-  --lp-line: #e4e3dd;
-  --lp-line-strong: #cfcdc5;
-  --lp-on-ink: #f4f3ee;
-  --lp-on-ink-muted: #a3a29b;
+  --lp-sand: #ebf0f8;
+  --lp-sand-2: #e2e7ef;
+  --lp-ink: #061226;
+  --lp-ink-2: #0e1c31;
+  --lp-ink-3: #1c2a40;
+  --lp-text: #061226;
+  --lp-muted: #626a77;
+  --lp-line: #dee3eb;
+  --lp-line-strong: #c8cdd5;
+  --lp-on-ink: #eef3fb;
+  --lp-on-ink-muted: #9aa2b0;
   --lp-line-ink: rgba(255, 255, 255, 0.12);
   /* Brand orange. --lp-glow is for marks and graphics; --lp-signal is the
      surface color that carries white text at AA (4.7:1). */
-  --lp-glow: #f54e00;
-  --lp-signal: #d14100;
-  --lp-signal-hover: #b83900;
+  --lp-glow: #428cff;
+  --lp-signal: #0070fb;
+  --lp-signal-hover: #0162dd;
   /* Buttons and CTA tiles use the full brand orange, as on the current site. */
-  --lp-cta: #f54e00;
-  --lp-cta-hover: #d04200;
-  --lp-on-signal-muted: #ffe6da;
+  --lp-cta: #428cff;
+  --lp-cta-hover: #0070fa;
+  --lp-on-signal-muted: #e1edfe;
   /* Orange used as text (labels, numbers). */
   --lp-accent-text: var(--lp-signal);
 
@@ -60,7 +60,7 @@
 
 /* The site footer sits outside `.lp`; keep it on the same canvas. */
 body:has(.lp) {
-  background: #fbfbf9;
+  background: #f8fbff;
 }
 
 :root:has(.lp) {
@@ -256,14 +256,14 @@ body:has(.lp) {
 .lp-btn--light {
   /* Sits on orange surfaces. */
   --btn-bg: #ffffff;
-  --btn-fg: #121211;
-  --btn-bg-hover: #f1f0eb;
+  --btn-fg: #061226;
+  --btn-bg-hover: #ebf0f8;
 }
 
 .lp-btn--line {
   --btn-bg: transparent;
   --btn-fg: currentColor;
-  --btn-bg-hover: rgba(127, 127, 127, 0.1);
+  --btn-bg-hover: rgba(119, 128, 141, 0.1);
   box-shadow: inset 0 0 0 1px currentColor;
 }
 
@@ -1246,13 +1246,13 @@ body:has(.lp) {
   width: 100%;
   font-family: Tahoma, Verdana, 'Segoe UI', sans-serif;
   font-size: 0.75rem;
-  color: #111;
+  color: #051125;
 }
 
 .lp-legacy > div:first-child {
-  background: #c3c3c3;
+  background: #bfc4cb;
   border: 2px solid;
-  border-color: #fff #5a5a5a #5a5a5a #fff;
+  border-color: #fff #535b67 #535b67 #fff;
   box-shadow: 1px 1px 0 #000;
 }
 
@@ -1261,7 +1261,7 @@ body:has(.lp) {
   align-items: center;
   justify-content: space-between;
   padding: 0.25rem 0.375rem;
-  background: linear-gradient(90deg, #0a246a, #3a6ea5);
+  background: linear-gradient(90deg, #002864, #2d68c3);
   color: #fff;
   font-weight: 700;
   font-size: 0.6875rem;
@@ -1275,9 +1275,9 @@ body:has(.lp) {
 .lp-legacy__btns i {
   width: 0.75rem;
   height: 0.625rem;
-  background: #c3c3c3;
+  background: #bfc4cb;
   border: 1px solid;
-  border-color: #fff #404040 #404040 #fff;
+  border-color: #fff #39414c #39414c #fff;
 }
 
 .lp-legacy__body {
@@ -1299,20 +1299,20 @@ body:has(.lp) {
   padding: 0.1875rem 0.375rem;
   background: #fff;
   border: 2px solid;
-  border-color: #5a5a5a #fff #fff #5a5a5a;
+  border-color: #535b67 #fff #fff #535b67;
   font-family: 'Courier New', monospace;
   white-space: pre;
   outline: 1px dotted transparent;
 }
 
 .lp-legacy__field.is-focus {
-  outline-color: #0a246a;
+  outline-color: #002864;
   outline-offset: 1px;
 }
 
 .lp-legacy__field--select {
   font-family: inherit;
-  color: #333;
+  color: #2c343f;
 }
 
 .lp-legacy__caret {
@@ -1321,22 +1321,22 @@ body:has(.lp) {
   height: 0.8rem;
   margin-left: 1px;
   vertical-align: -1px;
-  background: #111;
+  background: #051125;
   animation: lp-pulse 1s steps(1) infinite;
 }
 
 .lp-legacy__button {
   padding: 0.1875rem 0.875rem;
-  background: #c3c3c3;
+  background: #bfc4cb;
   border: 2px solid;
-  border-color: #fff #404040 #404040 #fff;
+  border-color: #fff #39414c #39414c #fff;
   box-shadow: 1px 1px 0 #000;
   min-width: 5.5rem;
   text-align: center;
 }
 
 .lp-legacy__button.is-pressed {
-  border-color: #404040 #fff #fff #404040;
+  border-color: #39414c #fff #fff #39414c;
   box-shadow: none;
   transform: translate(1px, 1px);
 }
@@ -1346,7 +1346,7 @@ body:has(.lp) {
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.25rem 0.375rem;
-  background: #0a246a;
+  background: #002864;
   color: #fff;
   transition: opacity 250ms ease;
 }
@@ -1377,50 +1377,49 @@ body:has(.lp) {
 }
 
 /* ==========================================================================
-   Palette experiment: Sierra-style green with pastel contrast panels.
-   Enabled by data-palette="sierra" on .lp (PALETTE in page.tsx).
-   Colors from sierra.ai's own tokens: green-500 #006838, green-800 #05351d,
-   gray-700 #302e2d, gray-100 #f6f5f3, blue-200 #ecf6fe, green-50 #e4eee6,
-   purple-100 #f2ecf8, purple-500 #7644a6, blue-700 #345eb2.
-   ========================================================================== */
+   Live palette: blue only. Every color is a shade of one blue hue
+   (OKLCH 259): navy for dark panels, #0650b3 for the primary, pale
+   blues for panels, and blue-tinted grays for text and lines.
+   Token names like --g-green are historical; the values are blue.
+*/
 
 .lp[data-palette='sierra'] {
   --lp-bg: #ffffff;
   --lp-surface: #ffffff;
-  --lp-sand: #f6f5f3;
-  --lp-sand-2: #e4e0dc;
-  --lp-ink: #05351d;
-  --lp-ink-2: #0b4428;
-  --lp-ink-3: #145a37;
-  --lp-text: #302e2d;
-  --lp-muted: #716f6c;
-  --lp-faint: #898683;
-  --lp-line: #eeeeee;
-  --lp-line-strong: #e4e0dc;
-  --lp-on-ink: #f4fffa;
-  --lp-on-ink-muted: #b9d3c3;
+  --lp-sand: #f3f5f9;
+  --lp-sand-2: #dce1e9;
+  --lp-ink: #002762;
+  --lp-ink-2: #01347b;
+  --lp-ink-3: #134896;
+  --lp-text: #282f3a;
+  --lp-muted: #68707d;
+  --lp-faint: #7f8794;
+  --lp-line: #e9eff6;
+  --lp-line-strong: #dce1e9;
+  --lp-on-ink: #fafcff;
+  --lp-on-ink-muted: rgba(255, 255, 255, 0.92);
   --lp-line-ink: rgba(255, 255, 255, 0.14);
-  --lp-glow: #006838;
-  --lp-signal: #006838;
-  --lp-signal-hover: #05351d;
-  --lp-cta: #006838;
-  --lp-cta-hover: #05351d;
-  --lp-on-signal-muted: rgba(255, 255, 255, 0.84);
-  --lp-accent-text: #006838;
+  --lp-glow: #0650b3;
+  --lp-signal: #0650b3;
+  --lp-signal-hover: #002762;
+  --lp-cta: #0650b3;
+  --lp-cta-hover: #002762;
+  --lp-on-signal-muted: rgba(255, 255, 255, 0.92);
+  --lp-accent-text: #0650b3;
 
   /* Contrast panels */
-  --lp-pastel-blue: #ecf6fe;
-  --lp-pastel-green: #e4eee6;
-  --lp-pastel-purple: #f2ecf8;
+  --lp-pastel-blue: #f0f5fd;
+  --lp-pastel-green: #e6ebf3;
+  --lp-pastel-purple: #eaeff7;
 }
 
 body:has(.lp[data-palette='sierra']) {
   background: #ffffff;
   /* Footer and consultation form use the shared --c-* tokens. */
-  --c-primary: #006838;
-  --c-primary-active: #05351d;
-  --c-text: #302e2d;
-  --c-text-muted: #716f6c;
+  --c-primary: #0650b3;
+  --c-primary-active: #002762;
+  --c-text: #282f3a;
+  --c-text-muted: #68707d;
 }
 
 /* Product cards: soft diagonal gradients in muted mid-tones (ocean blue,
@@ -1431,15 +1430,15 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp[data-palette='sierra'] #voice {
-  --card-grad: linear-gradient(140deg, #3a6cb3 0%, #2f80c4 52%, #2c93cf 100%);
+  --card-grad: linear-gradient(140deg, #024fb4 0%, #005cd0 52%, #1b6ce0 100%);
 }
 
 .lp[data-palette='sierra'] #agents {
-  --card-grad: linear-gradient(140deg, #93708c 0%, #a65d7f 50%, #b04768 100%);
+  --card-grad: linear-gradient(140deg, #2f64b5 0%, #225db7 50%, #0252bb 100%);
 }
 
 .lp[data-palette='sierra'] #brain {
-  --card-grad: linear-gradient(140deg, #7d9a68 0%, #648a5c 50%, #4f7a52 100%);
+  --card-grad: linear-gradient(140deg, #4176c9 0%, #3165b5 50%, #2054a3 100%);
 }
 
 .lp[data-palette='sierra'] .lp-card::before,
@@ -1480,7 +1479,7 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp[data-palette='sierra'] .lp-card .lp-body {
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .lp[data-palette='sierra'] .lp-card .lp-caps {
@@ -1494,25 +1493,25 @@ body:has(.lp[data-palette='sierra']) {
 
 .lp[data-palette='sierra'] .lp-card .lp-btn {
   --btn-bg: #ffffff;
-  --btn-fg: #302e2d;
+  --btn-fg: #282f3a;
   --btn-bg-hover: rgba(255, 255, 255, 0.86);
 }
 
 /* Product mockups float on the gradient. */
 .lp[data-palette='sierra'] .lp-card .lp-mock {
   border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 18px 50px -24px rgba(20, 20, 40, 0.45);
+  box-shadow: 0 18px 50px -24px rgba(0, 20, 58, 0.45);
 }
 
 /* The Agents mockup becomes tinted glass instead of a dark slab. */
 .lp[data-palette='sierra'] #agents .lp-mock {
   /* Accents inside the glass panel turn white so green doesn't clash with rose. */
   --lp-glow: #ffffff;
-  --lp-on-glow: #9b4f72;
+  --lp-on-glow: #2968c9;
   --mock-line: rgba(255, 255, 255, 0.18);
   --lp-ink-2: transparent;
   --lp-ink-3: rgba(255, 255, 255, 0.22);
-  background: rgba(60, 22, 48, 0.32);
+  background: rgba(0, 34, 87, 0.32);
   backdrop-filter: blur(14px) saturate(1.2);
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
   color: #fff;
@@ -1540,8 +1539,8 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp[data-palette='sierra'] .lp-btn--light {
-  --btn-fg: #05351d;
-  --btn-bg-hover: #f4fffa;
+  --btn-fg: #002762;
+  --btn-bg-hover: #fafcff;
 }
 
 /* --------------------------------------------------------------------------
@@ -1552,15 +1551,15 @@ body:has(.lp[data-palette='sierra']) {
 
 .lp[data-palette='sierra'] {
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  --g-green: linear-gradient(140deg, #3f8a5c 0%, #1f7a4a 50%, #0b6a3b 100%);
-  --g-blue: linear-gradient(140deg, #3a6cb3 0%, #2f80c4 52%, #2c93cf 100%);
-  --g-sage: linear-gradient(140deg, #7d9a68 0%, #648a5c 50%, #4f7a52 100%);
-  --g-terracotta: linear-gradient(140deg, #c86b45 0%, #b5583a 50%, #a5472c 100%);
-  --g-lilac: linear-gradient(140deg, #8c7ab9 0%, #7a63ad 50%, #6a50a2 100%);
-  --g-teal: linear-gradient(140deg, #3f8584 0%, #2e6f73 50%, #1f5560 100%);
-  --g-forest: linear-gradient(140deg, #123d2a 0%, #1b4f3e 55%, #22605e 100%);
-  --g-pastel-green: linear-gradient(140deg, #eef5ee 0%, #e2eee4 50%, #dcebe8 100%);
-  --g-pastel-lilac: linear-gradient(140deg, #f4eefa 0%, #efe6f7 50%, #f8e9f0 100%);
+  --g-green: linear-gradient(140deg, #225db7 0%, #004aaa 50%, #003d90 100%);
+  --g-blue: linear-gradient(140deg, #024fb4 0%, #005cd0 52%, #1b6ce0 100%);
+  --g-sage: linear-gradient(140deg, #4176c9 0%, #3165b5 50%, #2054a3 100%);
+  --g-terracotta: linear-gradient(140deg, #1869df 0%, #0158c8 50%, #014bac 100%);
+  --g-lilac: linear-gradient(140deg, #376cc0 0%, #0f55b9 50%, #0146a1 100%);
+  --g-teal: linear-gradient(140deg, #2a5eaf 0%, #154998 50%, #00337a 100%);
+  --g-forest: linear-gradient(140deg, #002f72 0%, #093f8d 55%, #1e52a1 100%);
+  --g-pastel-green: linear-gradient(140deg, #eef3fb 0%, #e6ebf3 50%, #e2e8ef 100%);
+  --g-pastel-lilac: linear-gradient(140deg, #ecf1f9 0%, #e5ebf2 50%, #e9eef6 100%);
 }
 
 .lp[data-palette='sierra'] .lp-tile,
@@ -1664,30 +1663,30 @@ body:has(.lp[data-palette='sierra']) {
 
 .lp[data-palette='sierra'] .lp-step.lp-on-ink .lp-btn {
   --btn-bg: #ffffff;
-  --btn-fg: #302e2d;
+  --btn-fg: #282f3a;
   --btn-bg-hover: rgba(255, 255, 255, 0.86);
 }
 
 /* Department marks on the forest band use Sierra's light green. */
 .lp[data-palette='sierra'] section.lp-on-ink {
-  --lp-glow: #7ed185;
+  --lp-glow: #90bcff;
 }
 
 /* Voice mockup accents follow its blue card: waveform, live dot, checks,
    and the agent's speech bubble. */
 .lp[data-palette='sierra'] #voice .lp-mock {
-  --lp-glow: #2f80c4;
-  --lp-accent-text: #2a6cb0;
-  --lp-signal: #2a6cb0;
-  --lp-ink: #24518f;
+  --lp-glow: #2675ec;
+  --lp-accent-text: #1363d4;
+  --lp-signal: #1363d4;
+  --lp-ink: #014bac;
 }
 
 /* Brain mockup accents follow its sage card: tab underline, question dot,
    source numbers, spinner. */
 .lp[data-palette='sierra'] #brain .lp-mock {
-  --lp-glow: #5f8a5b;
-  --lp-accent-text: #4a7a4f;
-  --lp-signal: #4a7a4f;
+  --lp-glow: #477ccf;
+  --lp-accent-text: #366bbc;
+  --lp-signal: #366bbc;
 }
 
 /* ==========================================================================
@@ -1699,34 +1698,34 @@ body:has(.lp[data-palette='sierra']) {
 
 .lp[data-palette='sierra'] {
   --c-bg: #ffffff;
-  --c-canvas-soft: #f6f5f3;
-  --c-surface: #f6f5f3;
-  --c-surface-2: #e4e0dc;
+  --c-canvas-soft: #f3f5f9;
+  --c-surface: #f3f5f9;
+  --c-surface-2: #dce1e9;
   --c-surface-card: #ffffff;
-  --c-surface-strong: #f6f5f3;
-  --c-text: #302e2d;
-  --c-body: #625e5b;
-  --c-text-muted: #716f6c;
-  --c-text-soft: #898683;
-  --c-border: #eeeeee;
-  --c-border-soft: #f3f2ef;
-  --c-border-strong: #e4e0dc;
-  --c-primary: #006838;
-  --c-primary-active: #05351d;
-  --c-navy: #05351d;
-  --c-on-dark: #f4fffa;
+  --c-surface-strong: #f3f5f9;
+  --c-text: #282f3a;
+  --c-body: #585f6c;
+  --c-text-muted: #68707d;
+  --c-text-soft: #7f8794;
+  --c-border: #e9eff6;
+  --c-border-soft: #edf3fa;
+  --c-border-strong: #dce1e9;
+  --c-primary: #0650b3;
+  --c-primary-active: #002762;
+  --c-navy: #002762;
+  --c-on-dark: #fafcff;
   /* tokens.css resolves these aliases at :root, so they need restating here
      or they keep the old orange. */
-  --c-orange: #006838;
-  --c-orange-bright: #1f8a52;
-  --c-orange-ink: #05351d;
-  --c-accent: #006838;
-  --c-accent-ink: #05351d;
-  --c-accent-soft: color-mix(in oklab, #006838 14%, transparent);
-  --c-accent-wash: color-mix(in oklab, #006838 6%, #ffffff);
-  --c-navy-2: color-mix(in oklab, #05351d 92%, white);
-  --c-on-dark-muted: color-mix(in oklab, #f4fffa 65%, transparent);
-  --c-on-dark-soft: color-mix(in oklab, #f4fffa 40%, transparent);
+  --c-orange: #0650b3;
+  --c-orange-bright: #206ee2;
+  --c-orange-ink: #002762;
+  --c-accent: #0650b3;
+  --c-accent-ink: #002762;
+  --c-accent-soft: color-mix(in oklab, #0650b3 14%, transparent);
+  --c-accent-wash: color-mix(in oklab, #0650b3 6%, #ffffff);
+  --c-navy-2: color-mix(in oklab, #002762 92%, white);
+  --c-on-dark-muted: color-mix(in oklab, #fafcff 65%, transparent);
+  --c-on-dark-soft: color-mix(in oklab, #fafcff 40%, transparent);
 }
 
 .lp .ds-stat-unit {
@@ -1896,7 +1895,7 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp[data-palette='sierra'] .lp-step--4 {
-  --g: linear-gradient(120deg, #0d5a34 0%, #0f6b45 45%, #1d7d74 100%);
+  --g: linear-gradient(120deg, #104797 0%, #1c56ae 45%, #376bbd 100%);
   --glint: 0.2;
   border: 0;
   color: #fff;
@@ -1904,7 +1903,7 @@ body:has(.lp[data-palette='sierra']) {
 
 .lp[data-palette='sierra'] .lp-step--4 .lp-mock {
   border-color: transparent;
-  box-shadow: 0 24px 48px -24px rgba(5, 40, 25, 0.55), 0 2px 6px rgba(5, 40, 25, 0.12);
+  box-shadow: 0 24px 48px -24px rgba(0, 29, 77, 0.55), 0 2px 6px rgba(0, 29, 77, 0.12);
 }
 
 /* ==========================================================================
@@ -2032,15 +2031,15 @@ body:has(.lp[data-palette='sierra']) {
 
 /* Cross-links to the other products wear their homepage card colors. */
 .lp[data-palette='sierra'] .lp-tile--voice {
-  --g: linear-gradient(140deg, #3a6cb3 0%, #2f80c4 52%, #2c93cf 100%);
+  --g: linear-gradient(140deg, #1966d5 0%, #2675ec 52%, #3885fc 100%);
 }
 
 .lp[data-palette='sierra'] .lp-tile--agents {
-  --g: linear-gradient(140deg, #93708c 0%, #a65d7f 50%, #b04768 100%);
+  --g: linear-gradient(140deg, #467ccf 0%, #3a76d2 50%, #0267e8 100%);
 }
 
 .lp[data-palette='sierra'] .lp-tile--brain {
-  --g: linear-gradient(140deg, #7d9a68 0%, #648a5c 50%, #4f7a52 100%);
+  --g: linear-gradient(140deg, #598fe4 0%, #487dd0 50%, #376cbd 100%);
 }
 
 /* Secondary outline button on the colored pillar cards. */
@@ -2057,15 +2056,15 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp-stories > :nth-child(3n + 1) .lp-story--example {
-  background: linear-gradient(140deg, #eef3fa 0%, #e5eef8 50%, #e2edf3 100%);
+  background: linear-gradient(140deg, #eef3fb 0%, #e8edf5 50%, #e6ebf3 100%);
 }
 
 .lp-stories > :nth-child(3n + 2) .lp-story--example {
-  background: linear-gradient(140deg, #f4eefa 0%, #efe6f7 50%, #f8e9f0 100%);
+  background: linear-gradient(140deg, #ecf1f9 0%, #e5ebf2 50%, #e9eef6 100%);
 }
 
 .lp-stories > :nth-child(3n + 3) .lp-story--example {
-  background: linear-gradient(140deg, #fbf1e8 0%, #f8eadf 50%, #f6e6e1 100%);
+  background: linear-gradient(140deg, #eef3fb 0%, #e8edf5 50%, #e5eaf2 100%);
 }
 
 /* Platform + built for you: two panels joined by a plus. */
@@ -2093,7 +2092,7 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp-approach__col--bespoke.lp-approach__col--voice {
-  background: linear-gradient(140deg, #eef3fa 0%, #e5eef8 50%, #e2edf3 100%);
+  background: linear-gradient(140deg, #eef3fb 0%, #e8edf5 50%, #e6ebf3 100%);
 }
 
 .lp-approach__label {
@@ -2132,7 +2131,7 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp-approach__col--bespoke.lp-approach__col--agents {
-  background: linear-gradient(140deg, #f7eef3 0%, #f4e6ee 50%, #f6e7ec 100%);
+  background: linear-gradient(140deg, #ecf1f9 0%, #e6ebf3 50%, #e7ecf4 100%);
 }
 
 /* Two stories: wider cards with roomier padding. */
@@ -2312,15 +2311,15 @@ body:has(.lp[data-palette='sierra']) {
 }
 
 .lp-booking > :nth-child(1) .lp-booking__panel {
-  background: linear-gradient(140deg, #eef3fa 0%, #e5eef8 50%, #e2edf3 100%);
+  background: linear-gradient(140deg, #eef3fb 0%, #e8edf5 50%, #e6ebf3 100%);
 }
 
 .lp-booking > :nth-child(2) .lp-booking__panel {
-  background: linear-gradient(140deg, #f4eefa 0%, #efe6f7 50%, #f8e9f0 100%);
+  background: linear-gradient(140deg, #ecf1f9 0%, #e5ebf2 50%, #e9eef6 100%);
 }
 
 .lp-booking > :nth-child(3) .lp-booking__panel {
-  background: linear-gradient(140deg, #fbf1e8 0%, #f8eadf 50%, #f6e6e1 100%);
+  background: linear-gradient(140deg, #eef3fb 0%, #e8edf5 50%, #e5eaf2 100%);
 }
 
 .lp-booking > :nth-child(4) .lp-booking__panel {

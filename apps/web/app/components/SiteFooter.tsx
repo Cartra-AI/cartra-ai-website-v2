@@ -39,7 +39,7 @@ export default function SiteFooter() {
               Cartra
             </Link>
             <p className="lp-small mt-4">
-              Applied AI for the businesses that run the real economy: voice agents, agent teammates, and a company brain.
+              Transform your business with AI agents and solutions customized to how your company works.
             </p>
             <div className="lp-small mt-6 grid gap-1.5">
               <a href="mailto:team@cartra.ai" className="lp-footer__link">
