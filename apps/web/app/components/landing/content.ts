@@ -7,7 +7,7 @@ export const HERO = {
   // Rendered two-tone: [ink, orange]
   headline: ['Transform your business', 'with custom AI.'],
   lede:
-    'Off-the-shelf AI gives you the same tools as everyone else. Custom AI is built around how your business actually works, so it becomes an advantage your competitors can’t buy.',
+    'Cartra designs and builds custom AI agents and AI solutions tailored specifically to how your business works. The result is a successful AI transformation leading to less manual work, higher productivity, and better business outcomes.',
 };
 
 export type Pillar = {
@@ -73,28 +73,28 @@ export const PILLARS: Pillar[] = [
 
 export const STEPS = [
   {
-    tag: '01 / Find',
-    title: 'Find the first win',
+    tag: '01 / Understand',
+    title: 'Learn how your business works',
     body:
-      'We sit with your team, listen to real calls, read real inboxes, and walk through your systems. Then we pick the one workflow where AI pays off fastest, and agree on what success looks like before we build anything.',
+      'We start by learning how your business actually runs: who does what, which tools you rely on, and where work slows down. Then we agree on where AI will make the biggest difference and what success looks like.',
   },
   {
     tag: '02 / Build',
-    title: 'Build it around how you work',
+    title: 'Build around how you work',
     body:
-      'Your procedures, your systems, your edge cases. We build and test against real examples from your business, and you see it working before a single customer does.',
+      'We design and build a solution around your processes, your systems, and your edge cases, so it fits the way your team already works.',
   },
   {
-    tag: '03 / Launch',
-    title: 'Go live alongside your team',
+    tag: '03 / Validate',
+    title: 'Test it before it goes live',
     body:
-      'It starts on real work inside the tools you already use: your phone lines, your inboxes, your software. Your team stays in control, and anything unusual goes to the right person.',
+      'We test it against real examples from your business and measure it against the goals we set together. It goes live once it works, and your team stays in control.',
   },
   {
     tag: 'Ongoing',
     title: 'Let it compound',
     body:
-      'Every call, correction, and resolved case teaches it something. It turns what works into new skills, and each new workflow you add builds on everything it already knows.',
+      'It keeps learning from every correction and new case, and each new solution builds on everything the last one already knows.',
   },
 ];
 

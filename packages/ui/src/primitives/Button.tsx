@@ -33,7 +33,7 @@ type ButtonProps = ButtonAsButton | ButtonAsAnchor;
  * Button — primary interactive element (DESIGN.md).
  *
  * Variants:
- *   primary   → orange CTA (#f54e00)
+ *   primary   → orange CTA (#428cff)
  *   secondary → white + hairline border
  *   ghost     → tertiary text link style
  */

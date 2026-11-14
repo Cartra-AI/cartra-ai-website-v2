@@ -75,7 +75,7 @@ const aeonik = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Cartra | Custom AI Agents",
+    default: "Cartra: Custom AI Agents for Businesses",
     template: "%s | Cartra",
   },
   description: DEFAULT_DESCRIPTION,
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     shortcut: LOGO_PATH,
   },
   openGraph: {
-    title: "Cartra | Custom AI Agents",
+    title: "Cartra: Custom AI Agents for Businesses",
     description: DEFAULT_DESCRIPTION,
     url: "/",
     siteName: SITE_NAME,
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cartra | Custom AI Agents",
+    title: "Cartra: Custom AI Agents for Businesses",
     description: DEFAULT_DESCRIPTION,
     images: [OG_IMAGE_PATH],
   },
