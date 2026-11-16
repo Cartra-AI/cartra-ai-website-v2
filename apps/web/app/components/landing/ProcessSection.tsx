@@ -56,7 +56,20 @@ export default function ProcessSection() {
     return () => io.disconnect();
   }, []);
 
-  const running = inView && !paused && !reduce;
+  // Panels mount (and their clocks start) the first time the panel itself is
+  // well into view, so the first step plays from the start when people reach
+  // it rather than running offscreen.
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const el = panelRef.current;
+    if (!el || seen) return;
+    const io = new IntersectionObserver(([e]) => e?.isIntersecting && setSeen(true), { threshold: 0.4 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [seen]);
+
+  const running = seen && inView && !paused && !reduce;
 
   useEffect(() => {
     if (!running) return;
@@ -105,13 +118,15 @@ export default function ProcessSection() {
             ))}
           </ol>
 
-          <div id="lp-proc-panel" className="lp-proc__panel">
+          <div id="lp-proc-panel" ref={panelRef} className="lp-proc__panel">
             {/* Keyed by step: switching steps remounts the panel and replays it. */}
-            <div key={STEPS[active]!.id} className="lp-proc__frame">
-              {active === 0 && <DiscoverPanel />}
-              {active === 1 && <BuildPanel />}
-              {active === 2 && <CompoundPanel />}
-            </div>
+            {seen && (
+              <div key={STEPS[active]!.id} className="lp-proc__frame">
+                {active === 0 && <DiscoverPanel />}
+                {active === 1 && <BuildPanel />}
+                {active === 2 && <CompoundPanel />}
+              </div>
+            )}
           </div>
         </div>
       </div>
