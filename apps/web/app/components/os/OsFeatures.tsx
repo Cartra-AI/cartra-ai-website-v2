@@ -341,7 +341,20 @@ export default function OsFeatures() {
     return () => io.disconnect();
   }, []);
 
-  const running = inView && !paused && !reduce;
+  // Panels mount (and their clocks start) the first time the panel itself is
+  // well into view, so the first step plays from the start when people reach
+  // it rather than running offscreen.
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const el = panelRef.current;
+    if (!el || seen) return;
+    const io = new IntersectionObserver(([e]) => e?.isIntersecting && setSeen(true), { threshold: 0.4 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [seen]);
+
+  const running = seen && inView && !paused && !reduce;
 
   useEffect(() => {
     if (!running) return;
@@ -381,13 +394,15 @@ export default function OsFeatures() {
             ))}
           </ol>
 
-          <div id="lp-os-panel" className="lp-proc__panel">
-            <div key={PARTS[active]!.id} className="lp-proc__frame lp-os-f">
-              {active === 0 && <TogetherPanel />}
-              {active === 1 && <ContextPanel />}
-              {active === 2 && <ExceptionsPanel />}
-              {active === 3 && <AppsPanel />}
-            </div>
+          <div id="lp-os-panel" ref={panelRef} className="lp-proc__panel">
+            {seen && (
+              <div key={PARTS[active]!.id} className="lp-proc__frame lp-os-f">
+                {active === 0 && <TogetherPanel />}
+                {active === 1 && <ContextPanel />}
+                {active === 2 && <ExceptionsPanel />}
+                {active === 3 && <AppsPanel />}
+              </div>
+            )}
           </div>
         </div>
       </div>
