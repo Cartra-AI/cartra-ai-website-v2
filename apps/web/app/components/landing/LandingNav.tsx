@@ -19,6 +19,7 @@ const MENUS: Menu[] = [
     id: 'solutions',
     label: 'Solutions',
     items: [
+      { href: '/os', label: 'Cartra OS', note: 'One workspace for people and agents' },
       { href: '/voice', label: 'Cartra Voice', note: 'AI voice agents for every call' },
       { href: '/agents', label: 'Cartra Agents', note: 'AI teammates for operations work' },
       { href: '/brain', label: 'Cartra Brain', note: 'Your company’s knowledge, put to work' },
