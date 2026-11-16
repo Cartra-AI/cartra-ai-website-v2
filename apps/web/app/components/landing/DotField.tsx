@@ -73,11 +73,13 @@ export default function DotField() {
 
           const depth = 1 - j / ROWS;
           const size = Math.max(0.7, 3 / z);
-          const crest = y > 0.3;
+          // Crests of the nearer rows, where dots are big enough to read.
+          const crest = y > 0.1 && j < ROWS * 0.6;
           const square = (i * 7 + j * 13) % 41 === 0;
 
-          if (crest && (i + j) % 3 === 0) {
-            ctx.fillStyle = `rgba(${accent}, ${0.35 + depth * 0.55})`;
+          const lit = crest && (i * 3 + j * 5) % 11 === 0;
+          if (lit) {
+            ctx.fillStyle = `rgba(${accent}, ${0.55 + depth * 0.45})`;
           } else {
             ctx.fillStyle = `rgba(${ink}, ${0.1 + depth * 0.5})`;
           }
@@ -85,8 +87,12 @@ export default function DotField() {
           if (square) {
             const s = size * 2.2;
             ctx.fillRect(sx - s / 2, sy - s / 2, s, s);
-          } else if (size < 1.3) {
+          } else if (size < 1.3 && !lit) {
             ctx.fillRect(sx - size / 2, sy - size / 2, size, size);
+          } else if (lit) {
+            ctx.beginPath();
+            ctx.arc(sx, sy, Math.max(size, 1.6) / 2, 0, Math.PI * 2);
+            ctx.fill();
           } else {
             ctx.beginPath();
             ctx.arc(sx, sy, size / 2, 0, Math.PI * 2);

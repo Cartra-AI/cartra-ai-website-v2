@@ -4,8 +4,9 @@
  * A quiet editorial system modeled on cursor.com: warm off-white canvas,
  * warm near-black ink, muted text as ink at 60%, flat 4px cards one step
  * darker than the page, pill buttons, one sans family at regular weight, and
- * small, restrained headings. Fully monochrome: no brand accent color; links,
- * checks, and live dots use the ink.
+ * small, restrained headings. Monochrome except for one signal color:
+ * orange means "an agent is working". See "Orange signal" at the end of this
+ * file for the rule and every place it applies.
  *
  * Enabled by data-palette="paper" on .lp (PALETTE in palette.ts). Loaded after
  * landing.css and overrides its base rules; the sierra layer does not apply.
@@ -34,6 +35,10 @@
   --lp-cta-hover: #3b3a32;
   --lp-on-signal-muted: rgba(247, 247, 244, 0.7);
   --lp-accent-text: #26251e;
+  /* Signal orange: fills, dots, carets, rails (any background). */
+  --lp-orange: #f54e00;
+  /* Orange for small text on the light canvas (AA contrast). */
+  --lp-orange-ink: #c43e00;
 
   --lp-max: 72rem;
   --lp-gutter: 1.25rem;
@@ -2260,4 +2265,108 @@ body:has(.lp[data-palette='paper']) {
   font-size: 1.25rem;
   letter-spacing: -0.01em;
   color: var(--lp-text);
+}
+
+/* ==========================================================================
+ * Orange signal
+ *
+ * The page is ink on paper. Orange appears only where an agent is working,
+ * so the eye learns one meaning for it:
+ *
+ *   1. Live: something running right now (the hero's typing caret and the
+ *      crests of its dot wave, live/working badges, pulsing dots).
+ *   2. Progress: how far a run has got (the active step's rail, ticked boxes).
+ *   3. Done by agents: the checkmarks beside work agents do or did
+ *      (use cases, case study results).
+ *   4. Pointer feedback: hover and keyboard focus on links and chips, so the
+ *      next thing you can act on lights up the same way.
+ *
+ * Never on headings, body copy, buttons, backgrounds, numbers, or photos.
+ * Small text uses --lp-orange-ink; everything else uses --lp-orange.
+ * ========================================================================== */
+
+/* 1. Live */
+.lp[data-palette='paper'] .lp-typed__caret {
+  background: var(--lp-orange);
+}
+
+/* Once typed, the caret stays and blinks: the hero's one steady live signal. */
+.lp[data-palette='paper'] .lp-typed__caret[data-state='done'] {
+  animation: lp-caret 1.1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp[data-palette='paper'] .lp-typed__caret[data-state='done'] {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.lp-hero__field {
+  --dot-accent: 245, 78, 0;
+}
+
+.lp[data-palette='paper'] .lp-mock__live,
+.lp[data-palette='paper'] .lp-card .lp-mock__live {
+  color: var(--lp-orange-ink);
+}
+
+.lp[data-palette='paper'] .lp-mock__live::before {
+  background: var(--lp-orange);
+}
+
+.lp[data-palette='paper'] .lp-proc__live,
+.lp[data-palette='paper'] .lp-proc__status[data-status='live'] {
+  color: var(--lp-orange-ink);
+  background: rgba(245, 78, 0, 0.1);
+}
+
+.lp[data-palette='paper'] .lp-proc__live::before,
+.lp[data-palette='paper'] .lp-proc__status[data-status='live']::before {
+  background: var(--lp-orange);
+}
+
+/* 2. Progress */
+.lp[data-palette='paper'] .lp-proc__rail::after {
+  background: var(--lp-orange);
+}
+
+.lp[data-palette='paper'] .lp-proc__checklist li[data-on='true'] .lp-proc__box {
+  background: var(--lp-orange);
+  color: #fff;
+}
+
+/* 3. Done by agents */
+.lp[data-palette='paper'] .lp-usecase__check,
+.lp[data-palette='paper'] .lp-cs__check {
+  color: var(--lp-orange);
+  opacity: 1;
+}
+
+/* 4. Pointer feedback */
+.lp[data-palette='paper'] :focus-visible,
+.lp-dark :focus-visible,
+.lp-ind-section :focus-visible {
+  outline-color: var(--lp-orange);
+}
+
+.lp[data-palette='paper'] .lp-link:hover,
+.lp[data-palette='paper'] .lp-prose a:hover,
+.lp[data-palette='paper'] .lp-nav__item:hover > span,
+.lp[data-palette='paper'] .lp-nav__footer:hover {
+  text-decoration-line: underline;
+  text-decoration-color: var(--lp-orange);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.lp[data-palette='paper'] .lp-ind__chip:hover {
+  background: #f2f1ed;
+  color: var(--lp-text);
+  box-shadow: inset 0 0 0 1px var(--lp-orange);
+}
+
+.lp-dark .lp-ind__chip:hover,
+.lp-ind-section .lp-ind__chip:hover {
+  box-shadow: inset 0 0 0 1px var(--lp-orange);
 }
