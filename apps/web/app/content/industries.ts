@@ -51,6 +51,8 @@ const L = {
   box: { slug: 'box', name: 'Box', wordmark: true },
   caldotcom: { slug: 'caldotcom', name: 'Cal.com', ext: 'png' },
   calendly: { slug: 'calendly', name: 'Calendly' },
+  cargowise: { slug: 'cargowise', name: 'CargoWise', wordmark: true },
+  descartes: { slug: 'descartes', name: 'Descartes', ext: 'png', wordmark: true },
   confluence: { slug: 'confluence', name: 'Confluence' },
   dialpad: { slug: 'dialpad', name: 'Dialpad', wordmark: true },
   efreight: { slug: 'efreight', name: 'E-Freight', ext: 'png' },
@@ -59,6 +61,8 @@ const L = {
   googledrive: { slug: 'googledrive', name: 'Google Drive' },
   hawksoft: { slug: 'hawksoft', name: 'HawkSoft' },
   hubspot: { slug: 'hubspot', name: 'HubSpot' },
+  magaya: { slug: 'magaya', name: 'Magaya', ext: 'png', wordmark: true },
+  mcleod: { slug: 'mcleod', name: 'McLeod', ext: 'png' },
   outlook: { slug: 'microsoftoutlook', name: 'Microsoft Outlook' },
   sharepoint: { slug: 'microsoftsharepoint', name: 'Microsoft SharePoint' },
   teams: { slug: 'microsoftteams', name: 'Microsoft Teams' },
@@ -145,7 +149,7 @@ export const INDUSTRIES: Industry[] = [
         does: ['Answers from your SOPs and rate files', 'Cites the document behind each answer', 'Stays current as files change'],
       },
     ],
-    systems: [L.efreight, L.netsuite, L.quickbooks, L.outlook, L.gmail, L.teams, L.whatsapp, L.wechat],
+    systems: [L.cargowise, L.magaya, L.descartes, L.mcleod, L.efreight, L.netsuite, L.quickbooks, L.outlook, L.gmail, L.teams, L.whatsapp, L.wechat],
     caseStudies: [FREIGHT_QUOTING, FREIGHT_TRIAGE],
     faqs: [
       {

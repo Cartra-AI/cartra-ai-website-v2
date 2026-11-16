@@ -10,6 +10,7 @@ const COLUMNS: Array<{ title: string; links: Array<{ href: string; label: string
   {
     title: 'Solutions',
     links: [
+      { href: '/os', label: 'Cartra OS' },
       { href: '/voice', label: 'Cartra Voice' },
       { href: '/agents', label: 'Cartra Agents' },
       { href: '/brain', label: 'Cartra Brain' },

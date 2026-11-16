@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
+import { Buffer } from 'node:buffer';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
@@ -36,6 +37,12 @@ const blockedPatterns = [
   { label: 'partner-mentions planning copy', pattern: /\bpartner mentions\b/i },
   { label: 'content brief copy', pattern: /\bcontent brief\b/i },
   { label: 'target keyword copy', pattern: /\btarget keywords?\b/i },
+  // Cartra OS is white-labeled: the vendor underneath must never appear on
+  // the public site or in this public repo. Stored encoded on purpose.
+  {
+    label: 'white-label vendor name',
+    pattern: new RegExp(Buffer.from('a29ydGl4', 'base64').toString('utf8'), 'i'),
+  },
 ];
 
 function walk(dir) {
