@@ -109,6 +109,11 @@ body:has(.lp) {
   font-size: clamp(3rem, 6.6vw, 5.75rem);
 }
 
+/* Homepage hero: a step smaller than the product-page h1. */
+.lp-h1--home {
+  font-size: clamp(2.5rem, 5.6vw, 4.75rem);
+}
+
 .lp-h2 {
   font-size: clamp(2.25rem, 5vw, 4rem);
   line-height: 1.02;
@@ -395,34 +400,11 @@ body:has(.lp) {
 
 .lp-hero {
   position: relative;
-  min-height: min(100svh, 62rem);
   padding-top: calc(var(--lp-nav-h) + clamp(3rem, 9vh, 6.5rem));
   padding-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-.lp-hero__field {
-  position: absolute;
-  inset: 34% 0 0 0;
-  pointer-events: none;
-}
-
-.lp-hero__field canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.lp-hero__field::before {
-  /* fade the field into the headline area */
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 40%;
-  background: linear-gradient(var(--lp-bg), transparent);
-  z-index: 1;
 }
 
 .lp-pillar-strip {

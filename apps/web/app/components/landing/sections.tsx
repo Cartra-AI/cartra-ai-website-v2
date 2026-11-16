@@ -1,5 +1,4 @@
-import LineArt from './LineArt';
-import { Arrow, CallTile, Reveal } from './primitives';
+import { Arrow, CallButton, Reveal } from './primitives';
 import type { ProductLogo, ProductStory } from '../../content/products';
 
 /* Sections shared by the homepage and the product pages. */
@@ -116,45 +115,27 @@ export function ClosingSection({
 }: {
   title: string;
   body: string;
-  /** Analytics location for the call tile. */
+  /** Analytics location for the call button. */
   location: string;
-  /** Label for the call tile, to match the page. */
+  /** Label for the call button, to match the page. `meta` is unused in this layout. */
   cta?: { label: string; meta: string };
 }) {
   return (
-    <section className="lp-section" style={{ paddingTop: 0 }} aria-labelledby="closing-title">
+    <section className="lp-closing" aria-labelledby="closing-title">
       <div className="lp-wrap">
-        <div className="grid gap-2 lg:grid-cols-[1.4fr_1fr]">
-          <Reveal>
-            <div
-              className="relative h-full overflow-hidden p-[clamp(1.5rem,4vw,3.5rem)] lp-on-ink lp-round-xl"
-              style={{ minHeight: '26rem', isolation: 'isolate' }}
-            >
-              <div className="lp-step__art" style={{ color: 'var(--lp-on-ink)' }}>
-                <LineArt variant="sweep" opacity={0.12} accent={13} />
-              </div>
-              <span className="lp-tag lp-tag--muted">Get started</span>
-              <h2 id="closing-title" className="lp-display lp-h2 mt-8 max-w-[15ch]">
-                {title}
-              </h2>
-              <p className="lp-lede mt-6 max-w-[32rem]">{body}</p>
-            </div>
-          </Reveal>
-          <div className="grid gap-2">
-            <Reveal delay={80} className="grid">
-              <CallTile label={cta.label} meta={cta.meta} location={location} className="lp-round-xl" />
-            </Reveal>
-            <Reveal delay={160} className="grid">
-              <a href="mailto:team@cartra.ai" className="lp-tile lp-tile--ink lp-round-xl">
-                <span className="lp-tile__label">
-                  Email the team
-                  <Arrow />
-                </span>
-                <span className="lp-tile__meta">team@cartra.ai</span>
-              </a>
-            </Reveal>
+        <Reveal>
+          <h2 id="closing-title" className="lp-statement lp-statement--xl mx-auto max-w-[16ch]">
+            {title}
+          </h2>
+          <p className="lp-lede mx-auto mt-6 max-w-[34rem]">{body}</p>
+          <div className="mt-9 flex flex-wrap justify-center gap-2">
+            <CallButton location={location}>{cta.label}</CallButton>
+            <a href="mailto:team@cartra.ai" className="lp-btn lp-btn--line">
+              Email the team
+              <Arrow />
+            </a>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

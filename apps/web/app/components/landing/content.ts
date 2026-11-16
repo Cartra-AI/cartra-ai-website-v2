@@ -5,9 +5,9 @@
 
 export const HERO = {
   // Rendered two-tone: [ink, orange]
-  headline: ['Transform your business', 'with custom AI.'],
+  headline: ['Your company,', 'transformed for the AI era.'],
   lede:
-    'Cartra designs and builds custom AI agents and AI solutions tailored specifically to how your business works. The result is a successful AI transformation leading to less manual work, higher productivity, and better business outcomes.',
+    'Cartra is your AI transformation partner. We work with your team to understand your business processes and build custom AI agents and solutions around your existing systems in order to reinvent how your company operates. The result is increased operational efficiency and improvements to both your top and bottom line.',
 };
 
 export type Pillar = {
@@ -121,38 +121,26 @@ export const OUTCOMES = [
 export const DEPARTMENTS = [
   {
     name: 'Customer service',
-    pillars: ['Voice', 'Agents', 'Brain'],
-    mark: ['c', 's', 'o'],
     body: 'Answer every call, resolve routine requests end to end, and give every rep the right answer in seconds.',
   },
   {
     name: 'Sales and revenue',
-    pillars: ['Voice', 'Agents'],
-    mark: ['c', 'c', 's'],
     body: 'Call new leads back in minutes, qualify them on your criteria, and keep the CRM clean without chasing reps.',
   },
   {
     name: 'Operations',
-    pillars: ['Agents', 'Brain'],
-    mark: ['s', 's', 'c'],
     body: 'Orders, scheduling, documents, and status updates handled across your systems, with exceptions surfaced early.',
   },
   {
     name: 'Finance',
-    pillars: ['Agents'],
-    mark: ['s', 'o', 's'],
     body: 'Invoice intake, matching, reconciliation, and collections follow-up, all inside your existing controls.',
   },
   {
     name: 'Marketing',
-    pillars: ['Brain', 'Agents'],
-    mark: ['o', 'c', 'c'],
     body: 'Content, product answers, and campaign research grounded in what your company actually knows.',
   },
   {
     name: 'People and training',
-    pillars: ['Brain'],
-    mark: ['c', 'o', 's'],
     body: 'New hires ramp on your real procedures, and senior people stop answering the same questions.',
   },
 ];

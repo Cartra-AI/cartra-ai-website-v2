@@ -7,3 +7,11 @@ export const landingMono = localFont({
   weight: '100 900',
   display: 'swap',
 });
+
+/** Sans for the 'paper' palette: headings, body and UI. */
+export const landingSans = localFont({
+  src: '../../fonts/GeistVF.woff',
+  variable: '--font-lp-sans',
+  weight: '100 900',
+  display: 'swap',
+});

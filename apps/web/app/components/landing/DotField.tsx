@@ -5,7 +5,10 @@ import { useEffect, useRef } from 'react';
 /**
  * Perspective field of dots rolling like terrain, after the hero on
  * varickagents.com. Mostly ink circles; the logo's squares are scattered
- * through it, and wave crests catch the brand orange.
+ * through it, and wave crests catch an accent.
+ *
+ * Colors come from CSS custom properties on the canvas, as "r, g, b":
+ * --dot-ink for the field and --dot-accent for crests (falls back to --lp-glow).
  */
 export default function DotField() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -17,9 +20,13 @@ export default function DotField() {
     if (!ctx) return;
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Crest highlights use the palette accent (--lp-glow) as "r, g, b".
+    const styles = getComputedStyle(canvas);
+    const ink = styles.getPropertyValue('--dot-ink').trim() || '18, 18, 17';
+    // Crest highlights: --dot-accent, else the palette accent (--lp-glow).
     const accent = (() => {
-      const hex = getComputedStyle(canvas).getPropertyValue('--lp-glow').trim();
+      const set = styles.getPropertyValue('--dot-accent').trim();
+      if (set) return set;
+      const hex = styles.getPropertyValue('--lp-glow').trim();
       const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(hex);
       return m ? m.slice(1).map((h) => parseInt(h, 16)).join(', ') : '245, 78, 0';
     })();
@@ -72,7 +79,7 @@ export default function DotField() {
           if (crest && (i + j) % 3 === 0) {
             ctx.fillStyle = `rgba(${accent}, ${0.35 + depth * 0.55})`;
           } else {
-            ctx.fillStyle = `rgba(18, 18, 17, ${0.1 + depth * 0.5})`;
+            ctx.fillStyle = `rgba(${ink}, ${0.1 + depth * 0.5})`;
           }
 
           if (square) {

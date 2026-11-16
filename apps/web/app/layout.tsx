@@ -7,7 +7,8 @@ import "@repo/ui/components.css";
 import "@repo/ui/explainer.css";
 import "./globals.css";
 import "./components/landing/landing.css";
-import { landingMono } from "./components/landing/fonts";
+import "./components/landing/paper.css";
+import { landingMono, landingSans } from "./components/landing/fonts";
 import { PALETTE } from "./components/landing/palette";
 import JsonLd from "./components/JsonLd";
 import Analytics from "./components/Analytics";
@@ -137,7 +138,7 @@ export default function RootLayout({
         />
         <Analytics />
         {/* Site shell: the redesign's palette, fonts and tokens wrap every page. */}
-        <div className={`lp ${landingMono.variable}`} data-palette={PALETTE}>
+        <div className={`lp ${landingMono.variable} ${landingSans.variable}`} data-palette={PALETTE}>
           <ConsultationProvider>
             {children}
             <SiteFooter />
