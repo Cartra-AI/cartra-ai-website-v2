@@ -162,7 +162,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
       },
       {
         kind: 'case-study',
-        industry: 'Korean spa, Irvine, CA, 50 people',
+        industry: 'Wellness facility, Irvine, CA, 50 people',
         title: 'Appointments booked and questions answered around the clock',
         body: 'Clients call to book appointments and ask the same handful of questions, often while the front desk is busy with the people in front of them. We built Cartra Voice around the facility’s schedule and the answers its staff give every day. Now it books appointments over the phone and answers recurring questions 24/7, and the front desk can focus on the clients in the room.',
         results: ['5,000 calls handled every month', 'About 30 appointments booked every day', 'Live in under 2 weeks'],

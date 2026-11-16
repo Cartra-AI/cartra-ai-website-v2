@@ -1,19 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ContactLink from './ContactLink';
+import { INDUSTRIES, INDUSTRY_PATH } from '../content/industries';
 
 /* Site-wide footer in the redesign's system: logo + contact on the left,
    link columns on the right, legal row underneath. */
 
 const COLUMNS: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
   {
-    title: 'Products',
+    title: 'Solutions',
     links: [
       { href: '/voice', label: 'Cartra Voice' },
       { href: '/agents', label: 'Cartra Agents' },
       { href: '/brain', label: 'Cartra Brain' },
       { href: '/#integrations', label: 'Integrations' },
     ],
+  },
+  {
+    title: 'Industries',
+    links: INDUSTRIES.map((i) => ({ href: INDUSTRY_PATH(i.slug), label: i.name })),
   },
   {
     title: 'Company',
@@ -53,7 +58,7 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:gap-14">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-14">
             {COLUMNS.map((col) => (
               <div key={col.title}>
                 <p className="lp-mono" style={{ color: 'var(--lp-muted)' }}>

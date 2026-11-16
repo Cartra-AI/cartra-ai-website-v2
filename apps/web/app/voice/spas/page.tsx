@@ -71,15 +71,15 @@ export default function Page() {
                 For spas and wellness
               </span>
             </div>
-            <h1 id="spas-title" className="lp-display lp-h1 mt-8 lp-hero-in" style={{ '--d': '80ms' } as CSSProperties}>
+            <h1 id="spas-title" className="lp-display lp-h1 mt-6 lp-hero-in" style={{ '--d': '80ms' } as CSSProperties}>
               <span className="block">{lead}</span>
               <span className="lp-accent block">{accent}</span>
             </h1>
             <div
-              className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,40rem)_auto] lg:justify-between lg:items-end lp-hero-in"
+              className="mt-5 grid gap-8 lp-hero-in"
               style={{ '--d': '200ms' } as CSSProperties}
             >
-              <p className="lp-lede">{SPAS.lede}</p>
+              <p className="lp-lede max-w-[36rem]">{SPAS.lede}</p>
               <div className="flex flex-wrap gap-2">
                 <CallButton location="voice_spas_hero">{CTA}</CallButton>
                 <a href="#how-it-books" className="lp-btn lp-btn--line">
@@ -112,9 +112,9 @@ export default function Page() {
         <section className="lp-wrap" aria-label="Cartra Voice at a spa">
           <Reveal>
             <article id="voice" className="lp-card lp-card--light lp-card--static">
-              <div className="flex flex-col">
+              <div className="lp-card__text">
                 <span className="lp-tag self-start">What it handles</span>
-                <h2 className="lp-display lp-h3 mt-6 max-w-[17ch]">{SPAS.showcase.title}</h2>
+                <h2 className="lp-display lp-h3 mt-3">{SPAS.showcase.title}</h2>
                 <ul className="lp-caps mt-6">
                   {SPAS.showcase.capabilities.map((c, ci) => (
                     <li key={c}>
@@ -127,13 +127,15 @@ export default function Page() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-7 lg:mt-auto lg:pt-7">
+                <div className="mt-7">
                   <CallButton variant="ink" location="voice_spas_card">
                     Book a call
                   </CallButton>
                 </div>
               </div>
-              <VoiceCall script={SPA_CALL} />
+              <div className="lp-card__visual lp-card__visual--voice">
+                <VoiceCall script={SPA_CALL} />
+              </div>
             </article>
           </Reveal>
         </section>

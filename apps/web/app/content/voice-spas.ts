@@ -92,7 +92,7 @@ export const SPAS = {
   stories: [
     {
       kind: 'case-study',
-      industry: 'Korean spa, Irvine, CA, 50 people',
+      industry: 'Wellness facility, Irvine, CA, 50 people',
       title: 'Appointments booked and questions answered around the clock',
       body: 'Guests call to book treatments and ask the same questions about the spa, often while the front desk is busy with the people in the building. Cartra Voice now answers those questions around the clock and books appointments over the phone in several languages.',
       results: ['5,000 calls handled every month', 'About 30 appointments booked every day', 'Live in under 2 weeks'],
@@ -225,7 +225,7 @@ export const SPAS = {
     },
     {
       q: 'How long does it take to set up?',
-      a: 'Our team does the setup, not yours. The Korean spa above was live in under 2 weeks. We’ll give you a timeline for your spa on the first call.',
+      a: 'Our team does the setup, not yours. The Irvine wellness facility above was live in under 2 weeks. We’ll give you a timeline for your spa on the first call.',
     },
     {
       q: 'What does it cost?',

@@ -21,7 +21,6 @@ const MOCKUPS: Record<ProductId, () => React.JSX.Element> = {
   brain: BrainMockup,
 };
 
-const CARD_CTA = { light: 'ink', ink: 'signal', signal: 'light' } as const;
 
 export default function ProductPage({ product }: { product: Product }) {
   const pillar = PILLARS.find((p) => p.id === product.id)!;
@@ -72,15 +71,15 @@ export default function ProductPage({ product }: { product: Product }) {
                 {product.kicker}
               </span>
             </div>
-            <h1 id="product-title" className="lp-display lp-h1 mt-8 lp-hero-in" style={{ '--d': '80ms' } as CSSProperties}>
+            <h1 id="product-title" className="lp-display lp-h1 mt-6 lp-hero-in" style={{ '--d': '80ms' } as CSSProperties}>
               <span className="block">{lead}</span>
               <span className="lp-accent block">{accent}</span>
             </h1>
             <div
-              className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,40rem)_auto] lg:justify-between lg:items-end lp-hero-in"
+              className="mt-5 grid gap-8 lp-hero-in"
               style={{ '--d': '200ms' } as CSSProperties}
             >
-              <p className="lp-lede">{product.lede}</p>
+              <p className="lp-lede max-w-[36rem]">{product.lede}</p>
               <div className="flex flex-wrap gap-2">
                 <CallButton location={`product_${product.id}_hero`}>{`Talk to us about ${short}`}</CallButton>
                 <a href="#how-it-works" className="lp-btn lp-btn--line">
@@ -96,28 +95,30 @@ export default function ProductPage({ product }: { product: Product }) {
         <section className="lp-wrap" aria-label={`${product.name} in action`}>
           <Reveal>
             <article id={product.id} className={`lp-card lp-card--${pillar.tone} lp-card--static`}>
-              <div className="flex flex-col">
+              <div className="lp-card__text">
                 <span className="lp-tag self-start">What it handles</span>
-                <h2 className="lp-display lp-h3 mt-6 max-w-[17ch]">{pillar.title}</h2>
+                <h2 className="lp-display lp-h3 mt-3">{pillar.title}</h2>
                 <ul className="lp-caps mt-6">
                   {pillar.capabilities.map((c, ci) => (
                     <li key={c}>
                       <span
                         className={`lp-glyph ${ci % 2 ? 'lp-glyph--square' : 'lp-glyph--circle'}`}
-                        style={{ color: pillar.tone === 'signal' ? '#fff' : 'var(--lp-glow)' }}
+                        style={{ color: 'var(--lp-glow)' }}
                         aria-hidden
                       />
                       {c}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-7 lg:mt-auto lg:pt-7">
-                  <CallButton variant={CARD_CTA[pillar.tone]} location={`product_${product.id}_card`}>
+                <div className="mt-7">
+                  <CallButton location={`product_${product.id}_card`}>
                     Book a call
                   </CallButton>
                 </div>
               </div>
-              <Mock />
+              <div className={`lp-card__visual lp-card__visual--${product.id}`}>
+                <Mock />
+              </div>
             </article>
           </Reveal>
         </section>
