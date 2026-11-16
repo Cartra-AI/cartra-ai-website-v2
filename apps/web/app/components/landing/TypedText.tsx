@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 
 /**
  * Types `text` out one character at a time, with a caret that
- * blinks while typing and fades once done. The full text is laid out
- * invisibly underneath, so the line keeps its size and wrapping from the first
- * frame and nothing below it shifts. Screen readers and crawlers get the whole
+ * blinks while typing. The untyped rest of the text stays in the line,
+ * invisible, so every word already sits where it will end up: the line keeps
+ * its size and wrapping from the first frame, a word never starts on one line
+ * and jumps to the next, and nothing below it shifts. Screen readers and crawlers get the whole
  * text at once; visitors who prefer reduced motion see it immediately.
  *
  * Typing starts once the nearest `.lp-hero-in` ancestor has finished its
@@ -66,12 +67,10 @@ export default function TypedText({
   return (
     <span ref={ref} className={`lp-typed ${className}`.trim()}>
       <span className="sr-only">{text}</span>
-      <span className="lp-typed__ghost" aria-hidden>
-        {text}
-      </span>
-      <span className="lp-typed__live" aria-hidden>
+      <span aria-hidden>
         {text.slice(0, count)}
         <span className="lp-typed__caret" data-state={done ? 'done' : started ? 'typing' : 'waiting'} />
+        <span className="lp-typed__rest">{text.slice(count)}</span>
       </span>
     </span>
   );
