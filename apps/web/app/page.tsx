@@ -81,6 +81,7 @@ export default function Home() {
                   <span className="lp-h4" style={{ fontSize: '1.25rem' }}>{name}</span>
                 </span>
               ))}
+              <span className="lp-logo-tiles__more">and more</span>
             </section>
           </div>
         </section>

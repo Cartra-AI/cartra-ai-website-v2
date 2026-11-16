@@ -399,7 +399,7 @@ body:has(.lp[data-palette='paper']) {
 
 .lp-logo-tiles {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.5rem;
 }
 
@@ -420,9 +420,22 @@ body:has(.lp[data-palette='paper']) {
   font-size: 0.875rem;
 }
 
+.lp-logo-tiles > .lp-logo-tiles__more {
+  font-size: 1rem;
+}
+
 @media (max-width: 639px) {
   .lp-logo-tiles {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .lp-logo-tiles > * {
+    min-height: 3.75rem;
+  }
+  .lp-logo-tiles .lp-h4 {
+    font-size: 1rem !important;
+  }
+  .lp-logo-tiles > .lp-logo-tiles__more {
+    font-size: 0.875rem;
   }
   .lp-logo-tiles > :first-child {
     grid-column: 1 / -1;
