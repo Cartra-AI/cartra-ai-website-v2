@@ -8,6 +8,9 @@ export const HERO = {
   headline: ['Your company,', 'transformed for the AI era.'],
   lede:
     'Cartra is your AI transformation partner. We work with your team to understand your business processes and build custom AI agents and solutions around your existing systems in order to reinvent how your company operates. The result is increased operational efficiency and improvements to both your top and bottom line.',
+  // Phones: the same promise in two sentences.
+  ledeShort:
+    'Cartra is your AI transformation partner. We build custom AI agents around your existing systems to make your company faster, leaner, and more profitable.',
 };
 
 export type Pillar = {

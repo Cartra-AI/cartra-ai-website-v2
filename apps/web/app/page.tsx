@@ -4,6 +4,7 @@ import Image from 'next/image';
 import JsonLd from './components/JsonLd';
 import { createPageMetadata } from './lib/seo';
 import LandingNav from './components/landing/LandingNav';
+import DotRipple from './components/landing/DotRipple';
 import DotField from './components/landing/DotField';
 import TypedText from './components/landing/TypedText';
 import ProcessSection from './components/landing/ProcessSection';
@@ -52,7 +53,8 @@ export default function Home() {
             </h1>
 
             <p className="lp-lede mt-5 max-w-[36rem] lp-hero-in" style={{ '--d': '80ms' } as CSSProperties}>
-              {HERO.lede}
+              <span className="hidden sm:inline">{HERO.lede}</span>
+              <span className="sm:hidden">{HERO.ledeShort}</span>
             </p>
             <div className="mt-8 flex flex-wrap gap-2 lp-hero-in" style={{ '--d': '80ms' } as CSSProperties}>
               <CallButton location="landing_hero">Book a call</CallButton>
@@ -60,6 +62,11 @@ export default function Home() {
                 How it works
                 <Arrow />
               </a>
+            </div>
+
+            {/* Phones: a contained dot ripple fills the space above the logos. */}
+            <div className="lp-hero__ripple lp-hero-in" style={{ '--d': '80ms' } as CSSProperties} aria-hidden>
+              <DotRipple />
             </div>
 
             {/* Built by: pinned to the bottom of the hero so it sits above the fold. */}

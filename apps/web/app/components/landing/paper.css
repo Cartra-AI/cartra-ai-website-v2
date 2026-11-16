@@ -340,10 +340,39 @@ body:has(.lp[data-palette='paper']) {
   --dot-accent: 38, 37, 30;
 }
 
-/* Phones: the copy runs longer, so the field starts below it. */
+/* Tablets: the copy runs longer, so the field starts below it. */
 @media (max-width: 767px) {
   .lp-hero__field {
     inset: 62% 0 0 0;
+  }
+}
+
+/* Phones: no field behind the copy. A contained dot ripple takes the free
+   space between the buttons and the logos instead, overlapping nothing. */
+.lp-hero__ripple {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .lp-hero__field {
+    display: none;
+  }
+  .lp-hero__ripple {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 9rem;
+    max-height: 16rem;
+    margin-top: 2.5rem;
+    position: relative;
+  }
+  .lp-hero__ripple canvas {
+    position: absolute;
+    inset: 0;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%);
+  }
+  .lp-hero .lp-logo-tiles {
+    padding-top: 2rem;
   }
 }
 
@@ -823,16 +852,7 @@ body:has(.lp[data-palette='paper']) {
 
 /* ---------- Typed headline line (TypedText.tsx) ---------- */
 
-.lp-typed {
-  display: grid;
-}
-
-.lp-typed__ghost,
-.lp-typed__live {
-  grid-area: 1 / 1;
-}
-
-.lp-typed__ghost {
+.lp-typed__rest {
   visibility: hidden;
 }
 
@@ -2273,8 +2293,9 @@ body:has(.lp[data-palette='paper']) {
  * The page is ink on paper. Orange appears only where an agent is working,
  * so the eye learns one meaning for it:
  *
- *   1. Live: something running right now (the hero's typing caret and the
- *      crests of its dot wave, live/working badges, pulsing dots).
+ *   1. Live: something running right now (the hero's typing caret, the
+ *      crests of its dot wave and the peaks of the phone ripple,
+ *      live/working badges, pulsing dots).
  *   2. Progress: how far a run has got (the active step's rail, ticked boxes).
  *   3. Done by agents: the checkmarks beside work agents do or did
  *      (use cases, case study results).
