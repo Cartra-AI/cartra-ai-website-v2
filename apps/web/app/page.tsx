@@ -101,7 +101,7 @@ export default function Home() {
             <Reveal delay={100}>
               <dl className="lp-stat-tiles mt-14 lg:mt-16">
                 {[
-                  ['$10M–$100M', 'Annual revenue of our clients'],
+                  ['$5M–$100M', 'Annual revenue of our clients'],
                   ['100+', 'AI agents running in production'],
                   ['4 weeks', 'From kickoff to first results'],
                 ].map(([value, label]) => (
